@@ -1,0 +1,306 @@
+# Process result (297)
+
+> item format: [encoding/confidence][file path]
+
+## Converted (0)
+
+
+## Not convert (297)
+
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.0 Root\GameRoot.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.0 Root\GameRoot.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.0 Root\GameSetting.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.0 Root\GameSetting.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.0 Root\MonoManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.0 Root\MonoManager.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.0 Root.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.1 Singleton\IManagerBase.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.1 Singleton\IManagerBase.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.1 Singleton\LogicalManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.1 Singleton\LogicalManager.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.1 Singleton\Singleton.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.1 Singleton\Singleton.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.1 Singleton\SingletonMono.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.1 Singleton\SingletonMono.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.1 Singleton.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.2 Pool\GameObjPoolData.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.2 Pool\GameObjPoolData.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.2 Pool\ObjectPoolData.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.2 Pool\ObjectPoolData.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.2 Pool\PoolAttribute.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.2 Pool\PoolAttribute.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.2 Pool\PoolManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.2 Pool\PoolManager.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.2 Pool.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension\AnimationExtensions.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension\AnimationExtensions.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension\LocalizationExtensions.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension\LocalizationExtensions.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension\MathExtensions.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension\MathExtensions.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension\PoolExtensions.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension\PoolExtensions.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension\ReflectionExtensions.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension\ReflectionExtensions.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.3 StaticExtension.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.4 ResourcesManagaer\AddressableMethod\AddressableExample.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.4 ResourcesManagaer\AddressableMethod\AddressableManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.4 ResourcesManagaer\AddressableMethod\AddressableManager.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.4 ResourcesManagaer\AddressableMethod\README.md`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.4 ResourcesManagaer\AddressableMethod\README.md.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.4 ResourcesManagaer\AddressableMethod.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.4 ResourcesManagaer\ResouceMethod\ResourcesManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.4 ResourcesManagaer\ResouceMethod\ResourcesManager.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.4 ResourcesManagaer\ResouceMethod.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase\1.4 ResourcesManagaer.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\1.FrameBase.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.0 Config\ConfigBase.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.0 Config\ConfigBase.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.0 Config\ConfigManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.0 Config\ConfigManager.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.0 Config\ConfigSetting.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.0 Config\ConfigSetting.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.0 Config.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.1 Save\FileHelper.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.1 Save\FileHelper.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.1 Save\SaveManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.1 Save\SaveManager.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.1 Save.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.2 Localization\LocalizationManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.2 Localization\LocalizationManager.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.2 Localization\LocalizationSetting.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.2 Localization\LocalizationSetting.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.2 Localization.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\Base\WindowBase.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\Base\WindowBase.cs.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\Base\WindowBehaviour.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\Base\WindowBehaviour.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\Base.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\ConfingAndExtension\UGUIExtension.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\ConfingAndExtension\UGUIExtension.cs.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\ConfingAndExtension\UISetting.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\ConfingAndExtension\UISetting.cs.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\ConfingAndExtension\WindowConfig.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\ConfingAndExtension\WindowConfig.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\ConfingAndExtension.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\Core\UIModule.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\Core\UIModule.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime\Core.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts\Runtime.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork\Scripts.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI\ZMUIFrameWork.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase\2.3 UI.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\2.GameBase.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.1 AudioManagaer\AudioManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.1 AudioManagaer\AudioManager.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.1 AudioManagaer.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.3 UnityEvent\UnityEventListener.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.3 UnityEvent\UnityEventListener.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.3 UnityEvent\UnityEventListenerExtend.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.3 UnityEvent\UnityEventListenerExtend.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.3 UnityEvent.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.4 SceneManager\MieMieSceneManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.4 SceneManager\MieMieSceneManager.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.4 SceneManager.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.5 TimeManager\QueueTimer\GameTimer.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.5 TimeManager\QueueTimer\GameTimer.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.5 TimeManager\QueueTimer\GameTimerManager.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.5 TimeManager\QueueTimer\GameTimerManager.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.5 TimeManager\QueueTimer.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.5 TimeManager.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.6 EventCenter\Editor\EventRegister.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.6 EventCenter\Editor\EventRegister.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.6 EventCenter\Editor.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.6 EventCenter\EventCenter.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.6 EventCenter\EventCenter.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.6 EventCenter\EventRegisterSettings.asset`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.6 EventCenter\EventRegisterSettings.asset.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.6 EventCenter.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Dbugger.unity`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Dbugger.unity.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\Debuger.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\Debuger.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\LogColor.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\LogColor.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\LogConfig.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\LogConfig.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\LogSystem.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\LogSystem.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\ReporterHelper.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\ReporterHelper.cs.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\ShowFPS.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\ShowFPS.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\UnityLogHelper.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger\UnityLogHelper.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Debuger.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Editor\LogEditor.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Editor\LogEditor.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Editor\LogSystemWindow.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Editor\LogSystemWindow.cs.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Editor\ScriptingDefineSymbols.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Editor\ScriptingDefineSymbols.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Editor.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\LogTest.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\LogTest.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\README.md`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\README.md.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\README.md`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\README.md.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Editor\ReporterEditor.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Editor\ReporterEditor.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Editor.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\back.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\back.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\bar.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\bar.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\buildFrom.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\buildFrom.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\button_active.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\button_active.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\chart.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\chart.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\clear.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\clear.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\clearOnSceneLoaded.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\clearOnSceneLoaded.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\close.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\close.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\collapse.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\collapse.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\ComputerIcon.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\ComputerIcon.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\copy.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\copy.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\date.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\date.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\error_icon.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\error_icon.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\even_log.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\even_log.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\fps.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\fps.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\graphicCard.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\graphicCard.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\info.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\info.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\log_icon.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\log_icon.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\memory.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\memory.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\odd_log.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\odd_log.png.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\reporterScrollerSkin.guiskin`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\reporterScrollerSkin.guiskin.meta`
+- `[ISO-8859-2/0.5]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\Save.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\Save.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_down_arraw.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_down_arraw.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_horizental_back.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_horizental_back.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_horizental_thumb.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_horizental_thumb.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_left_arraw.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_left_arraw.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_right_arraw.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_right_arraw.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_up_arraw.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_up_arraw.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_vertical_back.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_vertical_back.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_vertical_thumb.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\scroller_vertical_thumb.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\search.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\search.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\selected.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\selected.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\software.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\software.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\timer_1.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\timer_1.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\UnityIcon.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\UnityIcon.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\user.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\user.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\warning_icon.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images\warning_icon.png.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Images.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\MultiKeyDictionary.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Reporter.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Reporter.cs.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\ReporterGUI.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\ReporterGUI.cs.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\ReporterMessageReceiver.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\ReporterMessageReceiver.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test\ReporterScene.unity`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test\ReporterScene.unity.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test\Rotate.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test\Rotate.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test\test1.unity`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test\test1.unity.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test\test2.unity`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test\test2.unity.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test\TestReporter.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter\Test.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter.prefab`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\Reporter.prefab.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\clear.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\clear.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\clearOnNewScene.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\clearOnNewScene.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\collapse.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\collapse.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\error.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\error.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\fps.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\fps.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\GCMem.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\GCMem.png.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\index.htm`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\index.htm.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\info.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\info.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\log.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\log.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\scene.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\scene.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\screenShot11.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\screenShot11.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\screenShot21.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\screenShot21.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\screenShot3.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\screenShot3.png.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\style.css`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\style.css.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\time.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\time.png.meta`
+- `[null/0]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\warning.png`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation\warning.png.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer\ReporterDocumentation.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log\Unity-Logs-Viewer.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools\3.7 HaKiMM.Log.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\3.Tools.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\Examples\ExampleFSMController.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\Examples\ExampleFSMController.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\Examples\ExampleStates.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\Examples\ExampleStates.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\Examples.meta`
+- `[UTF-8/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\I_FsmBlockBoard.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\I_FsmBlockBoard.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\README.md`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\README.md.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\StateBase.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\StateBase.cs.meta`
+- `[UTF-8/0.99]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\StateMachine.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine\StateMachine.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems\StateMechine.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\4.LogicSystems.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\FrameToolsTest\FrameEventTest.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\FrameToolsTest\FrameEventTest.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\FrameToolsTest\FrameTest.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\FrameToolsTest\FrameTest.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\FrameToolsTest\NewTest.cs`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\FrameToolsTest\NewTest.cs.meta`
+- `[ascii/1]` `e:\AAAA学习资料\Demo\哈基咩咩框架专用项目\Assets\MieMieFrameTools\Scripts\FrameToolsTest.meta`
