@@ -56,5 +56,9 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "HakiSheep-Framework.sln"
+    "dotnet.defaultSolution": "HakiSheep-Framework.sln",
+    "dotrush.roslyn.projectOrSolutionFiles": [
+        "f:\\AAAA学习资料\\Demo\\哈基咩咩框架专用项目\\HakiSheep-Framework\\哈基咩咩框架专用项目.sln",
+        "f:\\AAAA学习资料\\Demo\\哈基咩咩框架专用项目\\HakiSheep-Framework\\HakiSheep-Framework.sln"
+    ]
 }

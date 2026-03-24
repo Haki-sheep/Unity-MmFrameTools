@@ -1,0 +1,7 @@
+fileFormatVersion: 2
+guid: f36888bef7361534ea86523d7ecf77a7
+PrefabImporter:
+  externalObjects: {}
+  userData: {"data":{"prefabGuid":"f36888bef7361534ea86523d7ecf77a7","prefabName":"NewTestUI113","objectSelections":[{"objectPath":"Btn","objectName":"Btn","selectedComponentTypes":["UnityEngine.UI.Image","UnityEngine.UI.Button"]},{"objectPath":"ImagePanel","objectName":"ImagePanel","selectedComponentTypes":["UnityEngine.UI.Image"]},{"objectPath":"BtnPanel","objectName":"BtnPanel","selectedComponentTypes":["UnityEngine.UI.Image","UnityEngine.UI.Button"]},{"objectPath":"BPanel","objectName":"BPanel","selectedComponentTypes":["UnityEngine.UI.Button","UnityEngine.UI.Image"]}]}}
+  assetBundleName: 
+  assetBundleVariant: 

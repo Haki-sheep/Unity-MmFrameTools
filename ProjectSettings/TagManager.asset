@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - NarrowBeam
+  - SwingableLedge
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -12,10 +15,10 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Slope
+  - Ledge
+  - 'Block '
   - 
   - 
   - 
