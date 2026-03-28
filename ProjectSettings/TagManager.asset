@@ -19,8 +19,8 @@ TagManager:
   - Slope
   - Ledge
   - 'Block '
-  - 
-  - 
+  - Player
+  - FootTrigger
   - 
   - 
   - 
