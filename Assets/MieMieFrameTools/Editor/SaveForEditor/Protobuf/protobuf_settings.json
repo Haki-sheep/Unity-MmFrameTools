@@ -1,0 +1,6 @@
+{
+  "protocPath": "C:/Users/fmz/Desktop/GraduationProject/TryModel/Unity-UserInterface/消息订阅与回调机制/Assets/Editor/Tools/protoc.exe",
+  "protoDirectory": "C:/Users/fmz/Desktop/GraduationProject/TryModel/Unity-UserInterface/消息订阅与回调机制/Assets/Configs",
+  "outputDirectory": "C:/Users/fmz/Desktop/GraduationProject/TryModel/Unity-UserInterface/消息订阅与回调机制/Assets/Scripts/GameSave",
+  "csharpNamespace": "Game.Save"
+}

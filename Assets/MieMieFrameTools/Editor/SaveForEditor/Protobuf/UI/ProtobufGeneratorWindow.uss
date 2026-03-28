@@ -1,0 +1,229 @@
+/* ProtobufGeneratorWindow Styles */
+
+/* 主容器：占满窗口高度，纵向分配；子项默认可压缩时会把路径行挤扁，需配合各块 flex-shrink */
+.container {
+    flex-grow: 1;
+    flex-direction: column;
+    min-height: 0;
+    padding: 10px;
+    background-color: #2d2d2d;
+}
+
+/* 顶栏：提示 + 依赖下载 */
+.toolbar-row {
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    min-width: 0;
+}
+
+.toolbar-hint {
+    flex-shrink: 1;
+    font-size: 11px;
+    color: #888;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 8px;
+}
+
+.btn-toolbar {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* 区域块：禁止纵向被挤没（日志区单独覆盖） */
+.section {
+    flex-shrink: 0;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #383838;
+    border-radius: 5px;
+}
+
+/* 标题 */
+.section-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #d4d4d4;
+    margin-bottom: 8px;
+    -unity-font-style: bold;
+}
+
+/* 路径行：不在纵轴被压扁 */
+.path-row {
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+    margin-bottom: 8px;
+    min-width: 0;
+    min-height: 24px;
+}
+
+/* 输入框：横向可收缩，纵向保留一行高度 */
+.path-field {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 120px;
+    margin-right: 8px;
+}
+
+.path-field .unity-text-field__input,
+.path-field .unity-base-text-field__input {
+    min-height: 20px;
+}
+
+/* 按钮组：固定宽度，始终完整显示 */
+.path-buttons {
+    flex-direction: row;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.path-buttons > .btn-small {
+    margin-right: 6px;
+}
+
+/* 最后一个 btn-small 消除右边距 */
+
+/* 日志标题行：标题在左，按钮在右，两端分布 */
+.log-header-row {
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    min-width: 0;
+}
+
+.log-header-title {
+    flex-shrink: 1;
+    flex-grow: 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #d4d4d4;
+    -unity-font-style: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 8px;
+}
+
+/* 小按钮：固定宽度，不压缩 */
+.btn-small {
+    width: 72px;
+    height: 22px;
+    padding: 0 4px;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.btn-primary {
+    flex-grow: 1;
+    background-color: #4a7c59;
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.btn-primary:hover {
+    background-color: #5a9c69;
+}
+
+.btn-secondary {
+    flex-grow: 1;
+    background-color: #505050;
+    color: #d4d4d4;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.btn-secondary:hover {
+    background-color: #606060;
+}
+
+/* 状态标签 */
+.status-label {
+    font-size: 11px;
+    color: #888;
+    margin-top: 3px;
+}
+
+.status-label.success {
+    color: #4caf50;
+}
+
+.status-label.error {
+    color: #f44336;
+}
+
+/* 信息标签 */
+.info-label {
+    font-size: 11px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* proto 列表：约 3 行可视高度，超出由 ListView 内部滚动 */
+.proto-list {
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 66px;
+    min-height: 66px;
+    max-height: 66px;
+    background-color: #2a2a2a;
+    border-radius: 3px;
+}
+
+/* 日志区域：占据窗口剩余高度，内部可滚动 */
+.log-section {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 120px;
+    min-width: 0;
+    flex-direction: column;
+}
+
+/* 可多选、Ctrl+C 复制的只读日志框 */
+.log-text {
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 11px;
+    background-color: #1a1a1a;
+    color: #d4d4d4;
+    border-radius: 3px;
+    padding: 6px;
+    min-width: 0;
+    white-space: pre-wrap;
+    wordWrap: 1;
+}
+
+.log-text .unity-text-field__input,
+.log-text .unity-base-text-field__input {
+    flex-grow: 0;
+    min-height: 0;
+    white-space: pre-wrap;
+    overflow: visible;
+}
+
+/* ScrollView 包裹层：填满剩余高度，内部内容决定是否显示滚动条 */
+.log-scroll {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 60px;
+    min-width: 0;
+    background-color: #1a1a1a;
+    border-radius: 3px;
+}
+
+/* 按钮行 */
+.button-row {
+    flex-direction: row;
+    flex-shrink: 0;
+    justify-content: space-between;
+    margin-top: 10px;
+}

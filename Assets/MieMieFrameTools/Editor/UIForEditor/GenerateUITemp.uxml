@@ -1,0 +1,33 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/MieMieFrameTools/Editor/UIForEditor/GenerateUITemp.uss?fileID=7433441132597879392&amp;guid=f109a58eeeec6bf4eb17f031ee45d422&amp;type=3#GenerateUITemp" />
+    <ui:VisualElement name="RootElement" style="flex-grow: 1; flex-direction: column; align-items: stretch; justify-content: flex-end; flex-shrink: 0; align-self: stretch;">
+        <ui:Label text="UI模版生成器" name="ToolName" style="align-self: center; align-items: flex-start; justify-content: flex-start; font-size: 30px; height: auto; flex-grow: 0; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px;" />
+        <ui:VisualElement name="BaseInfoElement" style="flex-grow: 0; flex-direction: column; align-self: stretch; background-size: 100% 30%; flex-shrink: 0; height: auto;">
+            <ui:TextField label="类名" placeholder-text="(拖入预制体自动生成)" name="ClassName" style="align-items: flex-start; width: auto; flex-grow: 0; background-size: 100% 10%; margin-top: 10px; margin-bottom: 10px;" />
+            <uie:ObjectField label="预制体:" name="PrefabGameObject" type="UnityEngine.GameObject, UnityEngine.CoreModule" style="align-self: stretch; align-items: flex-start; flex-grow: 0; justify-content: flex-start; margin-top: 10px; margin-bottom: 10px;" />
+            <ui:VisualElement name="PathElement" style="flex-direction: row; align-items: center; margin-top: 10px; margin-right: 4px; margin-bottom: 10px; margin-left: 4px; flex-grow: 0;">
+                <ui:TextField label="生成路径 :" placeholder-text="Assets/_Scripts/UI/" name="CheckPath" style="flex-grow: 1; margin-right: 5px;" />
+                <ui:Button text="浏览文件夹" name="SelectButton" style="width: 80px; margin-right: 5px;" />
+                <ui:Button text="恢复默认路径" name="DefaultPahtButton" style="width: 100px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="MappingSection" style="flex-grow: 1; flex-direction: column; align-self: stretch; margin-top: 8px; margin-right: 8px; margin-bottom: 8px; margin-left: 8px;">
+            <ui:Foldout text="前缀→组件类型映射" value="true" name="MappingFoldout" style="flex-grow: 1; align-self: stretch;">
+                <ui:VisualElement name="MappingHeader" style="flex-direction: row; align-items: center; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px; background-color: rgba(80, 80, 80, 0.4); border-radius: 3px;">
+                    <ui:Label text="前缀" name="HeaderPrefix" style="width: 70px; flex-grow: 0; -unity-font-style: bold; font-size: 12px;" />
+                    <ui:Label text="→" name="HeaderArrow" style="width: 24px; flex-grow: 0; -unity-text-align: middle-center; font-size: 12px; color: rgba(180, 180, 180, 0.8);" />
+                    <ui:Label text="组件类型" name="HeaderType" style="flex-grow: 1; -unity-font-style: bold; font-size: 12px;" />
+                </ui:VisualElement>
+                <ui:ScrollView name="MappingScrollView" focusable="true" mode="Vertical" horizontal-scroller-visibility="Disabled" vertical-scroller-visibility="Auto" style="flex-grow: 1; align-self: stretch; min-height: 150px; max-height: 250px;" />
+                <ui:VisualElement name="MappingActions" style="flex-direction: row; flex-wrap: wrap; margin-top: 8px; margin-right: 0px; margin-bottom: 4px; margin-left: 0px; flex-grow: 0; align-items: center;">
+                    <ui:Button text="+ 添加" name="AddMappingButton" style="flex-grow: 0; margin-right: 6px; width: 60px;" />
+                    <ui:Button text="重置" name="ResetMappingButton" style="flex-grow: 0; margin-right: 6px; width: 60px;" />
+                    <ui:Button text="设为默认" name="SetNewDefaultButton" style="flex-grow: 0; margin-right: 6px; width: 70px;" />
+                    <ui:Button text="复制" name="CopyMappingButton" style="flex-grow: 0; margin-right: 6px; width: 60px;" />
+                    <ui:Button text="保存" name="SaveMappingButton" style="flex-grow: 0; width: 60px;" />
+                </ui:VisualElement>
+            </ui:Foldout>
+        </ui:VisualElement>
+        <ui:Button text="生成脚本" name="CreatButton" style="align-self: stretch; height: 30px; margin: 8px; font-size: 14px; -unity-font-style: bold;" />
+    </ui:VisualElement>
+</ui:UXML>

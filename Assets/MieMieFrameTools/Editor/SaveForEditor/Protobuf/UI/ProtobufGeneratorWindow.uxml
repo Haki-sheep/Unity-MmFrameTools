@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML xmlns:engine="UnityEngine.UIElements"
+             xmlns:editor="UnityEditor.UIElements"
+             editor-extension-mode="True">
+
+    <engine:VisualElement class="container">
+
+        <engine:VisualElement class="toolbar-row">
+            <engine:Label text="配置保存在 Assets/Editor/Protobuf/protobuf_settings.json" class="toolbar-hint" />
+            <engine:Button name="openDownloadLinks" text="依赖下载链接" class="btn-toolbar" />
+        </engine:VisualElement>
+
+        <engine:VisualElement class="section">
+            <engine:Label text="protoc 配置" class="section-title" />
+            <engine:VisualElement class="path-row">
+                <engine:TextField name="protocPath" label="编译器路径" class="path-field" />
+                <engine:VisualElement class="path-buttons">
+                    <engine:Button name="browseProtoc" text="浏览..." class="btn-small" />
+                    <engine:Button name="resetProtoc" text="重置" class="btn-small" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:Label name="protocStatus" class="status-label" />
+        </engine:VisualElement>
+
+        <engine:VisualElement class="section">
+            <engine:Label text="proto 文件配置" class="section-title" />
+            <engine:VisualElement class="path-row">
+                <engine:TextField name="protoPath" label="proto 目录" class="path-field" />
+                <engine:VisualElement class="path-buttons">
+                    <engine:Button name="openProto" text="打开" class="btn-small" />
+                    <engine:Button name="browseProto" text="浏览..." class="btn-small" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement class="path-row">
+                <engine:TextField name="outputPath" label="输出目录" class="path-field" />
+                <engine:VisualElement class="path-buttons">
+                    <engine:Button name="openOutput" text="打开" class="btn-small" />
+                    <engine:Button name="browseOutput" text="浏览..." class="btn-small" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement class="path-row">
+                <engine:TextField name="namespace" label="命名空间" class="path-field" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+
+        <engine:VisualElement class="section">
+            <engine:Label text="proto 文件列表" class="section-title" />
+            <engine:ListView name="protoList" class="proto-list" />
+            <engine:Label name="protoCount" class="info-label" />
+        </engine:VisualElement>
+
+        <engine:VisualElement class="section log-section">
+            <engine:VisualElement class="log-header-row">
+                <engine:Label text="编译日志" class="log-header-title" />
+                <engine:VisualElement class="path-buttons">
+                    <engine:Button name="copyLog" text="复制日志" class="btn-small" />
+                    <engine:Button name="clearLog" text="清空" class="btn-small" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:ScrollView name="logScroll" class="log-scroll">
+                <engine:TextField name="logText" multiline="true" readonly="true" class="log-text" />
+            </engine:ScrollView>
+        </engine:VisualElement>
+
+        <engine:VisualElement class="button-row">
+            <engine:Button name="compileAll" text="编译所有" class="btn-primary" />
+            <engine:Button name="compileSelected" text="编译选中" class="btn-secondary" />
+        </engine:VisualElement>
+
+    </engine:VisualElement>
+</engine:UXML>

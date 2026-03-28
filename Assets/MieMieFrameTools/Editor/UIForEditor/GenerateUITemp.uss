@@ -1,0 +1,77 @@
+.custom-label {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(68, 138, 255);
+}
+
+/* 前缀→组件类型映射表区域 */
+#MappingSection {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#MappingFoldout {
+    font-size: 14px;
+}
+
+#MappingScrollView {
+    border-top-width: 1px;
+    border-top-color: rgba(100, 100, 100, 0.3);
+    margin-top: 4px;
+}
+
+/* 映射表行样式 */
+.mapping-row {
+    flex-direction: row;
+    align-items: center;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    background-color: rgba(50, 50, 50, 0.25);
+    border-radius: 3px;
+}
+
+.mapping-row:hover {
+    background-color: rgba(68, 138, 255, 0.12);
+}
+
+/* 映射表箭头 */
+.mapping-arrow {
+    width: 24px;
+    flex-grow: 0;
+    -unity-text-align: middle-center;
+    font-size: 11px;
+    color: rgba(180, 180, 180, 0.6);
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/* 映射表前缀输入框 */
+.mapping-prefix-field {
+    width: 70px;
+    flex-grow: 0;
+    font-size: 12px;
+}
+
+/* 映射表类型输入框 */
+.mapping-type-field {
+    flex-grow: 1;
+    font-size: 12px;
+}
+
+/* 映射表删除按钮 */
+.mapping-delete-btn {
+    flex-grow: 0;
+    width: 50px;
+    margin-left: 4px;
+    background-color: rgba(220, 60, 60, 0.3);
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.mapping-delete-btn:hover {
+    background-color: rgba(220, 60, 60, 0.6);
+}
