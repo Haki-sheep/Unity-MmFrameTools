@@ -14,12 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Prefabs
   m_GUID: 1ec881f1f4b49ab4fbf8bb20286fdd61
-  m_SerializeEntries:
-  - m_GUID: d34e1bfb67125584f91c31cad0a7d781
-    m_Address: Cube
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: aca083bc141445b47b6a21cb24ee145d, type: 2}
   m_SchemaSet:

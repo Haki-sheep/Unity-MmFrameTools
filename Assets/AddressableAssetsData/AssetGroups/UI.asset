@@ -15,21 +15,6 @@ MonoBehaviour:
   m_GroupName: UI
   m_GUID: ecd492170c71aae43981e2dd349eccca
   m_SerializeEntries:
-  - m_GUID: 02ec8f64d7e76174d97a0543637b461c
-    m_Address: icon
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b06b416bdb60be542bd2586bcede729c
-    m_Address: NewTestUITemple
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f36888bef7361534ea86523d7ecf77a7
-    m_Address: NewTestUI113
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f5121d606772a874d80abc74ff135fc7
     m_Address: Temple
     m_ReadOnly: 0
