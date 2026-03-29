@@ -61,15 +61,23 @@ public class GenerateUITemp : EditorWindow
         root = rootVisualElement;
         if (m_VisualTreeAsset == null)
         {
-            var config = AssetDatabase.LoadAssetAtPath<UIPathConfig>(
-                "Assets/MieMieFrameTools/FrameSettings/UIPathConfig.asset");
-            string uxmlPath = config?.GetGenerateUITempUxmlPath()
-                ?? "Assets/MieMieFrameTools/Editor/UIForEditor/GenerateUITemp.uxml";
+            var config = UIPathConfigLocator.FindUIPathConfig() ?? UIPathConfigLocator.LoadOrCreateUIPathConfig();
+            string uxmlPath = null;
+            if (config != null)
+            {
+                UIPathConfigLocator.EnsureGenerateUITempPaths(config);
+                AssetDatabase.SaveAssets();
+                uxmlPath = config.GetGenerateUITempUxmlPath();
+            }
+
+            if (string.IsNullOrEmpty(uxmlPath))
+                uxmlPath = TryResolveUxmlPathWithoutConfig();
 
             m_VisualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(uxmlPath);
             if (m_VisualTreeAsset == null)
             {
-                Debug.LogError($"GenerateUITemp.uxml 路径不正确: {uxmlPath}");
+                Debug.LogError(
+                    $"GenerateUITemp.uxml 无法加载: {(uxmlPath ?? "(null)")}。请在菜单 Tools/UI/UIPathConfigEditor 中点击「自动扫描工程路径」，或检查工程中是否存在 GenerateUITemp.uxml。");
                 return;
             }
         }
@@ -142,14 +150,18 @@ public class GenerateUITemp : EditorWindow
         }
     }
 
+    private static string TryResolveUxmlPathWithoutConfig()
+    {
+        return UIPathConfigLocator.TryFindGenerateUITempUxmlPath(out string p) ? p : null;
+    }
+
     private string GetRecordedPathForPrefab(GameObject prefab)
     {
         if (prefab == null) return null;
         string prefabPath = AssetDatabase.GetAssetPath(prefab);
         if (string.IsNullOrEmpty(prefabPath)) return null;
         string guid = AssetDatabase.AssetPathToGUID(prefabPath);
-        var config = AssetDatabase.LoadAssetAtPath<UIPathConfig>(
-            "Assets/MieMieFrameTools/FrameSettings/UIPathConfig.asset");
+        var config = UIPathConfigLocator.FindUIPathConfig();
         return config?.GetLastGenScriptPath(guid);
     }
 
@@ -160,18 +172,11 @@ public class GenerateUITemp : EditorWindow
         if (string.IsNullOrEmpty(prefabPath)) return;
         string guid = AssetDatabase.AssetPathToGUID(prefabPath);
 
-        string configPath = "Assets/MieMieFrameTools/FrameSettings/UIPathConfig.asset";
-        var config = AssetDatabase.LoadAssetAtPath<UIPathConfig>(configPath);
-
+        var config = UIPathConfigLocator.FindUIPathConfig() ?? UIPathConfigLocator.LoadOrCreateUIPathConfig();
         if (config == null)
         {
-            if (!System.IO.Directory.Exists("Assets/MieMieFrameTools/FrameSettings"))
-                System.IO.Directory.CreateDirectory("Assets/MieMieFrameTools/FrameSettings");
-
-            config = ScriptableObject.CreateInstance<UIPathConfig>();
-            AssetDatabase.CreateAsset(config, configPath);
-            AssetDatabase.SaveAssets();
-            Debug.Log($"[GenerateUITemp] 自动创建 UIPathConfig: {configPath}");
+            Debug.LogError("[GenerateUITemp] 无法创建或找到 UIPathConfig，跳过路径记录。");
+            return;
         }
 
         config.SetGenScriptPath(guid, prefab.name, generatePath);
@@ -386,8 +391,7 @@ public class GenerateUITemp : EditorWindow
 
     private static FrameSetting GetFrameSetting()
     {
-        return AssetDatabase.LoadAssetAtPath<FrameSetting>(
-            "Assets/MieMieFrameTools/FrameSettings/FrameSetting.asset");
+        return UIPathConfigLocator.FindFrameSetting();
     }
 
     #endregion

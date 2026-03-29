@@ -28,20 +28,24 @@ namespace MieMieFrameWork.Editor
 
         private void LoadConfig()
         {
-            config = AssetDatabase.LoadAssetAtPath<UIPathConfig>(
-                "Assets/MieMieFrameTools/FrameSettings/UIPathConfig.asset");
+            config = UIPathConfigLocator.FindUIPathConfig();
 
             if (config == null)
             {
-                config = ScriptableObject.CreateInstance<UIPathConfig>();
-
-                string dir = "Assets/MieMieFrameTools/FrameSettings";
-                if (!AssetDatabase.IsValidFolder(dir))
-                    AssetDatabase.CreateFolder("Assets/MieMieFrameTools", "FrameSettings");
-
-                AssetDatabase.CreateAsset(config, "Assets/MieMieFrameTools/FrameSettings/UIPathConfig.asset");
-                AssetDatabase.SaveAssets();
-                EditorUtility.DisplayDialog("提示", "已自动创建 UIPathConfig.asset", "确定");
+                config = UIPathConfigLocator.LoadOrCreateUIPathConfig();
+                if (config != null)
+                {
+                    UIPathConfigLocator.ApplyAutoDetectedPaths(config, overwriteExisting: true);
+                    AssetDatabase.SaveAssets();
+                    EditorUtility.DisplayDialog("提示", "已在工程中定位或创建 UIPathConfig，并已自动扫描工具资源路径。", "确定");
+                }
+                else
+                {
+                    EditorUtility.DisplayDialog(
+                        "未找到 UIPathConfig",
+                        "无法自动创建 UIPathConfig：请确认工程中包含 FrameSetting.asset，或 MieMieFrameTools/Editor/UIForEditor 下的 GenerateUITemp.uxml。",
+                        "确定");
+                }
             }
             else
             {
@@ -73,7 +77,8 @@ namespace MieMieFrameWork.Editor
             EditorGUILayout.LabelField("UI 路径配置面板", EditorStyles.boldLabel);
             EditorGUILayout.HelpBox(
                 "【UI脚本生成路径】生成UI脚本时默认填入的路径\n" +
-                "【Bind记录Json路径】预制体bind映射关系的保存文件路径",
+                "【Bind记录Json路径】预制体 bind 映射关系的保存文件路径\n" +
+                "【GenerateUITemp】面板使用的 UXML / USS；若换工程后路径失效，请点击「自动扫描工程路径」。",
                 MessageType.Info);
             EditorGUILayout.EndVertical();
         }
@@ -111,12 +116,28 @@ namespace MieMieFrameWork.Editor
             }
 
             EditorGUILayout.Space(5);
+            EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("保存配置", GUILayout.Width(100)))
             {
                 EditorUtility.SetDirty(config);
                 AssetDatabase.SaveAssets();
                 EditorUtility.DisplayDialog("提示", "配置已保存", "确定");
             }
+
+            if (GUILayout.Button("自动扫描工程路径（覆盖三项）", GUILayout.Width(200)))
+            {
+                int n = UIPathConfigLocator.ApplyAutoDetectedPaths(config, overwriteExisting: true);
+                AssetDatabase.SaveAssets();
+                EditorUtility.DisplayDialog("扫描完成", n > 0 ? $"已更新 {n} 个路径字段。" : "未找到可写入的路径（请确认工程中存在对应文件）。", "确定");
+            }
+
+            if (GUILayout.Button("仅修复无效路径", GUILayout.Width(120)))
+            {
+                int n = UIPathConfigLocator.ApplyAutoDetectedPaths(config, overwriteExisting: false);
+                AssetDatabase.SaveAssets();
+                EditorUtility.DisplayDialog("扫描完成", n > 0 ? $"已修正 {n} 个无效路径。" : "当前路径均已解析成功，无需修改。", "确定");
+            }
+            EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.EndVertical();
         }

@@ -286,12 +286,13 @@ public class GenerateUITool
     // ==================== 工具方法 ====================
 
     // UI组件信息结构
-    private struct UIComponentInfo
+    private class UIComponentInfo
     {
-        public string name;
+        public string name;       // 原始物体名（如 [Btn][Tmp]DisPlay）
         public string type;
         public string path;
         public string fieldName; // 用于生成的字段名
+        public int instanceId;   // 用于去重的GameObject实例ID
     }
 
     // 多前缀解析分隔符
@@ -317,6 +318,7 @@ public class GenerateUITool
         { "Panel", "RectTransform" },
         { "RawImg", "RawImage" },
         { "RawImage", "RawImage" },
+        { "RT", "RectTransform" },
     };
 
     /// <summary>
@@ -338,8 +340,7 @@ public class GenerateUITool
     public static void RefreshPrefixToTypeMap()
     {
         var dict = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-        var frameSetting = AssetDatabase.LoadAssetAtPath<FrameSetting>(
-            "Assets/MieMieFrameTools/FrameSettings/FrameSetting.asset");
+        var frameSetting = UIPathConfigLocator.FindFrameSetting();
 
         if (frameSetting != null && frameSetting.PrefixToComponentTypeMap != null)
         {
@@ -385,14 +386,23 @@ public class GenerateUITool
 
         foreach (var comp in allComponents)
         {
+            // 排除子预制体
+            var prefabRoot = PrefabUtility.GetOutermostPrefabInstanceRoot(comp.gameObject);
+            if (prefabRoot != null && prefabRoot != uiPrefab)
+                continue;
+
             string compName = comp.gameObject.name;
             string actualComponentType = comp.GetType().Name;
 
-            // 计算相对路径
-            string path = GetRelativePath(uiContent, comp.transform);
+            // [RT]xxx 物体由 RectTransform 扫描单独处理，避免重复
+            if (compName.StartsWith("[RT]", StringComparison.OrdinalIgnoreCase))
+                continue;
 
             // 使用多前缀解析规则处理组件名
             var parsedComponents = ParseMultiPrefix(compName, actualComponentType, effectivePrefixes);
+
+            if (parsedComponents.Count == 0)
+                continue;
 
             // 获取物体上所有组件的类型（用于多前缀解析时的类型过滤）
             var componentsOnObject = comp.gameObject.GetComponents<UnityEngine.EventSystems.UIBehaviour>();
@@ -402,15 +412,19 @@ public class GenerateUITool
                 componentTypesOnObject.Add(c.GetType().Name);
             }
 
+            // 计算相对路径（只需计算一次）
+            string path = GetRelativePath(uiContent, comp.transform);
+
+            // 检查是否已处理过此 GameObject - 使用 instanceId 进行精确去重
+            // 必须在 parsedComponents 循环外部检查，确保每个 GameObject 只被检查一次，
+            // 但允许其所有 parsed 组件都能被添加（多前缀场景：同一物体有多个组件）
+            if (components.Any(c => c.instanceId == comp.gameObject.GetInstanceID()))
+            {
+                continue;
+            }
+
             foreach (var parsed in parsedComponents)
             {
-                // 检查是否已存在同名组件（同路径同类型）
-                var existing = components.Find(c => c.path == path && c.type == parsed.type && c.fieldName == parsed.fieldName);
-                if (existing.name != null)
-                {
-                    continue;
-                }
-
                 // 多前缀模式下，需要检查物体上是否有对应类型的组件（否则会生成无法 GetComponent 的字段）
                 if (compName.Contains(MULTI_PREFIX_SEPARATOR))
                 {
@@ -429,7 +443,54 @@ public class GenerateUITool
                     name = parsed.originalName,
                     type = parsed.type,
                     path = path,
-                    fieldName = parsed.fieldName
+                    fieldName = parsed.fieldName,
+                    instanceId = comp.gameObject.GetInstanceID()
+                });
+            }
+        }
+
+        // RectTransform 扫描：收集 [RT]xxx 等带 RT 前缀的物体，走字典匹配
+        foreach (RectTransform rt in uiContent.GetComponentsInChildren<RectTransform>(true))
+        {
+            // 排除子预制体
+            var prefabRoot = PrefabUtility.GetOutermostPrefabInstanceRoot(rt.gameObject);
+            if (prefabRoot != null && prefabRoot != uiPrefab)
+                continue;
+
+            string compName = rt.gameObject.name;
+
+            // 只处理以 [ 开头的物体（[] 单前缀格式，如 [RT]SettingMain）
+            if (!compName.StartsWith("["))
+                continue;
+
+            // 非 [RT] 前缀：若已挂 Image/Button/TMP 等 UIBehaviour，由上面的 UIBehaviour 循环处理，避免重复
+            // [RT] 前缀：面板节点常同时挂 Image、LayoutGroup 等，仍需生成 RectTransform 引用（UIBehaviour 循环已整体跳过 [RT] 名）
+            bool isRtBracketName = compName.StartsWith("[RT]", StringComparison.OrdinalIgnoreCase);
+            if (!isRtBracketName && rt.GetComponent<UnityEngine.EventSystems.UIBehaviour>() != null)
+                continue;
+
+            // 检查是否已处理过此 GameObject - 使用 instanceId 进行精确去重
+            // 必须在 ParseMultiPrefix 之前检查，避免无效解析
+            if (components.Any(c => c.instanceId == rt.gameObject.GetInstanceID()))
+                continue;
+
+            // 走通用解析：剥去方括号后查字典
+            var parsedComponents = ParseMultiPrefix(compName, "RectTransform", effectivePrefixes);
+            if (parsedComponents.Count == 0)
+                continue;
+
+            // 计算相对路径（只需计算一次）
+            string path = GetRelativePath(uiContent, rt);
+
+            foreach (var parsed in parsedComponents)
+            {
+                components.Add(new UIComponentInfo
+                {
+                    name = compName,
+                    type = parsed.type,
+                    path = path,
+                    fieldName = parsed.fieldName,
+                    instanceId = rt.gameObject.GetInstanceID()
                 });
             }
         }
@@ -466,6 +527,17 @@ public class GenerateUITool
         {
             // 多层解析模式
             result = ParseMultiPrefixMode(compName, effectivePrefixes);
+        }
+        else if (compName.StartsWith("[") && compName.Length > 1)
+        {
+            // [] 单前缀格式：剥去方括号后按单前缀解析
+            // 例如 [RT]SettingMain -> 剥去 [ 和 ] 后得到 "RTSettingMain"，再按单前缀匹配
+            int closeBracket = compName.IndexOf(']');
+            if (closeBracket > 1)
+            {
+                string stripped = compName.Substring(closeBracket + 1);
+                result = ParseSinglePrefixMode(stripped, componentType, effectivePrefixes);
+            }
         }
         else
         {
@@ -873,8 +945,7 @@ public class GenerateUITool
     /// </summary>
     public static string GetLastGenScriptPath(string prefabGuid)
     {
-        var config = AssetDatabase.LoadAssetAtPath<UIPathConfig>(
-            "Assets/MieMieFrameTools/FrameSettings/UIPathConfig.asset");
+        var config = UIPathConfigLocator.FindUIPathConfig();
         return config?.GetLastGenScriptPath(prefabGuid);
     }
 
@@ -883,8 +954,7 @@ public class GenerateUITool
     /// </summary>
     public static string GetDefaultUIGenScriptPath()
     {
-        var config = AssetDatabase.LoadAssetAtPath<UIPathConfig>(
-            "Assets/MieMieFrameTools/FrameSettings/UIPathConfig.asset");
+        var config = UIPathConfigLocator.FindUIPathConfig();
         return config?.GetDefaultUIGenScriptPath() ?? "Assets/_Scripts/UI/";
     }
 }

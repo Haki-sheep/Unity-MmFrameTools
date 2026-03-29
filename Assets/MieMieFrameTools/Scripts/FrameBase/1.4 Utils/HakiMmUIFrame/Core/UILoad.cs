@@ -1,18 +1,22 @@
 using UnityEngine;
-using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.AddressableAssets;
 
 namespace MieMieFrameWork.UI
 {
     /// <summary>
-    /// 专门为加载UI的类
+    /// UI 加载工具类
+    /// 提供 Addressable 和 Resources 双路径加载
     /// </summary>
-
     public static class UILoad
     {
+        /// <summary>
+        /// 同步加载 UI 预制体
+        /// 优先走 Addressable，失败则降级到 Resources
+        /// </summary>
+        /// <param name="uiName">UI 名称（Addressable 地址或 Resources 路径）</param>
+        /// <returns>加载的 GameObject，未找到则返回 null</returns>
         public static GameObject AddressableLoad(string uiName)
         {
-            // 先尝试Addressable加载
+            // 先尝试 Addressable 加载
             GameObject uiPrefab = null;
 
             try
@@ -21,10 +25,10 @@ namespace MieMieFrameWork.UI
             }
             catch (System.Exception e)
             {
-                Debug.LogWarning($"UI_Load: Addressable加载失败，尝试Resources加载: {e.Message}");
+                Debug.LogWarning($"[UILoad] Addressable 加载失败，尝试 Resources 加载: {e.Message}");
             }
 
-            // 如果Addressable失败，尝试从Resources加载
+            // 如果 Addressable 失败，尝试从 Resources 加载
             if (uiPrefab == null)
             {
                 uiPrefab = Resources.Load<GameObject>(uiName);
@@ -36,7 +40,7 @@ namespace MieMieFrameWork.UI
 
             if (uiPrefab == null) return null;
 
-            // 确保UI预制体在正确的位置和状态
+            // 确保 UI 预制体在正确的位置和状态
             RectTransform rectTransform = uiPrefab.GetComponent<RectTransform>();
             if (rectTransform != null)
             {
@@ -49,34 +53,44 @@ namespace MieMieFrameWork.UI
         }
 
         /// <summary>
-        /// 异步加载UI预制体
+        /// 异步加载 UI 预制体
+        /// 优先走 Addressable，失败则降级到 Resources
         /// </summary>
-        /// <param name="uiName">UI名称</param>
-        /// <param name="onComplete">加载完成回调，返回加载的GameObject</param>
+        /// <param name="uiName">UI 名称（Addressable 地址或 Resources 路径）</param>
+        /// <param name="onComplete">加载完成回调，返回加载的 GameObject</param>
         public static void AddressableLoadAsync(string uiName, System.Action<GameObject> onComplete)
         {
-            Addressables.LoadAssetAsync<GameObject>(uiName).Completed += (AsyncOperationHandle<GameObject> handle) =>
+            // 使用 AddressableMgr 的异步方法，内部正确管理句柄
+            AddressableMgr.LoadAssetAsync<GameObject>(uiName, (prefab) =>
             {
-                if (handle.Status == AsyncOperationStatus.Succeeded)
+                if (prefab != null)
                 {
-                    GameObject uiPrefab = handle.Result;
-
-                    RectTransform rectTransform = uiPrefab.GetComponent<RectTransform>();
+                    RectTransform rectTransform = prefab.GetComponent<RectTransform>();
                     if (rectTransform != null)
                     {
                         rectTransform.localScale = Vector3.one;
                         rectTransform.localPosition = Vector3.zero;
                         rectTransform.localRotation = Quaternion.identity;
                     }
-
-                    onComplete?.Invoke(uiPrefab);
+                    onComplete?.Invoke(prefab);
                 }
                 else
                 {
-                    Debug.LogError($"UI_Load: 异步加载UI失败: {uiName}, Error: {handle.OperationException}");
-                    onComplete?.Invoke(null);
+                    // Addressable 失败，降级到 Resources
+                    Debug.LogWarning($"[UILoad] Addressable 异步加载失败，尝试 Resources: {uiName}");
+                    GameObject uiPrefab = Resources.Load<GameObject>(uiName);
+                    if (uiPrefab != null)
+                    {
+                        uiPrefab = GameObject.Instantiate(uiPrefab);
+                        onComplete?.Invoke(uiPrefab);
+                    }
+                    else
+                    {
+                        Debug.LogError($"[UILoad] Resources 也加载失败: {uiName}");
+                        onComplete?.Invoke(null);
+                    }
                 }
-            };
+            });
         }
     }
 }
