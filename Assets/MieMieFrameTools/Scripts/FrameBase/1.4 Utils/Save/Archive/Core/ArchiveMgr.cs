@@ -290,7 +290,7 @@ namespace MieMieFrameTools
 
         public void Init()
         {
-            throw new NotImplementedException();
+            
         }
 
         /// <summary>
