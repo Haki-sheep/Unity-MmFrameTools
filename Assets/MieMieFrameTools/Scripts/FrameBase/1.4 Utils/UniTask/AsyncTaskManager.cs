@@ -9,7 +9,7 @@ using UnityEngine;
 /// 多线程任务调度管理器
 /// 基于UniTask实现线程切换和任务调度
 /// </summary>
-public class AsyncTaskManager : MonoBehaviour, I_ManagerBase
+public class AsyncTaskManager : MonoBehaviour, IManagerBase
 {
     //任务统计信息
     private TaskStatistics statistics = new();

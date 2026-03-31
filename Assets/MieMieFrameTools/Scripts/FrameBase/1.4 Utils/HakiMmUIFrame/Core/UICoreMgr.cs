@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace MieMieFrameWork.UI
@@ -17,7 +19,7 @@ namespace MieMieFrameWork.UI
     /// UI核心管理类
     /// </summary>
     [Serializable]
-    public class UICoreMgr : MonoBehaviour, I_ManagerBase
+    public class UICoreMgr : MonoBehaviour, IManagerBase
     {
         //堆栈系统
         private UIStack uiStack ;
@@ -28,18 +30,19 @@ namespace MieMieFrameWork.UI
         [SerializeField] private Transform UIRoot;
 
         [SerializeField] private Camera UICamera;
+
         public void Init()
         {  
-            // Debug.Log("UI_CoreMgr Init");
-            //获取UICamera 和 Root
             UIRoot = this.transform;
             UICamera = UIRoot.GetComponentInChildren<Camera>();
             uiStack =new();
         }
         public T ShowWindow<T>(bool isUseAnimation = false, Action action = null) where T : UIDataBase, new()
         {
+            var tShow = Time.realtimeSinceStartup;
             Type type = typeof(T);
             string uiName = type.Name;
+            Debug.Log($"[UICoreMgr.ShowWindow] 开始 [{uiName}] t={tShow:F3}");
 
             //查询字典
             if (uiDic.ContainsKey(uiName))
@@ -48,6 +51,7 @@ namespace MieMieFrameWork.UI
                 existingWindow.OnShow();
                 existingWindow.ApplyAniamtion = isUseAnimation;
                 action?.Invoke();
+                Debug.Log($"[UICoreMgr.ShowWindow] [{uiName}] 命中缓存，OnShow t={Time.realtimeSinceStartup:F3}");
                 return existingWindow as T;
             }
 
@@ -55,16 +59,35 @@ namespace MieMieFrameWork.UI
             T uiWindow = new T();
 
             //加载UI
-            GameObject uiPrefab = UILoad.AddressableLoad(uiName); 
+            var tLoad = Time.realtimeSinceStartup;
+            Debug.Log($"[UICoreMgr.ShowWindow] [{uiName}] 开始加载 Prefab t={tLoad:F3}");
+            GameObject uiPrefab = UILoad.AddressableLoad(uiName);
+            var tLoadEnd = Time.realtimeSinceStartup;
+            Debug.Log($"[UICoreMgr.ShowWindow] [{uiName}] Prefab加载完成，耗时={(tLoadEnd - tLoad) * 1000:F1}ms t={tLoadEnd:F3}");
 
+            var tInstantiate = Time.realtimeSinceStartup;
             uiPrefab.transform.SetParent(UIRoot, false);
             uiWindow.BindGameObject(uiPrefab, UICamera);
+            var tBindEnd = Time.realtimeSinceStartup;
+            Debug.Log($"[UICoreMgr.ShowWindow] [{uiName}] Instantiate+BindGameObject，耗时={(tBindEnd - tInstantiate) * 1000:F1}ms t={tBindEnd:F3}");
+
             uiWindow.ApplyAniamtion = isUseAnimation;
 
             uiDic.Add(uiName, uiWindow);
+
+            var tAwake = Time.realtimeSinceStartup;
             uiWindow.OnAwake();
+            var tAwakeEnd = Time.realtimeSinceStartup;
+            Debug.Log($"[UICoreMgr.ShowWindow] [{uiName}] OnAwake，耗时={(tAwakeEnd - tAwake) * 1000:F1}ms t={tAwakeEnd:F3}");
+
+            var tOnShow = Time.realtimeSinceStartup;
             uiWindow.OnShow();
+            var tOnShowEnd = Time.realtimeSinceStartup;
+            Debug.Log($"[UICoreMgr.ShowWindow] [{uiName}] OnShow，耗时={(tOnShowEnd - tOnShow) * 1000:F1}ms t={tOnShowEnd:F3}");
+
             action?.Invoke();
+            var tTotal = Time.realtimeSinceStartup;
+            Debug.Log($"[UICoreMgr.ShowWindow] [{uiName}] 全部完成，总耗时={(tTotal - tShow) * 1000:F1}ms");
             return uiWindow;
         }
 
@@ -97,41 +120,42 @@ namespace MieMieFrameWork.UI
         /// 异步加载面板
         /// </summary>
         /// <typeparam name="T">UI类型</typeparam>
-        /// <param name="onComplete">加载完成回调，返回加载的UI实例</param>
         /// <param name="isUseAnimation">是否使用动画</param>
-        public void ShowWindowAsync<T>(Action<T> onComplete, bool isUseAnimation = false) where T : UIDataBase, new()
+        /// <param name="onComplete">加载完成回调（参数为加载的UI实例）</param>
+        /// <returns>加载的UI实例</returns>
+        public async UniTask<T> ShowWindowAsync<T>(bool isUseAnimation = false, Action<T> onComplete = null) where T : UIDataBase, new()
         {
             Type type = typeof(T);
             string uiName = type.Name;
 
-            // 查询字典，如果有则直接回调
+            // 查询字典，如果有则直接返回
             if (uiDic.ContainsKey(uiName))
             {
                 var existingWindow = uiDic[uiName] as T;
                 existingWindow.ApplyAniamtion = isUseAnimation;
+                existingWindow.OnShow();
                 onComplete?.Invoke(existingWindow);
-                return;
+                return existingWindow;
             }
 
             // 异步加载
-            UILoad.AddressableLoadAsync(uiName, (uiPrefab) =>
+            GameObject uiPrefab = await UILoad.AddressableLoadAsync(uiName);
+            if (uiPrefab == null)
             {
-                if (uiPrefab == null)
-                {
-                    onComplete?.Invoke(null);
-                    return;
-                }
+                return null;
+            }
 
-                T uiWindow = new T();
-                uiPrefab = GameObject.Instantiate(uiPrefab);
-                uiPrefab.transform.SetParent(UIRoot, false);
-                uiWindow.BindGameObject(uiPrefab, UICamera);
-                uiWindow.ApplyAniamtion = isUseAnimation;
-                uiDic.Add(uiName, uiWindow);
-                uiWindow.OnAwake();
-                uiWindow.OnShow();
-                onComplete?.Invoke(uiWindow);
-            });
+            T uiWindow = new T();
+            uiPrefab = GameObject.Instantiate(uiPrefab);
+            uiPrefab.transform.SetParent(UIRoot, false);
+            uiWindow.BindGameObject(uiPrefab, UICamera);
+            uiWindow.ApplyAniamtion = isUseAnimation;
+            uiDic.Add(uiName, uiWindow);
+            uiWindow.OnAwake();
+            uiWindow.OnShow();
+
+            onComplete?.Invoke(uiWindow);
+            return uiWindow;
         }
 
         /// <summary>

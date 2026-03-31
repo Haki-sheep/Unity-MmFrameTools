@@ -1,27 +1,35 @@
 namespace MieMieFrameWork
 {
+    using Cysharp.Threading.Tasks;
     using MieMieFrameWork.Pool;
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.AddressableAssets;
     using UnityEngine.ResourceManagement.AsyncOperations;
 
     /// <summary>
-    /// Addressable资源管理器 - 简洁的Addressable资源加载解决方案
-    /// 支持同步/异步加载，自动集成对象池管理
+    /// Addressable资源管理器
+    /// 功能：
+    /// 1. 加载：同步/异步加载资源
+    /// 2. 实例化：同步/异步实例化预制体
+    /// 3. 缓存：assetCache 字典缓存已加载的资源
+    /// 4. 引用计数：referenceCount 追踪资源引用，防止提前释放
+    /// 5. 对象池：自动集成 PoolManager，GameObject 类型按规则自动进池
+    ///
+    /// 句柄由 Addressables 原生层管理，通过 referenceCount 控制 Release 时机，无需手动管理。
     /// </summary>
     public static class AddressableMgr
     {
-        // 资源缓存字典
-        private static Dictionary<string, (UnityEngine.Object asset, AsyncOperationHandle handle)> assetCache
-            = new();
+        #region 内部状态
 
-        // 资源引用计数
+        // 资源缓存字典：address → (asset, handle)
+        private static Dictionary<string, (UnityEngine.Object asset, AsyncOperationHandle handle)> assetCache = new();
+
+        // 资源引用计数：address → count
         private static Dictionary<string, int> referenceCount = new();
 
-        // 加载中的异步操作
+        // 加载中的异步操作：address → handle（防止重复加载）
         private static Dictionary<string, AsyncOperationHandle> loadingOperations = new();
 
         // 通过 Addressables.InstantiateAsync 创建的实例集合
@@ -30,38 +38,24 @@ namespace MieMieFrameWork
         // 实例到地址的映射
         private static Dictionary<GameObject, string> instanceToAddress = new();
 
-        // 初始化状态
+        // 初始化状态标记
         private static bool isInitialized = false;
 
-        // 批量资源加载句柄（名字/标签混合加载产生的句柄集合，用于统一释放）
+        // 批量资源加载句柄集合（用于统一释放）
         private static List<AsyncOperationHandle> multiAssetHandles = new();
 
-        #region 核心加载方法 - 参考ResourcesManager设计
+        #endregion
+
+        #region 加载 - 同步
 
         /// <summary>
-        /// 检查是否需要使用对象池缓存
-        /// </summary>
-        private static bool ShouldUsePool<T>()
-        {
-            return ModuleHub.Instance?.FrameSetting.PoolCacheSet.Contains(typeof(T)) == true;
-        }
-
-        /// <summary>
-        /// 创建普通类实例（自动使用对象池）
-        /// </summary>
-        public static T CreateInstance<T>() where T : class, new()
-        {
-            return ShouldUsePool<T>() ? ModuleHub.Instance.GetManager<PoolManager>().GetObject<T>() : new T();
-        }
-
-        /// <summary>
-        /// 同步加载组件
+        /// 同步加载组件，自动按规则决定是否进对象池
         /// </summary>
         public static T LoadComponent<T>(string address, Transform parent = null) where T : Component
         {
             EnsureInitialized();
-            
-            if (ShouldUsePool<T>())
+
+            if (PoolDef.ShouldUsePool<T>())
             {
                 GameObject prefab = LoadAsset<GameObject>(address);
                 if (prefab == null)
@@ -76,13 +70,13 @@ namespace MieMieFrameWork
         }
 
         /// <summary>
-        /// 同步加载GameObject
+        /// 同步加载 GameObject，自动按规则决定是否进对象池
         /// </summary>
         public static GameObject LoadGameObject(string address, Transform parent = null)
         {
             EnsureInitialized();
-            
-            if (ShouldUsePool<GameObject>())
+
+            if (PoolDef.ShouldUsePool<GameObject>())
             {
                 GameObject prefab = LoadAsset<GameObject>(address);
                 if (prefab != null)
@@ -90,47 +84,31 @@ namespace MieMieFrameWork
                     return ModuleHub.Instance.GetManager<PoolManager>().GetGameObj<GameObject>(prefab, parent);
                 }
             }
-            
+
             return Instantiate(address, parent);
         }
 
         /// <summary>
-        /// 异步加载组件
-        /// </summary>
-        public static void LoadComponentAsync<T>(string address, Action<T> onComplete, Transform parent = null) where T : Component
-        {
-            ModuleHub.Instance.GetManager<MonoManager>().StartCoroutine(LoadComponentAsyncCoroutine(address, onComplete, parent));
-        }
-
-        /// <summary>
-        /// 异步加载GameObject
-        /// </summary>
-        public static void LoadGameObjectAsync(string address, Action<GameObject> onComplete, Transform parent = null)
-        {
-            ModuleHub.Instance.GetManager<MonoManager>().StartCoroutine(LoadGameObjectAsyncCoroutine(address, onComplete, parent));
-        }
-
-        #endregion
-
-        #region 便捷方法
-
-        /// <summary>
-        /// 同步加载Unity资源文件（使用缓存）
+        /// 同步加载 Unity 资源文件（使用缓存）
         /// </summary>
         public static T LoadAsset<T>(string address) where T : UnityEngine.Object
         {
             EnsureInitialized();
-            
-            // 检查缓存
+
+            var t0 = Time.realtimeSinceStartup;
+
+            // 命中缓存
             if (assetCache.TryGetValue(address, out var cachedData) && cachedData.asset is T asset)
             {
                 AddReference(address);
                 return asset;
             }
 
-            // 同步加载（仅用于预制体等必要场景）
+            // 同步加载（WaitForCompletion 会阻塞当前线程）
+            var tAsync = Time.realtimeSinceStartup;
             AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(address);
             T result = handle.WaitForCompletion();
+            var tWait = Time.realtimeSinceStartup;
 
             if (result != null)
             {
@@ -138,18 +116,18 @@ namespace MieMieFrameWork
                 AddReference(address);
             }
             else
-            {    
-                if(result is null){
-                    Debug.LogError($"无法从地址 {address} 加载资源 获取为Null");
-                    Addressables.Release(handle);            
+            {
+                if (result is null)
+                {
+                    Debug.LogError($"无法从地址 {address} 加载资源，获取为 Null");
+                    Addressables.Release(handle);
                     return null;
                 }
-                //如果是资源和T类型不一致
-                if(result is not T)
-                {   
-                    Debug.LogError($"无法从地址 {address} 加载资源 资源与泛型不匹配");
+                if (result is not T)
+                {
+                    Debug.LogError($"无法从地址 {address} 加载资源，资源与泛型不匹配");
                 }
-                Addressables.Release(handle);            
+                Addressables.Release(handle);
                 return null;
             }
 
@@ -157,32 +135,174 @@ namespace MieMieFrameWork
         }
 
         /// <summary>
-        /// 异步加载Unity资源文件
+        /// 同步实例化 GameObject
         /// </summary>
-        public static void LoadAssetAsync<T>(string address, Action<T> onComplete) where T : UnityEngine.Object
+        public static GameObject Instantiate(string address, Transform parent = null)
         {
-            ModuleHub.Instance.GetManager<MonoManager>().StartCoroutine(LoadAssetAsyncCoroutine(address, onComplete));
+            EnsureInitialized();
+
+            var t0 = Time.realtimeSinceStartup;
+
+            var handle = Addressables.InstantiateAsync(address, parent);
+            GameObject result = handle.WaitForCompletion();
+            var tWait = Time.realtimeSinceStartup;
+
+            if (result != null)
+            {
+                result.name = result.name.Replace("(Clone)", "");
+                instantiatedObjects.Add(result);
+                instanceToAddress[result] = address;
+                AddReference(address);
+            }
+            else
+            {
+                Debug.LogError($"无法实例化地址: {address}");
+            }
+
+            return result;
+        }
+
+        #endregion
+
+        #region 加载 - 异步
+
+        /// <summary>
+        /// 异步加载组件
+        /// </summary>
+        public static async UniTask<T> LoadComponentAsync<T>(string address, Transform parent = null) where T : Component
+        {
+            var handle = Addressables.LoadAssetAsync<GameObject>(address);
+            await handle;
+            if (handle.Status != AsyncOperationStatus.Succeeded || handle.Result == null)
+            {
+                Debug.LogError($"无法从地址 {address} 加载预制体");
+                return null;
+            }
+            GameObject prefab = handle.Result;
+            assetCache[address] = (prefab, handle);
+            AddReference(address);
+
+            if (PoolDef.ShouldUsePool<T>())
+            {
+                return ModuleHub.Instance.GetManager<PoolManager>().GetGameObj<T>(prefab, parent);
+            }
+            else
+            {
+                GameObject instance = await InstantiateAsyncInternal(address, parent);
+                return instance?.GetComponent<T>();
+            }
+        }
+
+        /// <summary>
+        /// 异步加载 GameObject
+        /// </summary>
+        public static async UniTask<GameObject> LoadGameObjectAsync(string address, Transform parent = null)
+        {
+            if (PoolDef.ShouldUsePool<GameObject>())
+            {
+                var handle = Addressables.LoadAssetAsync<GameObject>(address);
+                await handle;
+                if (handle.Status != AsyncOperationStatus.Succeeded || handle.Result == null)
+                {
+                    Debug.LogError($"无法从地址 {address} 加载预制体");
+                    return null;
+                }
+                GameObject prefab = handle.Result;
+                assetCache[address] = (prefab, handle);
+                AddReference(address);
+                return ModuleHub.Instance.GetManager<PoolManager>().GetGameObj<GameObject>(prefab, parent);
+            }
+            else
+            {
+                return await InstantiateAsyncInternal(address, parent);
+            }
+        }
+
+        /// <summary>
+        /// 异步加载 Unity 资源文件
+        /// </summary>
+        public static async UniTask<T> LoadAssetAsync<T>(string address) where T : UnityEngine.Object
+        {
+            EnsureInitialized();
+
+            // 命中缓存
+            if (assetCache.TryGetValue(address, out var cachedData) && cachedData.asset is T asset)
+            {
+                AddReference(address);
+                return asset;
+            }
+
+            // 检查是否正在加载中
+            if (loadingOperations.TryGetValue(address, out var existingHandle))
+            {
+                await existingHandle;
+                if (assetCache.TryGetValue(address, out cachedData) && cachedData.asset is T cachedAsset)
+                {
+                    AddReference(address);
+                    return cachedAsset;
+                }
+                return null;
+            }
+
+            // 发起加载
+            var handle = Addressables.LoadAssetAsync<T>(address);
+            loadingOperations[address] = handle;
+            await handle;
+            loadingOperations.Remove(address);
+
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                T result = handle.Result;
+                assetCache[address] = (result, handle);
+                AddReference(address);
+                return result;
+            }
+            else
+            {
+                if (handle.IsValid())
+                    Addressables.Release(handle);
+                return null;
+            }
         }
 
         /// <summary>
         /// 异步批量加载资源（传入名字与标签的混合列表）
         /// </summary>
-        /// <typeparam name="T">资源类型</typeparam>
-        /// <param name="keys">名字与标签的混合列表，例如：["icon", "UI", "someLabel"]</param>
-        /// <param name="onComplete">加载完成回调，返回资源列表</param>
-        /// <param name="mergeMode">合并模式，默认 Union</param>
-        public static void LoadAssetsAsync<T>(IList<object> keys, Action<List<T>> onComplete, Addressables.MergeMode mergeMode = Addressables.MergeMode.Union) where T : UnityEngine.Object
+        public static async UniTask<List<T>> LoadAssetsAsync<T>(IList<object> keys, Addressables.MergeMode mergeMode = Addressables.MergeMode.Union) where T : UnityEngine.Object
         {
-            ModuleHub.Instance.GetManager<MonoManager>().StartCoroutine(LoadAssetsAsyncCoroutine(keys, onComplete, mergeMode));
+            EnsureInitialized();
+
+            if (keys == null || keys.Count == 0)
+            {
+                return new List<T>();
+            }
+
+            var handle = Addressables.LoadAssetsAsync<T>(keys, null, mergeMode);
+            await handle;
+
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                List<T> results = new List<T>(handle.Result);
+                multiAssetHandles.Add(handle);
+                return results;
+            }
+            else
+            {
+                if (handle.IsValid())
+                {
+                    Addressables.Release(handle);
+                }
+                return new List<T>();
+            }
         }
 
         /// <summary>
         /// 异步批量加载资源（分别传入名字列表与标签列表）
         /// </summary>
-        public static void LoadAssetsAsync<T>(
-        IList<string> names,
-        IList<string> labels, Action<List<T>> onComplete, 
-        Addressables.MergeMode mergeMode = Addressables.MergeMode.Union) where T : UnityEngine.Object
+        public static async UniTask<List<T>> LoadAssetsAsync<T>(
+            IList<string> names,
+            IList<string> labels,
+            Addressables.MergeMode mergeMode = Addressables.MergeMode.Union) where T : UnityEngine.Object
         {
             List<object> keys = new();
             if (names != null)
@@ -201,48 +321,23 @@ namespace MieMieFrameWork
                         keys.Add(labels[i]);
                 }
             }
-            ModuleHub.Instance.GetManager<MonoManager>().StartCoroutine(LoadAssetsAsyncCoroutine(keys, onComplete, mergeMode));
+            return await LoadAssetsAsync<T>(keys, mergeMode);
         }
 
         /// <summary>
-        /// 同步实例化GameObject
+        /// 异步实例化 GameObject
         /// </summary>
-        public static GameObject Instantiate(string address, Transform parent = null)
+        public static async UniTask<GameObject> InstantiateAsync(string address, Transform parent = null)
         {
-            EnsureInitialized();
-            
-            var handle = Addressables.InstantiateAsync(address, parent);
-            GameObject result = handle.WaitForCompletion();
-
-            if (result != null)
-            {
-                result.name = result.name.Replace("(Clone)", "");
-                instantiatedObjects.Add(result);
-                instanceToAddress[result] = address;
-                AddReference(address);
-            }
-            else
-            {
-                Debug.LogError($"无法实例化地址: {address}");
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// 异步实例化GameObject
-        /// </summary>
-        public static void InstantiateAsync(string address, Action<GameObject> onComplete, Transform parent = null)
-        {
-            ModuleHub.Instance.GetManager<MonoManager>().StartCoroutine(InstantiateAsyncCoroutine(address, onComplete, parent));
+            return await InstantiateAsyncInternal(address, parent);
         }
 
         #endregion
 
-        #region 资源管理
+        #region 生命周期管理
 
         /// <summary>
-        /// 释放资源引用
+        /// 释放资源引用（引用计数 -1，为 0 时释放原生内存）
         /// </summary>
         public static void ReleaseAsset(string address)
         {
@@ -250,7 +345,7 @@ namespace MieMieFrameWork
         }
 
         /// <summary>
-        /// 安全销毁GameObject
+        /// 安全销毁 GameObject（从 Addressables 实例集合移除或普通销毁）
         /// </summary>
         public static void DestroyObject(GameObject obj)
         {
@@ -278,8 +373,8 @@ namespace MieMieFrameWork
         public static void ReturnToPool(GameObject obj)
         {
             if (obj == null) return;
-            
-            if (ShouldUsePool<GameObject>())
+
+            if (PoolDef.ShouldUsePool<GameObject>())
             {
                 ModuleHub.Instance.GetManager<PoolManager>().PushGameObj(obj);
             }
@@ -294,14 +389,14 @@ namespace MieMieFrameWork
         /// </summary>
         public static void ReturnToPool<T>(T obj) where T : class
         {
-            if (ShouldUsePool<T>())
+            if (PoolDef.ShouldUsePool<T>())
             {
                 ModuleHub.Instance.GetManager<PoolManager>().PushObject(obj);
             }
         }
 
         /// <summary>
-        /// 清理所有缓存
+        /// 清理所有缓存和实例（切换场景时调用）
         /// </summary>
         public static void ClearAllCache()
         {
@@ -352,30 +447,32 @@ namespace MieMieFrameWork
 
         #region 私有方法
 
+        /// <summary>
+        /// 确保 Addressable 系统已初始化
+        /// </summary>
         private static void EnsureInitialized()
         {
             if (!isInitialized)
             {
-                ModuleHub.Instance.GetManager<MonoManager>().StartCoroutine(InitializeAsync());
+                InitializeAsync().Forget();
             }
         }
 
         /// <summary>
-        /// 初始化Addressable资源管理器
+        /// 初始化 Addressable 资源管理系统
         /// </summary>
-        private static IEnumerator InitializeAsync()
+        private static async UniTaskVoid InitializeAsync()
         {
-            if (isInitialized) yield break;
+            if (isInitialized) return;
 
             var initHandle = Addressables.InitializeAsync();
-            yield return initHandle;
+            await initHandle;
             isInitialized = true;
         }
 
         /// <summary>
         /// 添加资源引用
         /// </summary>
-        /// <param name="address">资源地址</param>
         private static void AddReference(string address)
         {
             if (referenceCount.ContainsKey(address))
@@ -388,6 +485,9 @@ namespace MieMieFrameWork
             }
         }
 
+        /// <summary>
+        /// 移除资源引用，引用归零时释放原生内存
+        /// </summary>
         private static void RemoveReference(string address)
         {
             if (referenceCount.ContainsKey(address))
@@ -396,7 +496,7 @@ namespace MieMieFrameWork
                 if (referenceCount[address] <= 0)
                 {
                     referenceCount.Remove(address);
-                    
+
                     if (assetCache.TryGetValue(address, out var cachedData))
                     {
                         if (cachedData.handle.IsValid())
@@ -411,145 +511,14 @@ namespace MieMieFrameWork
 
         #endregion
 
-        #region 私有协程实现
+        #region 私有方法
 
-        private static IEnumerator LoadAssetAsyncCoroutine<T>(string address, Action<T> onComplete) where T : UnityEngine.Object
-        {
-            EnsureInitialized();
-            
-            // 检查缓存
-            if (assetCache.TryGetValue(address, out var cachedData) && cachedData.asset is T asset)
-            {
-                AddReference(address);
-                onComplete?.Invoke(asset);
-                yield break;
-            }
-
-            // 检查是否正在加载
-            if (loadingOperations.ContainsKey(address))
-            {
-                yield return loadingOperations[address];
-
-                if (assetCache.TryGetValue(address, out cachedData) && cachedData.asset is T cachedAsset)
-                {
-                    AddReference(address);
-                    onComplete?.Invoke(cachedAsset);
-                }
-                else
-                {
-                    onComplete?.Invoke(null);
-                }
-                yield break;
-            }
-
-            // 开始加载
-            var handle = Addressables.LoadAssetAsync<T>(address);
-            loadingOperations[address] = handle;
-            yield return handle;
-            loadingOperations.Remove(address);
-
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                T result = handle.Result;
-                assetCache[address] = (result, handle);
-                AddReference(address);
-                onComplete?.Invoke(result);
-            }
-            else
-            {
-                if (handle.IsValid())
-                    Addressables.Release(handle);
-                onComplete?.Invoke(null);
-            }
-        }
-
-        /// <summary>
-        /// 异步批量加载资源协程（名字与标签混合 keys + 合并模式）
-        /// </summary>
-        private static IEnumerator LoadAssetsAsyncCoroutine<T>(IList<object> keys, Action<List<T>> onComplete, Addressables.MergeMode mergeMode) where T : UnityEngine.Object
+        private static async UniTask<GameObject> InstantiateAsyncInternal(string address, Transform parent)
         {
             EnsureInitialized();
 
-            if (keys == null || keys.Count == 0)
-            {
-                onComplete?.Invoke(new List<T>());
-                yield break;
-            }
-
-            var handle = Addressables.LoadAssetsAsync<T>(keys, null, mergeMode);
-            yield return handle;
-
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                List<T> results = new List<T>(handle.Result);
-                // 保存句柄以便后续统一释放
-                multiAssetHandles.Add(handle);
-                onComplete?.Invoke(results);
-            }
-            else
-            {
-                if (handle.IsValid())
-                {
-                    Addressables.Release(handle);
-                }
-                onComplete?.Invoke(new List<T>());
-            }
-        }
-
-        private static IEnumerator LoadComponentAsyncCoroutine<T>(string address, Action<T> onComplete, Transform parent) where T : Component
-        {
-            if (ShouldUsePool<T>())
-            {
-                GameObject prefab = null;
-                yield return LoadAssetAsyncCoroutine<GameObject>(address, (result) => { prefab = result; });
-
-                if (prefab != null)
-                {
-                    T component = ModuleHub.Instance.GetManager<PoolManager>().GetGameObj<T>(prefab, parent);
-                    onComplete?.Invoke(component);
-                    yield break;
-                }
-            }
-
-            // 直接实例化
-            GameObject instance = null;
-            yield return InstantiateAsyncCoroutine(address, (result) => { instance = result; }, parent);
-
-            if (instance != null)
-            {
-                T component = instance.GetComponent<T>();
-                onComplete?.Invoke(component);
-            }
-            else
-            {
-                onComplete?.Invoke(null);
-            }
-        }
-
-        private static IEnumerator LoadGameObjectAsyncCoroutine(string address, Action<GameObject> onComplete, Transform parent)
-        {
-            if (ShouldUsePool<GameObject>())
-            {
-                GameObject prefab = null;
-                yield return LoadAssetAsyncCoroutine<GameObject>(address, (result) => { prefab = result; });
-
-                if (prefab != null)
-                {
-                    GameObject pooledObj = ModuleHub.Instance.GetManager<PoolManager>().GetGameObj<GameObject>(prefab, parent);
-                    onComplete?.Invoke(pooledObj);
-                    yield break;
-                }
-            }
-
-            yield return InstantiateAsyncCoroutine(address, onComplete, parent);
-        }
-
-        private static IEnumerator InstantiateAsyncCoroutine(string address, Action<GameObject> onComplete, Transform parent)
-        {
-            EnsureInitialized();
-            
             var handle = Addressables.InstantiateAsync(address, parent);
-            yield return handle;
+            await handle;
 
             if (handle.Status == AsyncOperationStatus.Succeeded)
             {
@@ -558,11 +527,12 @@ namespace MieMieFrameWork
                 instantiatedObjects.Add(result);
                 instanceToAddress[result] = address;
                 AddReference(address);
-                onComplete?.Invoke(result);
+                return result;
             }
             else
             {
-                onComplete?.Invoke(null);
+                Debug.LogError($"无法实例化地址: {address}");
+                return null;
             }
         }
 

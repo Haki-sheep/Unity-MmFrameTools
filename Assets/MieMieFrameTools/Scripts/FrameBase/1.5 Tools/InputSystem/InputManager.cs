@@ -7,7 +7,7 @@ namespace MieMieFrameWork.M_InputSystem
 /// <summary>
 /// 输入管理器 - 封装玩家输入系统
 /// </summary>
-public class InputManager : MonoBehaviour, I_ManagerBase
+public class InputManager : MonoBehaviour, IManagerBase
 {   
 
     private InputSystem_Default inputActions;

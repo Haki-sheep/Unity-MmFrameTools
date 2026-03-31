@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: UIPathConfig
   m_EditorClassIdentifier: Assembly-CSharp-Editor::MieMieFrameWork.Editor.UIPathConfig
   defaultUIGenScriptPath: Assets/_Scripts/UI/
-  prefabBindJsonPath: Assets/MieMieFrameTools/Editor/UI/PrefabBindRecords.json
+  prefabBindJsonPath: Assets/_Scripts/MieMieFrameTools/Editor/UIForEditor/PrefabBindRecords.json
+  generateUITempUxmlPath: Assets/_Scripts/MieMieFrameTools/Editor/UIForEditor/GenerateUITemp.uxml
+  generateUITempUssPath: Assets/MieMieFrameTools/Editor/UIForEditor/GenerateUITemp.uss
   prefabPathRecords:
   - prefabGuid: b06b416bdb60be542bd2586bcede729c
     prefabName: NewTestUITemple
@@ -21,3 +23,12 @@ MonoBehaviour:
   - prefabGuid: f36888bef7361534ea86523d7ecf77a7
     prefabName: NewTestUI113
     lastGenScriptPath: "E:/AAAA\u5B66\u4E60\u8D44\u6599/Demo/\u54C8\u57FA\u54A9\u54A9\u6846\u67B6\u4E13\u7528\u9879\u76EE/HakiSheep-Framework/Assets/_Scripts/UI/TTWindow"
+  - prefabGuid: 2849f0abe8a15b14483331afd5627c91
+    prefabName: StoryWindow
+    lastGenScriptPath: C:/Users/fmz/Desktop/GraduationProject/TryModel/Unity-UserInterface/UIProject/Assets/_Scripts/3DUIProject_Mm/UIWindows/StoryWindow
+  - prefabGuid: c9cbf98a96ba75d40918b556b4ad24a9
+    prefabName: SettingWindow
+    lastGenScriptPath: C:/Users/fmz/Desktop/GraduationProject/TryModel/Unity-UserInterface/UIProject/Assets/_Scripts/3DUIProject_Mm/UIWindows/SettingWindow
+  - prefabGuid: 8a9813fc9b03e374d81d3ed3ec1b05a2
+    prefabName: ProgrammerWindow
+    lastGenScriptPath: C:/Users/fmz/Desktop/GraduationProject/TryModel/Unity-UserInterface/UIProject/Assets/_Scripts/3DUIProject_Mm/UIWindows/ProgrammerWindow

@@ -27,7 +27,7 @@ namespace MieMieFrameWork
 
     }
 
-    public class Mm_UniTimerManager : MonoBehaviour, I_ManagerBase
+    public class Mm_UniTimerManager : MonoBehaviour, IManagerBase
     {
         public void Init()
         {

@@ -18,7 +18,7 @@ namespace MieMieFrameWork.M_InputSystem
     /// <summary>
     /// 优化的输入缓冲管理器 - 更简洁、性能更好
     /// </summary>
-    public class InputBuffer : MonoBehaviour, I_ManagerBase
+    public class InputBuffer : MonoBehaviour, IManagerBase
     {
 
         [Header("缓冲设置")]

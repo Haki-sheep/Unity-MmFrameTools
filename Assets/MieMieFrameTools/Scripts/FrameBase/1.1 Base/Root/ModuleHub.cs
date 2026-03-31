@@ -13,9 +13,12 @@ namespace MieMieFrameWork
     {
         [field: SerializeField, LabelText("游戏设置")]
         public FrameSetting FrameSetting { get; private set; }
-
-        private Dictionary<Type, I_ManagerBase> managerDict = new Dictionary<Type, I_ManagerBase>();
+        private Dictionary<Type, IManagerBase> managerDict = new Dictionary<Type, IManagerBase>();
         
+        [SerializeField,LabelText("UI管理器")] 
+        private UICoreMgr uICoreMgr;
+
+
         #region Unity 生命周期
 
         protected override void Awake()
@@ -56,20 +59,28 @@ namespace MieMieFrameWork
 
         private void GetAllManager()
         {
-            List<I_ManagerBase> managers = new List<I_ManagerBase>();
-            managers.AddRange(this.transform.GetComponents<I_ManagerBase>());
+            var managers = new List<IManagerBase>();
+            managers.AddRange(this.transform.GetComponents<IManagerBase>());
             //获取特殊的UIManager
-            managers.Add(GameObject.FindFirstObjectByType<UICoreMgr>());
-
+            if(uICoreMgr is not null)
+                managers.Add(uICoreMgr);
+                 
             foreach (var manager in managers)
             {
                 managerDict[manager.GetType()] = manager;
 
-                manager.Init();
+                if(manager is not null)
+                {
+                    manager.Init();
+                }
+                else
+                {
+                    Debug.LogError($"管理器 {manager.GetType().Name} 不存在");
+                }
             }
         }
 
-        public T GetManager<T>() where T : I_ManagerBase
+        public T GetManager<T>() where T : IManagerBase
         {
             if (managerDict.TryGetValue(typeof(T), out var manager))
             {

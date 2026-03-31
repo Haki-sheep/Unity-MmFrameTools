@@ -8,25 +8,51 @@ namespace MieMieFrameWork
     using UnityEngine;
     using UnityEngine.Events;
 
-    public class AudioManager : MonoBehaviour, I_ManagerBase
+    /// <summary>
+    /// 音频管理器
+    /// 支持 BGM、环境音（Ambience）、特效音三种通道独立播放与控制
+    /// </summary>
+    public class AudioManager : MonoBehaviour, IManagerBase
     {
-        public void Init() 
+        /// <summary>
+        /// 背景音乐类型枚举
+        /// </summary>
+        public enum BgAudioType
+        {
+            /// <summary>主背景音乐（如主题曲）</summary>
+            BGM,
+            /// <summary>环境音（如雨声、风声）</summary>
+            Ambience
+        }
+
+        public void Init()
         {
             ChangeGlobalVolume();
         }
 
         #region 组件
+
+        /// <summary>特效声音预制体（对象池用）</summary>
+        [TitleGroup("组件配置")]
         [SerializeField, LabelText("特效声音播放器")]
         private GameObject efPlayerES;
 
-        [SerializeField, LabelText("总声音播放器")]
-        private AudioSource AudioSource;
+        /// <summary>主背景音乐播放器（对应 BGM 混音组）</summary>
+        [SerializeField, LabelText("BGM播放器")]
+        private AudioSource BgmSource;
+
+        /// <summary>环境音播放器（对应 Ambience 混音组）</summary>
+        [SerializeField, LabelText("环境音播放器")]
+        private AudioSource AmbienceSource;
+        
         #endregion
 
         #region 全局音量
-        //OnValueChanged仅对编辑器下作用
-        [SerializeField, Range(0, 1), OnValueChanged("ChangeGlobalVolume")]
-        private float globalVolumeFactor;//全局音量乘法系数
+        /// <summary>全局音量乘法系数（影响所有通道：BGM、环境音、特效音）</summary>
+        [TitleGroup("音量设置")]
+        [SerializeField, Range(0, 1), OnValueChanged("ChangeGlobalVolume"), LabelText("全局音量系数")]
+        private float globalVolumeFactor;
+        
         public float GlobalVolumeFactor
         {
             get => globalVolumeFactor;
@@ -37,8 +63,10 @@ namespace MieMieFrameWork
                 ChangeGlobalVolume();
             }
         }
+
         /// <summary>
-        /// 改变全局音量
+        /// 刷新所有通道的实际音量
+        /// 计算公式：实际音量 = 通道基准音量 * 全局系数
         /// </summary>
         private void ChangeGlobalVolume()
         {
@@ -50,8 +78,11 @@ namespace MieMieFrameWork
 
         #region 背景音乐音量
 
-        [SerializeField, Range(0, 1), OnValueChanged("ChangeBgVolume")]
+        /// <summary>主背景音乐（BGM）基准音量（0-1）</summary>
+        [Header("背景音乐音量")]
+        [SerializeField, Range(0, 1), OnValueChanged("ChangeBgVolume"), LabelText("BGM基准音量")]
         private float bgVolumeBaseNum;
+        
         public float BgVolumeBaseNum
         {
             get => bgVolumeBaseNum; set
@@ -61,16 +92,38 @@ namespace MieMieFrameWork
                 ChangeBgVolume();
             }
         }
+
+        /// <summary>环境音（Ambience）基准音量（0-1）</summary>
+        [SerializeField, Range(0, 1), OnValueChanged("ChangeBgVolume"), LabelText("环境音基准音量")]
+        private float ambienceVolumeBaseNum;
+        
+        public float AmbienceVolumeBaseNum
+        {
+            get => ambienceVolumeBaseNum; set
+            {
+                if (ambienceVolumeBaseNum == value) return;
+                ambienceVolumeBaseNum = value;
+                ChangeBgVolume();
+            }
+        }
+
+        /// <summary>
+        /// 刷新背景音乐通道的实际音量
+        /// </summary>
         private void ChangeBgVolume()
         {
-            AudioSource.volume = bgVolumeBaseNum * globalVolumeFactor;
+            if (BgmSource != null) BgmSource.volume = bgVolumeBaseNum * globalVolumeFactor;
+            if (AmbienceSource != null) AmbienceSource.volume = ambienceVolumeBaseNum * globalVolumeFactor;
         }
 
         #endregion
 
         #region 特效音量
-        [SerializeField, Range(0, 1), OnValueChanged("ChangeEffectVolume")]
+        /// <summary>特效音（Effect）基准音量（0-1）</summary>
+        [Header("特效音量")]
+        [SerializeField, Range(0, 1), OnValueChanged("ChangeEffectVolume"), LabelText("特效音基准音量")]
         private float effectVolumeBaseNum;
+        
         public float EffectVolumeBaseNum
         {
             get => effectVolumeBaseNum; set
@@ -81,11 +134,15 @@ namespace MieMieFrameWork
             }
         }
 
-        //特效声List
+        /// <summary>当前正在播放的特效音 AudioSource 列表（用于统一刷新音量）</summary>
         private List<AudioSource> efAudioList = new();
+
+        /// <summary>
+        /// 刷新所有正在播放的特效音的实际音量
+        /// </summary>
         private void ChangeEffectVolume()
         {
-            //倒叙
+            // 倒序遍历以便安全移除空元素
             for (int i = efAudioList.Count - 1; i >= 0; i--)
             {
                 if (efAudioList[i] != null)
@@ -100,11 +157,13 @@ namespace MieMieFrameWork
         }
         #endregion
 
-        #region 一键功能
-        //静音
-        [SerializeField]
-        [OnValueChanged("OnSelectMute")]
+        #region 全局控制
+
+        /// <summary>是否静音（影响所有通道）</summary>
+        [Header("全局控制")]
+        [SerializeField, OnValueChanged("OnSelectMute"), LabelText("静音")]
         private bool isMute;
+        
         public bool IsMute
         {
             get => isMute;
@@ -112,20 +171,24 @@ namespace MieMieFrameWork
             {
                 if (isMute == value) return;
                 isMute = value;
-
                 OnSelectMute();
             }
         }
+
+        /// <summary>
+        /// 同步所有通道的静音状态
+        /// </summary>
         private void OnSelectMute()
         {
-            AudioSource.mute = IsMute;
+            if (BgmSource != null) BgmSource.mute = IsMute;
+            if (AmbienceSource != null) AmbienceSource.mute = IsMute;
             ChangeEffectVolume();
         }
 
-        //循环
-        [SerializeField]
-        [OnValueChanged("OnSelectLoop")]
+        /// <summary>是否循环播放（仅影响 BGM 通道）</summary>
+        [SerializeField, OnValueChanged("OnSelectLoop"), LabelText("循环播放")]
         private bool isLoop;
+        
         public bool IsLoop
         {
             get => isLoop; set
@@ -136,93 +199,191 @@ namespace MieMieFrameWork
             }
         }
 
+        /// <summary>
+        /// 同步 BGM 通道的循环设置
+        /// </summary>
         private void OnSelectLoop()
         {
-            AudioSource.loop = IsLoop;
+            if (BgmSource != null) BgmSource.loop = IsLoop;
         }
 
-        //暂停
-        [SerializeField]
-        [OnValueChanged("OnIsPause")]
+        /// <summary>是否暂停（影响所有通道）</summary>
+        [SerializeField, OnValueChanged("OnIsPause"), LabelText("暂停所有")]
         private bool isPause;
+        
         public bool IsPause
         {
             get => isPause; set
             {
                 if (isPause == value) return;
                 isPause = value;
-
                 OnIsPause();
             }
         }
 
+        /// <summary>
+        /// 同步所有通道的暂停/恢复状态
+        /// </summary>
         private void OnIsPause()
         {
-
-            if (isPause == true) AudioSource.Pause();
-            else AudioSource.UnPause();
-
-            //音效同步设置
+            if (BgmSource != null)
+            {
+                if (isPause == true) BgmSource.Pause();
+                else BgmSource.UnPause();
+            }
+            if (AmbienceSource != null)
+            {
+                if (isPause == true) AmbienceSource.Pause();
+                else AmbienceSource.UnPause();
+            }
             ChangeEffectVolume();
         }
 
-
         #endregion
 
+        #region 私有辅助方法
+
         /// <summary>
-        /// 设置特效音效播放器属性
+        /// 配置单个特效音 AudioSource 的属性
         /// </summary>
-        /// <param name="efAudioSource"></param>
-        /// <param name="spatial">空间的</param>
+        /// <param name="efAudioSource">目标 AudioSource</param>
+        /// <param name="spatial">空间Blend值（0=2D, 1=3D）</param>
         private void SetEffectAudioPlay(AudioSource efAudioSource, float spatial = 0)
         {
             efAudioSource.mute = isMute;
-            // 同步特效音量 = 特效基准 * 全局系数
+            // 特效音实际音量 = 特效基准音量 * 全局系数
             efAudioSource.volume = effectVolumeBaseNum * globalVolumeFactor;
 
             if (spatial != 0)
             {
                 efAudioSource.spatialBlend = spatial;
             }
+
             if (IsPause)
                 efAudioSource.Pause();
             else
                 efAudioSource.UnPause();
         }
 
+        /// <summary>
+        /// 根据类型获取对应的背景音乐 AudioSource
+        /// </summary>
+        private AudioSource GetBgAudioSource(BgAudioType type)
+        {
+            return type == BgAudioType.BGM ? BgmSource : AmbienceSource;
+        }
+
+        #endregion
+
         #region 背景音乐控制
 
         /// <summary>
-        /// 播放背景音乐
+        /// 播放背景音乐（支持 AudioClip）
         /// </summary>
-        /// <param name="audioClip"></param>
+        /// <param name="audioClip">音频片段</param>
+        /// <param name="type">背景音乐类型（BGM/Ambience）</param>
         /// <param name="needLoop">是否循环</param>
-        /// <param name="volume">默认音量</param>
-        public void PlayerBgAudio(AudioClip audioClip, bool needLoop = true, float volume = -1)
+        /// <param name="volume">指定音量（-1使用基准音量）</param>
+        public void PlayerBgAudio(AudioClip audioClip, BgAudioType type = BgAudioType.BGM, bool needLoop = true, float volume = 1)
         {
-            this.AudioSource.clip = audioClip;
-            this.IsLoop = needLoop;
-            if (volume != -1) BgVolumeBaseNum = volume;
-            AudioSource.Play();
+            AudioSource source = GetBgAudioSource(type);
+            
+            if (source == null)
+            {
+                Debug.LogError($"[AudioManager] {type} 对应的 AudioSource 未赋值! 请检查 Inspector.");
+                return;
+            }
+
+            source.clip = audioClip;
+            source.loop = needLoop;
+
+            if (volume != -1)
+            {
+                if (type == BgAudioType.BGM) BgVolumeBaseNum = volume;
+                else AmbienceVolumeBaseNum = volume;
+            }
+
+            source.Play();
         }
-        //重载方法 可以音乐路径加载
-        public void PlayerBgAudio(string path, bool needLoop = true, float volume = -1)
+
+        /// <summary>
+        /// 播放背景音乐（支持 Addressable 路径同步加载）
+        /// </summary>
+        public void PlayerBgAudio(string path, BgAudioType type = BgAudioType.BGM, bool needLoop = true, float volume = -1)
         {
             AudioClip clip = AddressableMgr.LoadAsset<AudioClip>(path);
-            PlayerBgAudio(clip, needLoop, volume);
+            PlayerBgAudio(clip, type, needLoop, volume);
         }
+
+        /// <summary>
+        /// 异步加载并播放背景音乐
+        /// </summary>
+        public async UniTask PlayerBgAudioAsync(string path, BgAudioType type = BgAudioType.BGM, bool needLoop = true, float volume = 1)
+        {
+            var sw = System.Diagnostics.Stopwatch.StartNew();
+            AudioClip clip = await AddressableMgr.LoadAssetAsync<AudioClip>(path);
+            sw.Stop();
+            Debug.Log($"[AudioManager] 异步加载音频耗时: {sw.ElapsedMilliseconds}ms | Path: {path}");
+            
+            if (clip != null)
+            {
+                PlayerBgAudio(clip, type, needLoop, volume);
+            }
+            else
+            {
+                Debug.LogError($"[AudioManager] 音频加载失败，路径: {path}");
+            }
+        }
+
+        /// <summary>
+        /// 异步加载背景音乐 AudioClip
+        /// </summary>
+        public async UniTask<AudioClip> LoadBgClipAsync(string path)
+        {
+            return await AddressableMgr.LoadAssetAsync<AudioClip>(path);
+        }
+
+        /// <summary>
+        /// 停止指定类型的背景音乐
+        /// </summary>
+        public void StopBgAudio(BgAudioType type = BgAudioType.BGM)
+        {
+            AudioSource source = GetBgAudioSource(type);
+            if (source != null) source.Stop();
+        }
+
+        /// <summary>
+        /// 暂停指定类型的背景音乐
+        /// </summary>
+        public void PauseBgAudio(BgAudioType type = BgAudioType.BGM)
+        {
+            AudioSource source = GetBgAudioSource(type);
+            if (source != null && source.isPlaying) source.Pause();
+        }
+
+        /// <summary>
+        /// 恢复指定类型的背景音乐
+        /// </summary>
+        public void UnPauseBgAudio(BgAudioType type = BgAudioType.BGM)
+        {
+            AudioSource source = GetBgAudioSource(type);
+            if (source != null) source.UnPause();
+        }
+
         #endregion
 
 
         #region 特效音乐控制
+        
+        /// <summary>特效音对象池根节点</summary>
+        [Header("特效音配置")]
         [SerializeField, LabelText("特效音乐根节点")]
         private Transform EffectClipRoot;
 
         /// <summary>
-        /// 得到特效声音组件
+        /// 从对象池获取一个特效音 AudioSource
         /// </summary>
-        /// <param name="is3d"></param>
-        /// <returns></returns>
+        /// <param name="is3d">是否为3D声音</param>
         private AudioSource GetEfAudio(bool is3d)
         {
             if (EffectClipRoot == null)
@@ -230,7 +391,6 @@ namespace MieMieFrameWork
                 EffectClipRoot = this.transform.Find("EffectRoot");
             }
 
-            //获取特效播放器上的音源组件
             AudioSource ef = ModuleHub.Instance.GetManager<PoolManager>().GetGameObj<AudioSource>(efPlayerES, EffectClipRoot);
             try
             {
@@ -248,17 +408,15 @@ namespace MieMieFrameWork
             return null;
         }
 
-        //TODO:控制Clip停止播放 用某一个容器去管理 在需要的时候停止
-
         /// <summary>
-        /// 播放一次特性声 跟随组件位置
+        /// 播放一次特效音（支持 AudioClip）
         /// </summary>
-        /// <param name="clip">音效片段</param>
-        /// <param name="component">挂载组件</param>
-        /// <param name="volumeScale">音量 0-1</param>
+        /// <param name="clip">音频片段</param>
+        /// <param name="volumeScale">音量缩放（相对于特效基准音量）</param>
         /// <param name="is3d">是否3D</param>
-        /// <param name="callBack">回调函数-在音乐播放完成后执行</param>
-        /// <param name="callBackTime">回调函数在音乐播放完成后执行的延迟时间</param>
+        /// <param name="component">跟随目标组件（为null则跟随AudioManager本身）</param>
+        /// <param name="callBack">播放完成回调</param>
+        /// <param name="callBackTime">回调延迟时间</param>
         public void PlayOneShot(AudioClip clip,
             float volumeScale = 1,
             bool is3d = true,
@@ -266,9 +424,7 @@ namespace MieMieFrameWork
             UnityAction callBack = null,
             float callBackTime = 0)
         {
-            // 初始化特效声音播放器
             AudioSource audioSource = GetEfAudio(is3d);
-            //如果特效声音播放器都没有则直接返回
             if (audioSource == null) return;
 
             if (component != null)
@@ -281,61 +437,70 @@ namespace MieMieFrameWork
                 audioSource.transform.position = this.transform.position;
             }
 
-            // 播放一次音效
             audioSource.PlayOneShot(clip, volumeScale);
-            // 播放器回收以及回调函数
-            RecycleAudioPlay(audioSource, clip, callBack, callBackTime);
+            DoRecycleAudioPlay(audioSource, clip, callBack, callBackTime).Forget();
         }
 
-
         /// <summary>
-        /// 播放一次特效声 路径加载
+        /// 播放一次特效音（支持 Addressable 路径同步加载）
         /// </summary>
-        /// <param name="clipPath">音效路径</param>
-        /// <param name="component">挂载组件</param>
-        /// <param name="volumeScale">音量 0-1</param>
-        /// <param name="is3d">是否3D</param>
-        /// <param name="callBack">回调函数-在音乐播放完成后执行</param>
-        /// <param name="callBacKTime">回调函数在音乐播放完成后执行的延迟时间</param>
-        public void PlayOneShot(string clipPath, Component component, float volumeScale = 1, bool is3d = true, UnityAction callBack = null, float callBacKTime = 0)
+        public void PlayOneShot(string clipPath, Component component = null,
+                    float volumeScale = 1, bool is3d = true, UnityAction callBack = null, float callBacKTime = 0)
         {
             AudioClip audioClip = AddressableMgr.LoadAsset<AudioClip>(clipPath);
-
             if (audioClip != null) PlayOneShot(audioClip, volumeScale, is3d, component, callBack, callBacKTime);
         }
 
-
         /// <summary>
-        /// 回收播放器
+        /// 播放一次特效音（2D UI专用，自动禁用3D传播）
         /// </summary>
-        private void RecycleAudioPlay(AudioSource audioSource, AudioClip clip, UnityAction callBak, float time)
+        public void PlayOneShotWith2DUI(string clipPath, Component component = null,
+                    float volumeScale = 1, UnityAction callBack = null, float callBacKTime = 0)
         {
-            DoRecycleAudioPlay(audioSource, clip, callBak, time).Forget();
+            PlayOneShot(clipPath, component: component, volumeScale: volumeScale, is3d: false,
+                                                        callBack: callBack, callBacKTime: callBacKTime);
         }
 
+        /// <summary>
+        /// 播放一次特效音（异步加载）
+        /// </summary>
+        public async void PlayOneShotAsync(string clipPath,
+            Component component = null,
+            float volumeScale = 1,
+            bool is3d = true,
+            UnityAction callBack = null,
+            float callBackTime = 0)
+        {
+            AudioClip audioClip = await AddressableMgr.LoadAssetAsync<AudioClip>(clipPath);
+            if (audioClip != null)
+            {
+                PlayOneShot(audioClip, volumeScale, is3d, component, callBack, callBackTime);
+            }
+        }
+
+        /// <summary>
+        /// 异步回收特效音播放器并触发回调
+        /// </summary>
         private async UniTaskVoid DoRecycleAudioPlay(AudioSource audioSource, AudioClip clip, UnityAction callBak, float time)
         {
-            //等待音乐播放完成
+            // 等待音频播放完成
             await UniTask.WaitForSeconds(clip.length);
 
             if (audioSource != null)
             {
-                //如果播放器在特效声音列表中，则移除
                 if (efAudioList.Contains(audioSource))
                     efAudioList.Remove(audioSource);
+                    
                 audioSource.PushGameObjectToPool();
-                //等待回调时间后执行回调
+
+                // 等待指定延迟后执行回调
                 await UniTask.Delay(
                         TimeSpan.FromSeconds(time), ignoreTimeScale: true).
                             ContinueWith(() => callBak?.Invoke()
                     );
-
             }
         }
 
         #endregion
-
-
     }
-
 }

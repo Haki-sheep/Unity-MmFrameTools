@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MieMieFrameWork
 {
-    public interface I_ManagerBase
+    public interface IManagerBase
     {
         public void Init();
     }

@@ -13,7 +13,7 @@ namespace MieMieFrameTools
     /// <summary>
     /// 存档管理器：槽位、读写、模块汇总
     /// </summary>
-    public class ArchiveMgr : MonoBehaviour,IArchiveMgr,I_ManagerBase
+    public class ArchiveMgr : MonoBehaviour,IArchiveMgr,IManagerBase
     {
         // --------- 私有字段 ---------
         /// <summary>
@@ -290,7 +290,7 @@ namespace MieMieFrameTools
 
         public void Init()
         {
-            
+            // TODO:默认初始化实现
         }
 
         /// <summary>

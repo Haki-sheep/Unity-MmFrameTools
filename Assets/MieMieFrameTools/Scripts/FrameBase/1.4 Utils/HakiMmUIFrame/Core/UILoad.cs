@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace MieMieFrameWork.UI
@@ -10,35 +11,24 @@ namespace MieMieFrameWork.UI
     {
         /// <summary>
         /// 同步加载 UI 预制体
-        /// 优先走 Addressable，失败则降级到 Resources
         /// </summary>
-        /// <param name="uiName">UI 名称（Addressable 地址或 Resources 路径）</param>
-        /// <returns>加载的 GameObject，未找到则返回 null</returns>
+        /// <param name="uiName">Addressable 地址</param>
+        /// <returns>加载的 GameObject</returns>
         public static GameObject AddressableLoad(string uiName)
         {
-            // 先尝试 Addressable 加载
-            GameObject uiPrefab = null;
+            var t0 = Time.realtimeSinceStartup;
+            Debug.Log($"[UILoad.Load] [{uiName}] 开始同步加载 t={t0:F3}");
 
-            try
-            {
-                uiPrefab = AddressableMgr.LoadGameObject(uiName);
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogWarning($"[UILoad] Addressable 加载失败，尝试 Resources 加载: {e.Message}");
-            }
+            GameObject uiPrefab = AddressableMgr.LoadGameObject(uiName);
 
-            // 如果 Addressable 失败，尝试从 Resources 加载
             if (uiPrefab == null)
             {
-                uiPrefab = Resources.Load<GameObject>(uiName);
-                if (uiPrefab != null)
-                {
-                    uiPrefab = GameObject.Instantiate(uiPrefab);
-                }
+                Debug.LogError($"[UILoad.Load] Addressable 加载失败: {uiName}");
+                return null;
             }
 
-            if (uiPrefab == null) return null;
+            var tEnd = Time.realtimeSinceStartup;
+            Debug.Log($"[UILoad.Load] [{uiName}] 加载完成，总耗时={(tEnd - t0) * 1000:F1}ms t={tEnd:F3}");
 
             // 确保 UI 预制体在正确的位置和状态
             RectTransform rectTransform = uiPrefab.GetComponent<RectTransform>();
@@ -54,43 +44,29 @@ namespace MieMieFrameWork.UI
 
         /// <summary>
         /// 异步加载 UI 预制体
-        /// 优先走 Addressable，失败则降级到 Resources
         /// </summary>
-        /// <param name="uiName">UI 名称（Addressable 地址或 Resources 路径）</param>
-        /// <param name="onComplete">加载完成回调，返回加载的 GameObject</param>
-        public static void AddressableLoadAsync(string uiName, System.Action<GameObject> onComplete)
+        /// <param name="uiName">Addressable 地址</param>
+        /// <returns>加载的 GameObject</returns>
+        public static async UniTask<GameObject> AddressableLoadAsync(string uiName)
         {
-            // 使用 AddressableMgr 的异步方法，内部正确管理句柄
-            AddressableMgr.LoadAssetAsync<GameObject>(uiName, (prefab) =>
+            GameObject uiPrefab = await AddressableMgr.LoadGameObjectAsync(uiName);
+
+            if (uiPrefab == null)
             {
-                if (prefab != null)
-                {
-                    RectTransform rectTransform = prefab.GetComponent<RectTransform>();
-                    if (rectTransform != null)
-                    {
-                        rectTransform.localScale = Vector3.one;
-                        rectTransform.localPosition = Vector3.zero;
-                        rectTransform.localRotation = Quaternion.identity;
-                    }
-                    onComplete?.Invoke(prefab);
-                }
-                else
-                {
-                    // Addressable 失败，降级到 Resources
-                    Debug.LogWarning($"[UILoad] Addressable 异步加载失败，尝试 Resources: {uiName}");
-                    GameObject uiPrefab = Resources.Load<GameObject>(uiName);
-                    if (uiPrefab != null)
-                    {
-                        uiPrefab = GameObject.Instantiate(uiPrefab);
-                        onComplete?.Invoke(uiPrefab);
-                    }
-                    else
-                    {
-                        Debug.LogError($"[UILoad] Resources 也加载失败: {uiName}");
-                        onComplete?.Invoke(null);
-                    }
-                }
-            });
+                Debug.LogError($"[UILoad.LoadAsync] Addressable 加载失败: {uiName}");
+                return null;
+            }
+
+            // 确保 UI 预制体在正确的位置和状态
+            RectTransform rectTransform = uiPrefab.GetComponent<RectTransform>();
+            if (rectTransform != null)
+            {
+                rectTransform.localScale = Vector3.one;
+                rectTransform.localPosition = Vector3.zero;
+                rectTransform.localRotation = Quaternion.identity;
+            }
+
+            return uiPrefab;
         }
     }
 }

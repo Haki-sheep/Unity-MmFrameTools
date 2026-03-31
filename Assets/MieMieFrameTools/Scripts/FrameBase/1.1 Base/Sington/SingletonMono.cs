@@ -8,7 +8,6 @@ namespace MieMieFrameWork
     public class SingletonMono<T> : MonoBehaviour where T : SingletonMono<T>
     {
         private static readonly object locked = new();
-        [field: SerializeField]
         public static T Instance { get; private set; }
 
         protected virtual void Awake()
@@ -21,7 +20,6 @@ namespace MieMieFrameWork
                     return;
                 }
                 Instance = this as T;
-                DontDestroyOnLoad(gameObject);
             }
         }
 

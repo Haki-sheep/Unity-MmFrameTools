@@ -21,16 +21,16 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  lastUpdateTime: 2026-03-28 05:21:01
+  lastUpdateTime: 2026-04-01 00:42:56
   autoRefreshOnPlay: 1
   poolTypeNames: []
   <TargetFrameRate>k__BackingField: 120
   <EnableVSync>k__BackingField: 0
-  <EnableAutoSave>k__BackingField: 1
+  <EnableAutoSave>k__BackingField: 0
   <AutoSaveIntervalMinutes>k__BackingField: 25
-  <EnableSaveEncryption>k__BackingField: 1
+  <EnableSaveEncryption>k__BackingField: 0
   <MaxSaveSlots>k__BackingField: 9
-  <EnableSaveCompression>k__BackingField: 1
+  <EnableSaveCompression>k__BackingField: 0
   PrefixToComponentTypeMap:
   - Prefix: Img
     ComponentType: Image
@@ -66,6 +66,6 @@ MonoBehaviour:
     ComponentType: RawImage
   - Prefix: RawImage
     ComponentType: RawImage
-  - Prefix: B
-    ComponentType: Button
+  - Prefix: RT
+    ComponentType: RectTransform
   AutoCollectInteractiveComponents: 1

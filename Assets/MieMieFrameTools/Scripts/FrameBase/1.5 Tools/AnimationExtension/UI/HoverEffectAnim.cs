@@ -21,7 +21,7 @@ namespace MieMieFrameWork.UI
             config = cfg;
             if (config == null) return;
 
-            graphic = targetGraphic != null ? targetGraphic : GetComponent<Graphic>();
+            graphic = targetGraphic ?? GetComponent<Graphic>();
             if (graphic == null) return;
 
             originalColor = graphic.color;
@@ -31,6 +31,7 @@ namespace MieMieFrameWork.UI
 
         public void OnPointerEnter(PointerEventData _)
         {
+            ModuleHub.Instance.GetManager<AudioManager>().PlayOneShotWith2DUI(AddressDef.Audio.ui切换音效);
             PlayTween(true);
         }
 
@@ -42,6 +43,7 @@ namespace MieMieFrameWork.UI
         private void PlayTween(bool isEnter)
         {
             if (config == null || graphic == null) return;
+
 
             currentSeq?.Kill();
             currentSeq = DOTween.Sequence();

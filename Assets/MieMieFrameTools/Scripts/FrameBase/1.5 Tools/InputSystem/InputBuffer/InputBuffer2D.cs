@@ -16,7 +16,7 @@ namespace MieMieFrameWork.M_InputSystem
     /// <summary>
     /// 2D输入缓冲管理器
     /// </summary>
-    public class Mm_InputBuffer2D : MonoBehaviour, I_ManagerBase
+    public class Mm_InputBuffer2D : MonoBehaviour, IManagerBase
     {
         [Header("缓冲设置"), SerializeField, LabelText("默认缓冲时间"), Range(0.1f, 1f)]
         private float defaultBufferTime = 0.2f;

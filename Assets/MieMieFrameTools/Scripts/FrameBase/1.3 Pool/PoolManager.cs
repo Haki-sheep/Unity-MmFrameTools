@@ -8,7 +8,7 @@ namespace MieMieFrameWork.Pool
     /// <summary>
     /// 核心:新创建的实例应该由调用者使用，当调用者不再需要这个实例时，再调用 PushGameObj 方法将其放回对象池
     /// </summary>
-    public class PoolManager : MonoBehaviour, I_ManagerBase
+    public class PoolManager : MonoBehaviour, IManagerBase
     {
         [SerializeField]
         [LabelText("对象池根节点")]
