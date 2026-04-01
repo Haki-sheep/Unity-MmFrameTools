@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: UIPathConfig
   m_EditorClassIdentifier: Assembly-CSharp-Editor::MieMieFrameWork.Editor.UIPathConfig
   defaultUIGenScriptPath: Assets/_Scripts/UI/
-  prefabBindJsonPath: Assets/_Scripts/MieMieFrameTools/Editor/UIForEditor/PrefabBindRecords.json
-  generateUITempUxmlPath: Assets/_Scripts/MieMieFrameTools/Editor/UIForEditor/GenerateUITemp.uxml
+  prefabBindJsonPath: Assets/MieMieFrameTools/Editor/UIForEditor/PrefabBindRecords.json
+  generateUITempUxmlPath: Assets/MieMieFrameTools/Editor/UIForEditor/GenerateUITemp.uxml
   generateUITempUssPath: Assets/MieMieFrameTools/Editor/UIForEditor/GenerateUITemp.uss
   prefabPathRecords:
   - prefabGuid: b06b416bdb60be542bd2586bcede729c
