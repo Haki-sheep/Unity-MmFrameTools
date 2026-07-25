@@ -26,6 +26,13 @@
       },
       "hash": "11836003a5e2ffcb7715ecec7e1fbb9d9cdb5bb8"
     },
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ceac8d6946b1125fe782cd171fbcb245b567dbf9"
+    },
     "com.hakisheep.mm-eventbus": {
       "version": "git@github.com:Haki-sheep/MmCSharp-EventBus.git?path=unity",
       "depth": 0,

@@ -45,7 +45,7 @@ namespace MieMieFrameWork.Editor.MmAssets
                 _catalog = JsonConvert.DeserializeObject<MmModuleCatalogData>(json) ?? new MmModuleCatalogData();
             }
             catch (Exception ex)
-            {
+            {  
                 Debug.LogError($"[MmModuleCatalog] 读取清单失败: {ex.Message}");
                 _catalog = new MmModuleCatalogData();
             }

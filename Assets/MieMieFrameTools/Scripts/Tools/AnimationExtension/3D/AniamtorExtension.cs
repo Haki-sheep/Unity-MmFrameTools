@@ -50,12 +50,12 @@ namespace MieMieFrameWork.MMAnimation
         /// </summary>
         public static AnimatorStateInfo? GetAmCurrentStateInfo(this Animator animator, string name, out float amLength, int layerIndex = 0)
         {
-            return GetAmNextStateInfo(animator, GetHashFromDict(animator, name), out amLength, layerIndex);
+            return GetAmCurrentStateInfo(animator, GetHashFromDict(animator, name), out amLength, layerIndex);
         }
 
         public static AnimatorStateInfo? GetAmCurrentStateInfo(this Animator animator, int hash, out float amLength, int layerIndex = 0)
         {
-            var currentInfo = animator.GetCurrentAnimatorStateInfo(0);
+            var currentInfo = animator.GetCurrentAnimatorStateInfo(layerIndex);
             amLength = currentInfo.length;
             if (hash == currentInfo.shortNameHash)
             {
@@ -78,6 +78,28 @@ namespace MieMieFrameWork.MMAnimation
                 
             return true;
         }
+
+        /// <summary>
+        /// 当前或正在切入的状态是否为目标 且未接近结束
+        /// </summary>
+        public static bool IsPlayingState(this Animator animator, string name, float endNormalized = 0.95f, int layerIndex = 0)
+        {
+            if (animator == null || !animator.enabled)
+                return false;
+
+            int hash = GetHashFromDict(animator, name);
+            if (animator.IsInTransition(layerIndex))
+            {
+                AnimatorStateInfo next = animator.GetNextAnimatorStateInfo(layerIndex);
+                if (next.shortNameHash == hash)
+                    return true;
+            }
+
+            AnimatorStateInfo? info = GetAmCurrentStateInfo(animator, hash, out float length, layerIndex);
+            if (info is null)
+                return false;
+            return info.Value.normalizedTime < endNormalized;
+        }
         #endregion
 
         #region Next
@@ -91,7 +113,7 @@ namespace MieMieFrameWork.MMAnimation
 
         public static AnimatorStateInfo? GetAmNextStateInfo(this Animator animator, int hash, out float amLength, int layerIndex = 0)
         {
-            var nextInfo = animator.GetNextAnimatorStateInfo(0);
+            var nextInfo = animator.GetNextAnimatorStateInfo(layerIndex);
             amLength = nextInfo.length;
             if (hash == nextInfo.shortNameHash)
             {

@@ -9,7 +9,10 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/A_FrameBase/ModuleHub.cs",
-            "tags": ["核心", "必装"],
+            "tags": [
+                "核心",
+                "必装"
+            ],
             "isBuiltIn": true
         },
         {
@@ -21,20 +24,25 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/G_InputSystem/InputManager/InputManager.cs",
-            "tags": ["输入"],
+            "tags": [
+                "输入"
+            ],
             "isBuiltIn": true
         },
         {
             "id": "ui-frame",
             "displayName": "HakiMm UI 框架",
             "category": "框架",
-            "description": "UICoreMgr、面板加载与 UI 生命周期管理。",
-            "version": "1.0.0",
-            "gitUrl": "",
-            "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/E_HakiMmUIFrame/Core/UICoreMgr.cs",
-            "tags": ["UI"],
-            "isBuiltIn": true
+            "description": "UICoreMgr、面板加载、UI 生命周期与 DoTweenAnim 序列工具。编辑器生成器随包附带无需单独导入。",
+            "version": "1.0.6",
+            "gitUrl": "git@github.com:Haki-sheep/MmUIFrameWork.git?path=Assets/MmUIFrameWork",
+            "packageName": "com.hakisheep.mm-uiframe",
+            "installCheckPath": "Packages/com.hakisheep.mm-uiframe/package.json",
+            "tags": [
+                "UI"
+            ],
+            "isBuiltIn": false,
+            "subCategory": "可选模块"
         },
         {
             "id": "save-archive",
@@ -46,7 +54,9 @@
             "gitUrl": "git@github.com:Haki-sheep/MmCSharp-Saver.git?path=unity",
             "packageName": "com.hakisheep.mm-saver",
             "installCheckPath": "Packages/com.hakisheep.mm-saver/package.json",
-            "tags": ["存档"],
+            "tags": [
+                "存档"
+            ],
             "isBuiltIn": false
         },
         {
@@ -58,7 +68,9 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/F_Audio/AudioManager.cs",
-            "tags": ["音频"],
+            "tags": [
+                "音频"
+            ],
             "isBuiltIn": true
         },
         {
@@ -70,7 +82,9 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/C_Pool/PoolManager.cs",
-            "tags": ["性能"],
+            "tags": [
+                "性能"
+            ],
             "isBuiltIn": true
         },
         {
@@ -82,7 +96,9 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/B_Assets/AddressableMethod/AddressableMgr.cs",
-            "tags": ["资源"],
+            "tags": [
+                "资源"
+            ],
             "isBuiltIn": true
         },
         {
@@ -95,7 +111,9 @@
             "gitUrl": "git@github.com:Haki-sheep/MmCSharp-EventBus.git?path=unity",
             "packageName": "com.hakisheep.mm-eventbus",
             "installCheckPath": "Packages/com.hakisheep.mm-eventbus/package.json",
-            "tags": ["事件"],
+            "tags": [
+                "事件"
+            ],
             "isBuiltIn": false
         },
         {
@@ -108,7 +126,9 @@
             "gitUrl": "git@github.com:Haki-sheep/MmCSharp-FSM.git?path=unity",
             "packageName": "com.hakisheep.mm-fsm",
             "installCheckPath": "Packages/com.hakisheep.mm-fsm/package.json",
-            "tags": ["FSM"],
+            "tags": [
+                "FSM"
+            ],
             "isBuiltIn": false
         },
         {
@@ -121,7 +141,9 @@
             "gitUrl": "git@github.com:Haki-sheep/MmCSharp-DMVC.git?path=unity",
             "packageName": "com.hakisheep.mm-dmvc",
             "installCheckPath": "Packages/com.hakisheep.mm-dmvc/package.json",
-            "tags": ["架构"],
+            "tags": [
+                "架构"
+            ],
             "isBuiltIn": false
         },
         {
@@ -134,7 +156,10 @@
             "gitUrl": "git@github.com:Haki-sheep/MmCSharp-MMVM.git?path=unity",
             "packageName": "com.hakisheep.mm-mvvm",
             "installCheckPath": "Packages/com.hakisheep.mm-mvvm/package.json",
-            "tags": ["MVVM", "UI"],
+            "tags": [
+                "MVVM",
+                "UI"
+            ],
             "isBuiltIn": false
         },
         {
@@ -147,7 +172,10 @@
             "gitUrl": "https://github.com/yourname/MmLocalizationSystem.git",
             "packageName": "",
             "installCheckPath": "Assets/Modules/MmLocalizationSystem",
-            "tags": ["本地化", "规划中"],
+            "tags": [
+                "本地化",
+                "规划中"
+            ],
             "isBuiltIn": false
         },
         {
@@ -159,7 +187,10 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Tools/SceneCtrl/SceneCtrl.cs",
-            "tags": ["运行时", "场景"],
+            "tags": [
+                "运行时",
+                "场景"
+            ],
             "isBuiltIn": true
         },
         {
@@ -171,19 +202,10 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Tools/UniTask/AsyncTaskManager.cs",
-            "tags": ["运行时", "异步"],
-            "isBuiltIn": true
-        },
-        {
-            "id": "tool-animation-extension",
-            "displayName": "动画扩展",
-            "category": "工具",
-            "description": "DOTweenSequence 可视化补间序列 Animator 哈希缓存 AnimationEvent 状态机行为与 Transform 扩展",
-            "version": "1.0.0",
-            "gitUrl": "",
-            "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Tools/AnimationExtension/DoTweenAnim/DOTweenSequence.cs",
-            "tags": ["运行时", "动画", "DOTween"],
+            "tags": [
+                "运行时",
+                "异步"
+            ],
             "isBuiltIn": true
         },
         {
@@ -195,7 +217,11 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Tools/UnityInterEvents/SimpleEventListener.cs",
-            "tags": ["运行时", "UI", "事件"],
+            "tags": [
+                "运行时",
+                "UI",
+                "事件"
+            ],
             "isBuiltIn": true
         },
         {
@@ -207,7 +233,11 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Tools/Physic&Math/PhysicRayCast.cs",
-            "tags": ["运行时", "物理", "数学"],
+            "tags": [
+                "运行时",
+                "物理",
+                "数学"
+            ],
             "isBuiltIn": true
         },
         {
@@ -219,19 +249,26 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Tools/ColorToos/ColorTools.cs",
-            "tags": ["运行时", "UI"],
+            "tags": [
+                "运行时",
+                "UI"
+            ],
             "isBuiltIn": true
         },
         {
             "id": "plugin-dotween",
             "displayName": "DOTween Pro",
             "category": "插件",
-            "description": "Demigiant 商业补间动画库 DOTween 与 DOTween Pro 含 UI 音频 Physics 等模块 框架 AnimationExtension 依赖",
+            "description": "Demigiant 商业补间动画库 DOTween 与 DOTween Pro 含 UI 音频 Physics 等模块 Mm UI Frame DoTweenAnim 依赖",
             "version": "内置",
             "gitUrl": "http://dotween.demigiant.com",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Plugins/Demigiant/DOTween/DOTween.dll",
-            "tags": ["第三方", "商业", "动画"],
+            "tags": [
+                "第三方",
+                "商业",
+                "动画"
+            ],
             "isBuiltIn": true
         },
         {
@@ -243,7 +280,11 @@
             "gitUrl": "https://odininspector.com",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll",
-            "tags": ["第三方", "商业", "编辑器"],
+            "tags": [
+                "第三方",
+                "商业",
+                "编辑器"
+            ],
             "isBuiltIn": true
         },
         {
@@ -255,7 +296,11 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Plugins/Hierarchy Designer/Editor/Scripts/HD_Manager.cs",
-            "tags": ["第三方", "商业", "编辑器"],
+            "tags": [
+                "第三方",
+                "商业",
+                "编辑器"
+            ],
             "isBuiltIn": true
         },
         {
@@ -267,7 +312,10 @@
             "gitUrl": "https://github.com/Cysharp/UniTask",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Plugins/UniTask/package.json",
-            "tags": ["第三方", "异步"],
+            "tags": [
+                "第三方",
+                "异步"
+            ],
             "isBuiltIn": true
         },
         {
@@ -279,7 +327,11 @@
             "gitUrl": "https://epplussoftware.com",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Plugins/Epplus/EPPlus.dll",
-            "tags": ["第三方", "商业", "Excel"],
+            "tags": [
+                "第三方",
+                "商业",
+                "Excel"
+            ],
             "isBuiltIn": true
         },
         {
@@ -291,7 +343,10 @@
             "gitUrl": "3.2.1",
             "packageName": "com.unity.nuget.newtonsoft-json",
             "installCheckPath": "Packages/com.unity.nuget.newtonsoft-json/package.json",
-            "tags": ["第三方", "序列化"],
+            "tags": [
+                "第三方",
+                "序列化"
+            ],
             "isBuiltIn": false
         },
         {
@@ -303,7 +358,11 @@
             "gitUrl": "https://developers.google.com/protocol-buffers",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Plugins/Protobuf/Google.Protobuf.dll",
-            "tags": ["第三方", "序列化", "存档"],
+            "tags": [
+                "第三方",
+                "序列化",
+                "存档"
+            ],
             "isBuiltIn": true
         },
         {
@@ -316,7 +375,10 @@
             "gitUrl": "https://github.com/yourname/NormalBagSystem.git",
             "packageName": "",
             "installCheckPath": "Assets/Modules/NormalBagSystem",
-            "tags": ["背包", "物品"],
+            "tags": [
+                "背包",
+                "物品"
+            ],
             "isBuiltIn": false
         },
         {
@@ -324,12 +386,15 @@
             "displayName": "网格背包",
             "category": "玩法",
             "subCategory": "库存",
-            "description": "二维格子摆放 物品旋转 堆叠与空间校验",
+            "description": "通用网格背包 Runtime/Editor 与默认预制体 支持跨容器交互 宿主需自备 Odin 与 DOTween",
             "version": "0.1.0",
-            "gitUrl": "https://github.com/yourname/GridBagSystem.git",
-            "packageName": "",
-            "installCheckPath": "Assets/Modules/GridBagSystem",
-            "tags": ["背包", "物品"],
+            "gitUrl": "git@github.com:Haki-sheep/Mm-GridInventory.git?path=Packages/com.hakisheep.grid-inventory",
+            "packageName": "com.hakisheep.grid-inventory",
+            "installCheckPath": "Packages/com.hakisheep.grid-inventory/package.json",
+            "tags": [
+                "背包",
+                "物品"
+            ],
             "isBuiltIn": false
         },
         {
@@ -342,7 +407,10 @@
             "gitUrl": "https://github.com/yourname/MotionCharacterController.git",
             "packageName": "",
             "installCheckPath": "Assets/Modules/MotionCharacterController",
-            "tags": ["角色", "控制"],
+            "tags": [
+                "角色",
+                "控制"
+            ],
             "isBuiltIn": false
         },
         {
@@ -355,7 +423,10 @@
             "gitUrl": "https://github.com/yourname/MmNpcAISystem.git",
             "packageName": "",
             "installCheckPath": "Assets/Modules/MmNpcAISystem",
-            "tags": ["AI", "规划中"],
+            "tags": [
+                "AI",
+                "规划中"
+            ],
             "isBuiltIn": false
         },
         {
@@ -368,7 +439,11 @@
             "gitUrl": "https://github.com/yourname/MmUnityGAS.git",
             "packageName": "",
             "installCheckPath": "Assets/Modules/MmUnityGAS",
-            "tags": ["战斗", "Buff", "技能"],
+            "tags": [
+                "战斗",
+                "Buff",
+                "技能"
+            ],
             "isBuiltIn": false
         },
         {
@@ -381,7 +456,11 @@
             "gitUrl": "https://github.com/yourname/MmDialogueTaskSystem.git",
             "packageName": "",
             "installCheckPath": "Assets/Modules/MmDialogueTaskSystem",
-            "tags": ["剧情", "任务", "成就"],
+            "tags": [
+                "剧情",
+                "任务",
+                "成就"
+            ],
             "isBuiltIn": false
         },
         {
@@ -394,7 +473,10 @@
             "gitUrl": "https://github.com/yourname/MmShopEconomySystem.git",
             "packageName": "",
             "installCheckPath": "Assets/Modules/MmShopEconomySystem",
-            "tags": ["经济", "规划中"],
+            "tags": [
+                "经济",
+                "规划中"
+            ],
             "isBuiltIn": false
         },
         {
@@ -407,20 +489,42 @@
             "gitUrl": "https://github.com/yourname/MmDayNightSystem.git",
             "packageName": "",
             "installCheckPath": "Assets/Modules/MmDayNightSystem",
-            "tags": ["世界", "规划中"],
+            "tags": [
+                "世界",
+                "规划中"
+            ],
             "isBuiltIn": false
         },
         {
-            "id": "mm-build-system",
-            "displayName": "网格化建筑",
+            "id": "mm-builder",
+            "displayName": "体素建造",
             "category": "玩法",
             "subCategory": "世界",
-            "description": "放置预览 吸附对齐 占地检测与建造撤销",
+            "description": "通用体素建造 射线检测 预览 放置破坏 虚拟网格分区与存档 宿主需自备 InputSystem",
             "version": "0.1.0",
-            "gitUrl": "https://github.com/yourname/MmBuildSystem.git",
-            "packageName": "",
-            "installCheckPath": "Assets/Modules/MmBuildSystem",
-            "tags": ["建造", "沙盒"],
+            "gitUrl": "git@github.com:Haki-sheep/MmBuildSystem.git?path=Packages/com.hakisheep.mm-builder",
+            "packageName": "com.hakisheep.mm-builder",
+            "installCheckPath": "Packages/com.hakisheep.mm-builder/package.json",
+            "tags": [
+                "建造",
+                "体素"
+            ],
+            "isBuiltIn": false
+        },
+        {
+            "id": "mm-procedural-building",
+            "displayName": "程序化建筑",
+            "category": "玩法",
+            "subCategory": "世界",
+            "description": "程序化建筑画布 蓝图生成 房间阵列与网格合并优化",
+            "version": "0.1.0",
+            "gitUrl": "git@github.com:Haki-sheep/MmBuildSystem.git?path=Packages/com.hakisheep.mm-procedural-building",
+            "packageName": "com.hakisheep.mm-procedural-building",
+            "installCheckPath": "Packages/com.hakisheep.mm-procedural-building/package.json",
+            "tags": [
+                "建造",
+                "程序化"
+            ],
             "isBuiltIn": false
         },
         {
@@ -433,7 +537,10 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/G_InputSystem/InputInteract/Core/InteractionManager.cs",
-            "tags": ["交互", "3C"],
+            "tags": [
+                "交互",
+                "3C"
+            ],
             "isBuiltIn": true
         },
         {
@@ -446,7 +553,10 @@
             "gitUrl": "https://github.com/yourname/MmMinimapSystem.git",
             "packageName": "",
             "installCheckPath": "Assets/Modules/MmMinimapSystem",
-            "tags": ["UI", "规划中"],
+            "tags": [
+                "UI",
+                "规划中"
+            ],
             "isBuiltIn": false
         },
         {
@@ -459,7 +569,11 @@
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/SaveForEditor/Protobuf/ProtobufGeneratorWindow.cs",
             "menuPath": "Tools/MieMieFrameWork/Protobuf/Protobuf Generator",
-            "tags": ["编辑器", "生成器", "存档"],
+            "tags": [
+                "编辑器",
+                "生成器",
+                "存档"
+            ],
             "isBuiltIn": true
         },
         {
@@ -472,7 +586,10 @@
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/FolderForEditor/ProjectWindow/FolderBookmarkWindow.cs",
             "menuPath": "Tools/MieMieFrameWork/Folder/Folder Bookmarks",
-            "tags": ["编辑器", "路径"],
+            "tags": [
+                "编辑器",
+                "路径"
+            ],
             "isBuiltIn": true
         },
         {
@@ -485,7 +602,10 @@
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/EventBusForEditor/EventBusEditorWindow.cs",
             "menuPath": "Tools/MieMieFrameWork/Event Bus",
-            "tags": ["编辑器", "事件"],
+            "tags": [
+                "编辑器",
+                "事件"
+            ],
             "isBuiltIn": true
         },
         {
@@ -498,7 +618,10 @@
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/FsmForEditor/TickFSMWindow.cs",
             "menuPath": "Tools/MieMieFrameWork/FSM/TickFSMWindow",
-            "tags": ["编辑器", "FSM"],
+            "tags": [
+                "编辑器",
+                "FSM"
+            ],
             "isBuiltIn": true
         },
         {
@@ -511,7 +634,10 @@
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/DmvcForEditor/DMVCCodeGeneratorWindow.cs",
             "menuPath": "Tools/MieMieFrameWork/DMVC/Code Generator",
-            "tags": ["编辑器", "架构"],
+            "tags": [
+                "编辑器",
+                "架构"
+            ],
             "isBuiltIn": true
         },
         {
@@ -524,21 +650,27 @@
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/PoolWindow/PoolEditorWindow.cs",
             "menuPath": "Tools/MieMieFrameWork/Object Pool",
-            "tags": ["编辑器", "性能"],
+            "tags": [
+                "编辑器",
+                "性能"
+            ],
             "isBuiltIn": true
         },
         {
             "id": "ui-generator",
             "displayName": "UI Generator",
             "category": "编辑器拓展",
-            "description": "UI 预制体脚本生成 组件绑定与路径配置",
-            "version": "1.0.0",
-            "gitUrl": "",
-            "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Editor/UIForEditor/UIScripts/GenerateUITemp.cs",
+            "description": "UI 预制体脚本生成 组件绑定与路径配置。随 com.hakisheep.mm-uiframe 一并安装 无需单独导入。",
+            "version": "1.0.6",
+            "gitUrl": "git@github.com:Haki-sheep/MmUIFrameWork.git?path=Assets/MmUIFrameWork",
+            "packageName": "com.hakisheep.mm-uiframe",
+            "installCheckPath": "Packages/com.hakisheep.mm-uiframe/Editor/UIForEditor/UIScripts/GenerateUITemp.cs",
             "menuPath": "Tools/MieMieFrameWork/UI/GenerateUITemp",
-            "tags": ["编辑器", "UI"],
-            "isBuiltIn": true
+            "tags": [
+                "编辑器",
+                "UI"
+            ],
+            "isBuiltIn": false
         }
     ]
 }

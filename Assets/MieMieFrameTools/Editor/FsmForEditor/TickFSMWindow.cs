@@ -182,8 +182,8 @@ namespace MieMieFrameWork.FSM
         {
             EditorGUILayout.LabelField("智能调试", EditorStyles.boldLabel);
             EditorGUILayout.HelpBox(
-                "开启后在 Play 模式下于 Game 视图左上角实时显示 UpdateFsmHost 当前状态\n" +
-                "需场景中存在 UpdateFsmHost 组件",
+                "开启后在 Play 模式下于 Game 视图用 OnGUI 显示 UpdateFsmHost 当前状态（与 Gizmos 无关）\n" +
+                "需勾选启用并点应用 且处于 Play 场景中有 UpdateFsmHost",
                 MessageType.Info);
 
             bool newEnabled = EditorGUILayout.Toggle("启用智能调试", smartDebugEnabled);

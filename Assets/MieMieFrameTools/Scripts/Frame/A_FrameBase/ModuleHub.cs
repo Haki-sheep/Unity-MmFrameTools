@@ -4,8 +4,8 @@ namespace MieMieFrameWork
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using MieMieFrameWork.Pool;
-    using MieMieFrameWork.UI;
     using Sirenix.OdinInspector;
     using UnityEngine;
 
@@ -18,8 +18,8 @@ namespace MieMieFrameWork
 
         private readonly Dictionary<Type, IManagerBase> managerDict = new Dictionary<Type, IManagerBase>();
 
-        [SerializeField, LabelText("UI管理器")]
-        private UICoreMgr uICoreMgr;
+        [SerializeField, LabelText("UI管理器(可选)")]
+        private MonoBehaviour uiCoreMgrBehaviour;
 
         [SerializeField, LabelText("存档子目录")]
         private string archiveSubFolder = "Archives";
@@ -38,6 +38,11 @@ namespace MieMieFrameWork
         /// 存档管理器实例 未安装 com.hakisheep.mm-saver 时为 null
         /// </summary>
         private object archiveMgr;
+
+        /// <summary>
+        /// UI 管理器实例 未安装 com.hakisheep.mm-uiframe 时为 null
+        /// </summary>
+        private object uiCoreMgr;
 
 
         #region Unity 生命周期
@@ -70,6 +75,7 @@ namespace MieMieFrameWork
             try
             {
                 InitArchiveMgr();
+                InitUICoreMgr();
                 GetAllManager();
             }
             catch (System.Exception ex)
@@ -130,6 +136,67 @@ namespace MieMieFrameWork
         /// </summary>
         public T GetArchive<T>() where T : class => archiveMgr as T;
 
+        /// <summary>
+        /// 初始化 UI 管理器钩子
+        /// </summary>
+        private void InitUICoreMgr()
+        {
+            Type uiType = ResolveUICoreMgrType();
+            if (uiType == null)
+            {
+                Debug.LogWarning("[ModuleHub] UI 模块未安装或 MieMieFrameWork.UI 程序集未编译 跳过 UICoreMgr 初始化");
+                return;
+            }
+
+            Component uiComp = uiCoreMgrBehaviour;
+            if (uiComp == null || uiComp.GetType() != uiType)
+                uiComp = GetComponent(uiType);
+
+            if (uiComp == null)
+            {
+                Debug.LogWarning("[ModuleHub] 已安装 UI 模块但未找到 UICoreMgr 组件 请挂到 ModuleHub 同物体或拖入序列化槽");
+                return;
+            }
+
+            uiCoreMgr = uiComp;
+            uiCoreMgrBehaviour = uiComp as MonoBehaviour;
+        }
+
+        /// <summary>
+        /// 解析 MieMieFrameWork.UI.UICoreMgr 类型
+        /// </summary>
+        private static Type ResolveUICoreMgrType()
+        {
+            const string uiTypeName = "MieMieFrameWork.UI.UICoreMgr";
+            const string assemblyName = "MieMieFrameWork.UI";
+
+            Type uiType = Type.GetType($"{uiTypeName}, {assemblyName}");
+            if (uiType != null)
+                return uiType;
+
+            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                if (assembly.GetName().Name != assemblyName)
+                    continue;
+
+                uiType = assembly.GetType(uiTypeName);
+                if (uiType != null)
+                    return uiType;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// 是否已安装并绑定 UI 模块
+        /// </summary>
+        public bool HasUI => uiCoreMgr != null;
+
+        /// <summary>
+        /// 获取 UI 管理器 需引用 MieMieFrameWork.UI 后使用 UICoreMgr 类型
+        /// </summary>
+        public T GetUI<T>() where T : class => uiCoreMgr as T;
+
         private void GetAllManager()
         {
             var managers = new List<IManagerBase>();
@@ -138,14 +205,16 @@ namespace MieMieFrameWork
             managers.Add(new AsyncTaskManager());
             managers.Add(new UniTimerManager());
             managers.AddRange(this.transform.GetComponents<IManagerBase>());
-            //获取特殊的UIManager
-            if (uICoreMgr is not null && !managers.Contains((IManagerBase)uICoreMgr))
-                managers.Add((IManagerBase)uICoreMgr);
+
+            if (uiCoreMgr != null)
+                managers.Add(new ReflectionManagerAdapter(uiCoreMgr, 10));
 
             foreach (var manager in managers.Where(m => m is not null)
                                                             .OrderBy(GetManagerPriority))
             {
-                var managerType = manager.GetType();
+                var managerType = manager is ReflectionManagerAdapter adapter
+                    ? adapter.TargetType
+                    : manager.GetType();
                 if (managerDict.ContainsKey(managerType))
                 {
                     Debug.LogError($"[ModuleHub] 发现重复管理器类型: {managerType.Name}，后续实例将被忽略。");
@@ -164,8 +233,10 @@ namespace MieMieFrameWork
         /// <returns></returns>
         private static int GetManagerPriority(IManagerBase manager)
         {
+            if (manager is ReflectionManagerAdapter adapter)
+                return adapter.Priority;
+
             var managerType = manager.GetType();
-            // managerType = 查谁的 , typeof(ManagerAttribute) = 查哪个Attribute
             var attr = (ManagerAttribute)Attribute.GetCustomAttribute(managerType, typeof(ManagerAttribute));
             return attr?.Priority ?? 0;
         }
@@ -212,6 +283,7 @@ namespace MieMieFrameWork
             managerDict.Clear();
             MmGlobalEventBus.GlobalBus.Clear();
             archiveMgr = null;
+            uiCoreMgr = null;
         }
 
         #endregion
@@ -231,6 +303,44 @@ namespace MieMieFrameWork
             {
                 Priority = priority;
             }
+        }
+
+        /// <summary>
+        /// 反射适配可选模块管理器
+        /// </summary>
+        private sealed class ReflectionManagerAdapter : IManagerBase
+        {
+            /// <summary>
+            /// 目标实例
+            /// </summary>
+            private readonly object target;
+
+            /// <summary>
+            /// Init 方法
+            /// </summary>
+            private readonly MethodInfo initMethod;
+
+            /// <summary>
+            /// 优先级
+            /// </summary>
+            private readonly int priority;
+
+            public Type TargetType { get; }
+
+            public ReflectionManagerAdapter(object target, int priority = 0)
+            {
+                this.target = target;
+                this.priority = priority;
+                TargetType = target.GetType();
+                initMethod = TargetType.GetMethod("Init", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic, null, Type.EmptyTypes, null);
+            }
+
+            public void Init()
+            {
+                initMethod?.Invoke(target, null);
+            }
+
+            public int Priority => priority;
         }
         #endregion
 
