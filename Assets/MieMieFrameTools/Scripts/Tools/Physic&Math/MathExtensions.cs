@@ -74,5 +74,27 @@ namespace MieMieFrameWork
             return Vector3.Distance(vector, other) < threshold;
 
         }
+
+        /// <summary>
+        /// 深度查找子节点 含自身
+        /// </summary>
+        public static Transform FindDeepChild(this Transform parent, string name)
+        {
+            if (parent == null || string.IsNullOrEmpty(name))
+                return null;
+
+            if (parent.name == name)
+                return parent;
+
+            int childCount = parent.childCount;
+            for (int i = 0; i < childCount; i++)
+            {
+                Transform result = parent.GetChild(i).FindDeepChild(name);
+                if (result != null)
+                    return result;
+            }
+
+            return null;
+        }
     }
 }
