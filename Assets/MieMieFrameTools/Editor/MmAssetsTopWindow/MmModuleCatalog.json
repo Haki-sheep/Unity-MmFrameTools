@@ -111,6 +111,7 @@
             "gitUrl": "https://github.com/tuyoogame/YooAsset",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/B_Assets/Yooasset/package.json",
+            "menuPath": "Tools/MieMieFrameWork/YooAsset/资源面板",
             "tags": [
                 "资源",
                 "YooAsset"

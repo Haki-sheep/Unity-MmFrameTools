@@ -12,7 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185f6993d5150494d98da50e26cb1c25, type: 3}
   m_Name: BundleCollectorSetting
   m_EditorClassIdentifier: YooAsset.Editor::YooAsset.Editor.BundleCollectorSetting
-  ShowPackageView: 0
-  ShowEditorAlias: 0
-  UniqueBundleName: 0
-  Packages: []
+  ShowPackageView: 1
+  ShowEditorAlias: 1
+  UniqueBundleName: 1
+  Packages:
+  - PackageName: YooSample
+    PackageDesc: 
+    EnableAddressable: 1
+    SupportExtensionless: 1
+    LocationToLower: 0
+    IncludeAssetGUID: 0
+    AutoCollectShaders: 1
+    IgnoreRuleName: NormalIgnoreRule
+    Groups:
+    - GroupName: Default Group
+      GroupDesc: 
+      AssetTags: 
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/MieMieFrameTools/Scripts/Frame/B_Assets/Yooasset/YooSample/TestAssets/Cube.prefab
+        CollectorGUID: b7d8238b310547b4cbfd32e835267786
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 

@@ -1,0 +1,17 @@
+{
+    "name": "YooSample.Runtime",
+    "rootNamespace": "MieMieFrameWork.YooSample",
+    "references": [
+        "GUID:e34a5702dd353724aa315fb8011f08c3",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
