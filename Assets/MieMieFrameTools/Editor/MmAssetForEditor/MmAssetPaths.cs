@@ -15,7 +15,7 @@ public static class MmAssetPaths
     /// MmAsset 运行时模块根
     /// </summary>
     public const string ModuleRoot =
-        MieMieRoot + "/Scripts/Frame/B_Assets/MmAssetsMethod/MmAsset";
+        MieMieRoot + "/Scripts/Frame/B_Assets/MmAsset";
 
     /// <summary>
     /// MmAsset 编辑器根
@@ -39,6 +39,11 @@ public static class MmAssetPaths
     public const string RuntimeFolder = ModuleRoot + "/Runtime";
 
     /// <summary>
+    /// 运行时配置目录
+    /// </summary>
+    public const string ConfigFolder = RuntimeFolder + "/Config";
+
+    /// <summary>
     /// Resources 目录资源路径前缀
     /// </summary>
     public const string ResourcesAssetFolder = ModuleRoot + "/Resources";
@@ -48,7 +53,7 @@ public static class MmAssetPaths
     /// </summary>
     public static string ModuleRootDiskPath =>
         UnityEngine.Application.dataPath
-        + "/MieMieFrameTools/Scripts/Frame/B_Assets/MmAssetsMethod/MmAsset";
+        + "/MieMieFrameTools/Scripts/Frame/B_Assets/MmAsset";
 
     /// <summary>
     /// Generated 磁盘路径
@@ -64,5 +69,10 @@ public static class MmAssetPaths
     /// Runtime 磁盘路径
     /// </summary>
     public static string RuntimeDiskPath => ModuleRootDiskPath + "/Runtime";
+
+    /// <summary>
+    /// 运行时配置目录
+    /// </summary>
+    public static string ConfigDiskPath => RuntimeDiskPath + "/Config";
 }
 }

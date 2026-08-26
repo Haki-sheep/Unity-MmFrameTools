@@ -44,7 +44,7 @@ namespace MieMieFrameWork.Editor.MmAssets
         /// MmAsset 运行时模块根
         /// </summary>
         public const string MmAssetModuleRoot =
-            FrameRoot + "/B_Assets/MmAssetsMethod/MmAsset";
+            FrameRoot + "/B_Assets/MmAsset";
 
         /// <summary>
         /// proto 源文件目录

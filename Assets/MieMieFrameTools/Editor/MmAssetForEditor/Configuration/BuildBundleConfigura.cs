@@ -55,6 +55,19 @@ public class BuildBundleConfigura : ScriptableObject
     }
 
     /// <summary>
+    /// 根据模块名列表删除模块数据
+    /// </summary>
+    public void RemoveBundleDataByNameList(IEnumerable<string> moduleNameList)
+    {
+        if (moduleNameList == null)
+            return;
+
+        var moduleNameHashList = new HashSet<string>(moduleNameList);
+        bundleModuleDataList.RemoveAll(data => data != null && moduleNameHashList.Contains(data.moduleName));
+        SaveData();
+    }
+
+    /// <summary>
     /// 添加模块数据
     /// </summary>
     /// <param name="bundleModuleData">模块数据</param>

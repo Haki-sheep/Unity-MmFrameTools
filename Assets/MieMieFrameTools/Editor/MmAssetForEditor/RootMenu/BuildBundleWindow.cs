@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -21,6 +24,13 @@ public class BuildBundleWindow : BundleBehaviour
     public override void DrawLeftButton()
     {
         base.DrawLeftButton();
+        if (GUILayout.Button(
+                new GUIContent("删除", "删除勾选模块的配置与生成产物 不删除源资源"),
+                GUILayout.Height(28),
+                GUILayout.MinWidth(68)))
+        {
+            DeleteSelectedModules();
+        }
          if (GUILayout.Button("打包", GUILayout.Height(28), GUILayout.MinWidth(88)))
         {
             Build();
@@ -132,6 +142,92 @@ public class BuildBundleWindow : BundleBehaviour
             "MmAsset",
             "已复制到 StreamingAssets\n" + string.Join("\n", selectedNameList),
             "确定");
+    }
+
+    /// <summary>
+    /// 删除勾选模块的配置与生成产物
+    /// </summary>
+    private void DeleteSelectedModules()
+    {
+        var selectedNameList = CollectSelectedModuleNameList();
+        if (selectedNameList.Count == 0)
+        {
+            EditorUtility.DisplayDialog("MmAsset", "没有勾选要删除的模块", "确定");
+            return;
+        }
+
+        string moduleText = string.Join("\n", selectedNameList);
+        bool confirmed = EditorUtility.DisplayDialog(
+            "删除模块",
+            "将删除以下模块的配置与全部生成产物 不会删除源资源\n\n" + moduleText,
+            "删除",
+            "取消");
+        if (!confirmed)
+            return;
+
+        foreach (string moduleName in selectedNameList)
+            DeleteModuleArtifacts(moduleName);
+
+        BuildBundleConfigura.Instance.RemoveBundleDataByNameList(selectedNameList);
+        BundleEnumCreator.GenerateBundleModuleEnum();
+        AssetDatabase.Refresh();
+        Init();
+        EditorUtility.DisplayDialog("MmAsset", "已删除模块与生成产物\n" + moduleText, "确定");
+    }
+
+    /// <summary>
+    /// 删除指定模块的构建生成物
+    /// </summary>
+    private static void DeleteModuleArtifacts(string moduleName)
+    {
+        string moduleNameLower = moduleName.ToLowerInvariant();
+        string projectRoot = Path.GetFullPath(Path.Combine(Application.dataPath, ".."));
+        string buildTarget = BundleSettings.Instance.buildTarget.ToString();
+        string bundleOutputPath = Path.Combine(
+            projectRoot,
+            "BuildOutput",
+            "Bundles",
+            moduleNameLower,
+            buildTarget);
+        string hotOutputPath = Path.Combine(
+            projectRoot,
+            "BuildOutput",
+            "Hot",
+            moduleNameLower);
+        string streamingAssetsPath = Path.Combine(
+            Application.streamingAssetsPath,
+            "AssetBundle",
+            moduleNameLower);
+        string generatedConfigPath = Path.Combine(
+            MmAssetPaths.GeneratedDiskPath,
+            moduleNameLower + "_AbConfig.json");
+        string builtInManifestPath = Path.Combine(
+            MmAssetPaths.ResourcesDiskPath,
+            moduleNameLower + "_builtin.json");
+
+        DeleteDirectory(bundleOutputPath);
+        DeleteDirectory(hotOutputPath);
+        DeleteDirectory(streamingAssetsPath);
+        DeleteFile(generatedConfigPath);
+        DeleteFile(builtInManifestPath);
+    }
+
+    /// <summary>
+    /// 删除目录并忽略不存在目录
+    /// </summary>
+    private static void DeleteDirectory(string path)
+    {
+        if (Directory.Exists(path))
+            Directory.Delete(path, true);
+    }
+
+    /// <summary>
+    /// 删除文件并忽略不存在文件
+    /// </summary>
+    private static void DeleteFile(string path)
+    {
+        if (File.Exists(path))
+            File.Delete(path);
     }
 }
 }

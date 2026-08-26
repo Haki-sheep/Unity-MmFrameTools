@@ -17,18 +17,19 @@ public class BundleEnumCreator
     /// 模块枚举脚本路径
     /// </summary>
     private static string bundleModuleEnumFilePath =
-             MmAssetPaths.RuntimeDiskPath + "/BundleModuleEnum.cs";
+             MmAssetPaths.ConfigDiskPath + "/BundleModuleEnum.cs";
 
     /// <summary>
     /// 模块交付方式脚本路径
     /// </summary>
     private static string bundleModuleDeliveryFilePath =
-             MmAssetPaths.RuntimeDiskPath + "/BundleModuleDelivery.cs";
+             MmAssetPaths.ConfigDiskPath + "/BundleModuleDelivery.cs";
 
     [MenuItem("Tools/MieMieFrameWork/MmAsset/生成模块枚举")]
     public static void GenerateBundleModuleEnum()
     {
         List<BundleModuleData> moduleList = BuildBundleConfigura.Instance.bundleModuleDataList;
+        Directory.CreateDirectory(MmAssetPaths.ConfigDiskPath);
         WriteModuleEnum(moduleList);
         WriteModuleDelivery(moduleList);
         AssetDatabase.Refresh();

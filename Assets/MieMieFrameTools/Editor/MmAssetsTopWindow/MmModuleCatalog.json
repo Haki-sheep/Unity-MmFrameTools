@@ -95,9 +95,25 @@
             "version": "1.0.0",
             "gitUrl": "",
             "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/B_Assets/AddressableMethod/AddressableMgr.cs",
+            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/B_Assets/Addressable/AddressableMgr.cs",
             "tags": [
                 "资源"
+            ],
+            "isBuiltIn": true
+        },
+        {
+            "id": "yooasset-res",
+            "displayName": "YooAsset 资源加载",
+            "category": "框架",
+            "subCategory": "可选模块",
+            "description": "YooAsset 资源管理系统，后续接入 MmAsset 资源后端选择器。",
+            "version": "内嵌",
+            "gitUrl": "https://github.com/tuyoogame/YooAsset",
+            "packageName": "",
+            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/B_Assets/Yooasset/package.json",
+            "tags": [
+                "资源",
+                "YooAsset"
             ],
             "isBuiltIn": true
         },
@@ -109,7 +125,7 @@
             "version": "1.0.0",
             "gitUrl": "",
             "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/B_Assets/MmAssetsMethod/MmAsset/Runtime/MmAssetFrame.cs",
+            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/B_Assets/MmAsset/Runtime/Core/MmAssetFrame.cs",
             "tags": [
                 "资源",
                 "AB",
