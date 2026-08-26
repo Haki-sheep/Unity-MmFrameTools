@@ -27,6 +27,11 @@ namespace MieMieFrameWork.Pool
         }
 
         /// <summary>
+        /// 全局实例 由 ModuleHub 创建时赋值 调用处直接访问免查注册表
+        /// </summary>
+        public static PoolManager Instance { get; internal set; }
+
+        /// <summary>
         /// 默认池上限
         /// </summary>
         private const int DefaultMaxSize = 50;
@@ -62,6 +67,7 @@ namespace MieMieFrameWork.Pool
         {
             this.serviceRoot = serviceRoot;
             AllGameObjectRoot = poolManagerConfig.AllGameObjectRoot;
+            Instance = this;
         }
 
         public void Init()
@@ -73,6 +79,8 @@ namespace MieMieFrameWork.Pool
         public void Dispose()
         {
             SelectClearPool();
+            if (Instance == this)
+                Instance = null;
         }
 
 

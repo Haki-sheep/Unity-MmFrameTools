@@ -1,0 +1,296 @@
+{
+  "bundleInfoList": [
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Materials/PolygonApocalypse_Material_01_A.mat",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Materials/PolygonApocalypse_Material_01_A.mat",
+      "crc": 818240244,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "PolygonApocalypse_Material_01_A.mat",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Bld_Bunker_Wood_Floor_Raised_x2_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Bld_Bunker_Wood_Floor_Raised_x2_01.fbx",
+      "crc": 3862902036,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "SM_Bld_Bunker_Wood_Floor_Raised_x2_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Item_Ammo_Paper_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Item_Ammo_Paper_01.fbx",
+      "crc": 2015071197,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "SM_Item_Ammo_Paper_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Item_Tape_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Item_Tape_01.fbx",
+      "crc": 435753228,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "SM_Item_Tape_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Item_ToiletRoll_02.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Item_ToiletRoll_02.fbx",
+      "crc": 693627027,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "SM_Item_ToiletRoll_02.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Prop_Glass_Shard_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Prop_Glass_Shard_01.fbx",
+      "crc": 1683845842,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "SM_Prop_Glass_Shard_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Prop_MetalSheet_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Prop_MetalSheet_01.fbx",
+      "crc": 1422821776,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "SM_Prop_MetalSheet_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Emissive_01.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Emissive_01.png",
+      "crc": 3393361662,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "PolygonApocalypse_Emissive_01.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Normal.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Normal.png",
+      "crc": 1932568659,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "PolygonApocalypse_Normal.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/PolygonApocalypse_Texture_01_A.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/PolygonApocalypse_Texture_01_A.png",
+      "crc": 2840058769,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "PolygonApocalypse_Texture_01_A.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Syringe_02/Syringe_02.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Syringe_02/Syringe_02.mat",
+      "crc": 3989014304,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "Syringe_02.mat",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Syringe_02_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Syringe_02_Mesh.FBX",
+      "crc": 3308465814,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "Syringe_02_Mesh.FBX",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Syringe_02/Syringe_02_Albedo.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Syringe_02/Syringe_02_Albedo.tga",
+      "crc": 3194093997,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "Syringe_02_Albedo.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Syringe_02/Syringe_02_Ao.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Syringe_02/Syringe_02_Ao.tga",
+      "crc": 2922138199,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "Syringe_02_Ao.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Syringe_02/Syringe_02_Metallic.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Syringe_02/Syringe_02_Metallic.tga",
+      "crc": 3926140900,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "Syringe_02_Metallic.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Syringe_02/Syringe_02_Normals.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Syringe_02/Syringe_02_Normals.tga",
+      "crc": 3206616588,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "Syringe_02_Normals.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Material/Item/塑料片.mat",
+      "alias": "Assets/Arts/InteranlArts/Material/Item/塑料片.mat",
+      "crc": 1036047805,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "塑料片.mat",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Material/Item/布料碎片.mat",
+      "alias": "Assets/Arts/InteranlArts/Material/Item/布料碎片.mat",
+      "crc": 1128192503,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "布料碎片.mat",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Material/Item/玻璃碎片.mat",
+      "alias": "Assets/Arts/InteranlArts/Material/Item/玻璃碎片.mat",
+      "crc": 545631616,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "玻璃碎片.mat",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Material/Item/绳结.mat",
+      "alias": "Assets/Arts/InteranlArts/Material/Item/绳结.mat",
+      "crc": 3832119283,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "绳结.mat",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/包裹.prefab",
+      "alias": "包裹",
+      "crc": 2921276721,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "包裹.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/卷纸.prefab",
+      "alias": "卷纸",
+      "crc": 2021536954,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "卷纸.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/塑料碎片.prefab",
+      "alias": "塑料碎片",
+      "crc": 195340802,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "塑料碎片.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/布料碎片.prefab",
+      "alias": "布料碎片",
+      "crc": 510256973,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "布料碎片.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/木板.prefab",
+      "alias": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/木板.prefab",
+      "crc": 1821394087,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "木板.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/玻璃碎片.prefab",
+      "alias": "玻璃碎片",
+      "crc": 1480019725,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "玻璃碎片.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/空注射器.prefab",
+      "alias": "空注射器",
+      "crc": 2487254482,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "空注射器.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/纸片.prefab",
+      "alias": "纸片",
+      "crc": 2688161658,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "纸片.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/绳结.prefab",
+      "alias": "绳结",
+      "crc": 3767012308,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "绳结.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/胶带.prefab",
+      "alias": "胶带",
+      "crc": 1423934392,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "胶带.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Materials/金属碎片.prefab",
+      "alias": "金属碎片",
+      "crc": 3885404518,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "金属碎片.prefab",
+      "dependencielist": [
+        "materials_model_materials.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/OringinFbx/笔记本.fbx",
+      "alias": "Assets/Arts/InteranlArts/Prefabs/OringinFbx/笔记本.fbx",
+      "crc": 292262084,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "笔记本.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/OringinFbx/绳索.obj",
+      "alias": "Assets/Arts/InteranlArts/Prefabs/OringinFbx/绳索.obj",
+      "crc": 90086794,
+      "bundleName": "materials_model_materials.abassetbundle",
+      "assetName": "绳索.obj",
+      "dependencielist": []
+    }
+  ]
+}

@@ -89,6 +89,11 @@ namespace MieMieFrameWork
         /// <summary>服务根节点</summary>
         private readonly Transform serviceRoot;
 
+        /// <summary>
+        /// 全局实例 由 ModuleHub 创建时赋值 调用处直接访问免查注册表
+        /// </summary>
+        public static AudioManager Instance { get; internal set; }
+
         public AudioManager(AudioManagerConfig audioManagerConfig, Transform serviceRoot)
         {
             this.serviceRoot = serviceRoot;
@@ -101,6 +106,7 @@ namespace MieMieFrameWork
             ambienceVolumeBaseNum = audioManagerConfig.AmbienceVolumeBaseNum;
             effectVolumeBaseNum = audioManagerConfig.EffectVolumeBaseNum;
             isMute = audioManagerConfig.IsMute;
+            Instance = this;
             isLoop = audioManagerConfig.IsLoop;
             isPause = audioManagerConfig.IsPause;
         }
@@ -118,6 +124,8 @@ namespace MieMieFrameWork
             StopBgAudio(BgAudioType.BGM);
             StopBgAudio(BgAudioType.Ambience);
             efAudioList.Clear();
+            if (Instance == this)
+                Instance = null;
         }
 
         #region 组件

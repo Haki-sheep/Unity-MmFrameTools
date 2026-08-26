@@ -1,0 +1,682 @@
+{
+  "bundleInfoList": [
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Materials/PolygonApocalypse_Material_01_A.mat",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Materials/PolygonApocalypse_Material_01_A.mat",
+      "crc": 818240244,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "PolygonApocalypse_Material_01_A.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_01.fbx",
+      "crc": 3238966803,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "SM_Chr_Attach_Backpack_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_02.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_02.fbx",
+      "crc": 2259602627,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "SM_Chr_Attach_Backpack_02.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_Large_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_Large_01.fbx",
+      "crc": 2875114390,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "SM_Chr_Attach_Backpack_Large_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_Small_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_Small_01.fbx",
+      "crc": 2387320001,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "SM_Chr_Attach_Backpack_Small_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Emissive_01.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Emissive_01.png",
+      "crc": 3393361662,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "PolygonApocalypse_Emissive_01.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Normal.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Normal.png",
+      "crc": 1932568659,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "PolygonApocalypse_Normal.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/PolygonApocalypse_Texture_01_A.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/PolygonApocalypse_Texture_01_A.png",
+      "crc": 2840058769,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "PolygonApocalypse_Texture_01_A.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_male_01.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_male_01.mat",
+      "crc": 3818472661,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_male_01.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_breeches_01_01_01bw.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_breeches_01_01_01bw.mat",
+      "crc": 183769854,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_breeches_01_01_01bw.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_breeches_01_01_01camo.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_breeches_01_01_01camo.mat",
+      "crc": 4129460445,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_breeches_01_01_01camo.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_cap_01_01_01bw.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_cap_01_01_01bw.mat",
+      "crc": 3521948879,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_cap_01_01_01bw.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_cap_01_01_02.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_cap_01_01_02.mat",
+      "crc": 1378998147,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_cap_01_01_02.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_cap_01_01_03.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_cap_01_01_03.mat",
+      "crc": 1867644467,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_cap_01_01_03.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_jacketsleeveles_01_01_01bw.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_jacketsleeveles_01_01_01bw.mat",
+      "crc": 3069870787,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_jacketsleeveles_01_01_01bw.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_jacketsleeveles_01_01_02bw.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_jacketsleeveles_01_01_02bw.mat",
+      "crc": 2266142814,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_jacketsleeveles_01_01_02bw.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_pants_02_01_01bw.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_pants_02_01_01bw.mat",
+      "crc": 3285047998,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_pants_02_01_01bw.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_pants_02_01_03bw.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_pants_02_01_03bw.mat",
+      "crc": 1414712215,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_pants_02_01_03bw.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_raglan_01m_01_01bw.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_raglan_01m_01_01bw.mat",
+      "crc": 4064856219,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_raglan_01m_01_01bw.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_shirtrolled_01m_01_01bw.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_shirtrolled_01m_01_01bw.mat",
+      "crc": 964892933,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_shirtrolled_01m_01_01bw.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_shirtrolled_01m_01_02bw.mat",
+      "alias": "Assets/Arts/ExternalArts/衣服/Materials/mtl_npc_csl_shirtrolled_01m_01_02bw.mat",
+      "crc": 141231000,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "mtl_npc_csl_shirtrolled_01m_01_02bw.mat",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Mesh/npc_body_01m.fbx",
+      "alias": "Assets/Arts/ExternalArts/衣服/Mesh/npc_body_01m.fbx",
+      "crc": 3798253745,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_body_01m.fbx",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Mesh/npc_body_01m_lod0.fbx",
+      "alias": "Assets/Arts/ExternalArts/衣服/Mesh/npc_body_01m_lod0.fbx",
+      "crc": 2030470497,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_body_01m_lod0.fbx",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_breeches_01_lod4.fbx",
+      "alias": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_breeches_01_lod4.fbx",
+      "crc": 2440971194,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_breeches_01_lod4.fbx",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_cap_01_lod4.fbx",
+      "alias": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_cap_01_lod4.fbx",
+      "crc": 3376709084,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_cap_01_lod4.fbx",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_jacketsleeveles_01_lod4.fbx",
+      "alias": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_jacketsleeveles_01_lod4.fbx",
+      "crc": 4247558634,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_jacketsleeveles_01_lod4.fbx",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_pants_02_lod4.fbx",
+      "alias": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_pants_02_lod4.fbx",
+      "crc": 1992984310,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_pants_02_lod4.fbx",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_raglan_01m.fbx",
+      "alias": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_raglan_01m.fbx",
+      "crc": 2306695744,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_raglan_01m.fbx",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_shirtrolled_01m_lod0.fbx",
+      "alias": "Assets/Arts/ExternalArts/衣服/Mesh/npc_csl_shirtrolled_01m_lod0.fbx",
+      "crc": 3694587445,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_shirtrolled_01m_lod0.fbx",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_body_01m_01_01_c_uv1.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_body_01m_01_01_c_uv1.tif",
+      "crc": 888964611,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_body_01m_01_01_c_uv1.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_body_01m_01_01_m_uv1.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_body_01m_01_01_m_uv1.tif",
+      "crc": 4231945617,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_body_01m_01_01_m_uv1.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_body_01m_01_01_n_uv1.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_body_01m_01_01_n_uv1.tif",
+      "crc": 3316867412,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_body_01m_01_01_n_uv1.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_body_01m_01_01_o_uv1.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_body_01m_01_01_o_uv1.tif",
+      "crc": 3536352535,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_body_01m_01_01_o_uv1.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_breeches_01_01_01_m.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_breeches_01_01_01_m.tif",
+      "crc": 2732411829,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_breeches_01_01_01_m.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_breeches_01_01_01_n.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_breeches_01_01_01_n.tif",
+      "crc": 3850187109,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_breeches_01_01_01_n.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_breeches_01_01_01_o.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_breeches_01_01_01_o.tif",
+      "crc": 3625785557,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_breeches_01_01_01_o.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_breeches_01_01_01bw_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_breeches_01_01_01bw_c.tif",
+      "crc": 4281491716,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_breeches_01_01_01bw_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_breeches_01_01_01camo_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_breeches_01_01_01camo_c.tif",
+      "crc": 878805337,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_breeches_01_01_01camo_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_01_m.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_01_m.tif",
+      "crc": 1153934273,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_cap_01_01_01_m.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_01_n.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_01_n.tif",
+      "crc": 57137425,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_cap_01_01_01_n.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_01_o.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_01_o.tif",
+      "crc": 1040707745,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_cap_01_01_01_o.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_01bw_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_01bw_c.tif",
+      "crc": 447762854,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_cap_01_01_01bw_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_02_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_02_c.tif",
+      "crc": 3391031101,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_cap_01_01_02_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_03_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_cap_01_01_03_c.tif",
+      "crc": 1818758281,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_cap_01_01_03_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_jacketsleeveles_01_01_01_m.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_jacketsleeveles_01_01_01_m.tif",
+      "crc": 831408834,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_jacketsleeveles_01_01_01_m.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_jacketsleeveles_01_01_01_n.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_jacketsleeveles_01_01_01_n.tif",
+      "crc": 1982738450,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_jacketsleeveles_01_01_01_n.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_jacketsleeveles_01_01_01_o.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_jacketsleeveles_01_01_01_o.tif",
+      "crc": 1263409570,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_jacketsleeveles_01_01_01_o.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_jacketsleeveles_01_01_01bw_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_jacketsleeveles_01_01_01bw_c.tif",
+      "crc": 3897241072,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_jacketsleeveles_01_01_01bw_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_jacketsleeveles_01_01_02bw_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_jacketsleeveles_01_01_02bw_c.tif",
+      "crc": 3519418677,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_jacketsleeveles_01_01_02bw_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_pants_02_01_01_m.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_pants_02_01_01_m.tif",
+      "crc": 491956299,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_pants_02_01_01_m.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_pants_02_01_01_n.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_pants_02_01_01_n.tif",
+      "crc": 1525863067,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_pants_02_01_01_n.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_pants_02_01_01_o.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_pants_02_01_01_o.tif",
+      "crc": 1737685803,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_pants_02_01_01_o.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_pants_02_01_01bw_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_pants_02_01_01bw_c.tif",
+      "crc": 1276027258,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_pants_02_01_01bw_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_pants_02_01_03bw_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_pants_02_01_03bw_c.tif",
+      "crc": 1660455420,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_pants_02_01_03bw_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_raglan_01m_01_01_m.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_raglan_01m_01_01_m.tif",
+      "crc": 4113286189,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_raglan_01m_01_01_m.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_raglan_01m_01_01_n.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_raglan_01m_01_01_n.tif",
+      "crc": 2995502845,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_raglan_01m_01_01_n.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_raglan_01m_01_01_o.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_raglan_01m_01_01_o.tif",
+      "crc": 2414581581,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_raglan_01m_01_01_o.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_raglan_01m_01_01bw_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_raglan_01m_01_01bw_c.tif",
+      "crc": 1001236561,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_raglan_01m_01_01bw_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_shirtrolled_01m_01_01_m.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_shirtrolled_01m_01_01_m.tif",
+      "crc": 2656473237,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_shirtrolled_01m_01_01_m.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_shirtrolled_01m_01_01_n.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_shirtrolled_01m_01_01_n.tif",
+      "crc": 3656837701,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_shirtrolled_01m_01_01_n.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_shirtrolled_01m_01_01_o.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_shirtrolled_01m_01_01_o.tif",
+      "crc": 3835085813,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_shirtrolled_01m_01_01_o.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_shirtrolled_01m_01_01bw_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_shirtrolled_01m_01_01bw_c.tif",
+      "crc": 2075619953,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_shirtrolled_01m_01_01bw_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_shirtrolled_01m_01_02bw_c.tif",
+      "alias": "Assets/Arts/ExternalArts/衣服/Textures/npc_csl_shirtrolled_01m_01_02bw_c.tif",
+      "crc": 1111117492,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "npc_csl_shirtrolled_01m_01_02bw_c.tif",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/上衣/棕色T恤.prefab",
+      "alias": "棕色T恤",
+      "crc": 3061576667,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "棕色T恤.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/上衣/白色T恤.prefab",
+      "alias": "白色T恤",
+      "crc": 1933194574,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "白色T恤.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/上衣/黑色马甲.prefab",
+      "alias": "黑色马甲",
+      "crc": 75491502,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "黑色马甲.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/头部/卡其色棒球帽.prefab",
+      "alias": "卡其色棒球帽",
+      "crc": 162092258,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "卡其色棒球帽.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/头部/白色棒球帽.prefab",
+      "alias": "白色棒球帽",
+      "crc": 1349971298,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "白色棒球帽.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/头部/黑色棒球帽.prefab",
+      "alias": "黑色棒球帽",
+      "crc": 553834663,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "黑色棒球帽.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/背包/灰棕中型背包.prefab",
+      "alias": "灰棕中型背包",
+      "crc": 2806062300,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "灰棕中型背包.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/背包/粉色小型背包.prefab",
+      "alias": "粉色小书包",
+      "crc": 3127327799,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "粉色小型背包.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/背包/蓝白大型背包.prefab",
+      "alias": "蓝白大型背包",
+      "crc": 548954973,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "蓝白大型背包.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/背包/蓝色小型背包.prefab",
+      "alias": "蓝色小书包",
+      "crc": 652341162,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "蓝色小型背包.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/裤子/工装裤.prefab",
+      "alias": "工装裤",
+      "crc": 3347909855,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "工装裤.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/裤子/直筒裤.prefab",
+      "alias": "直筒裤",
+      "crc": 1059894463,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "直筒裤.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/裤子/迷彩裤.prefab",
+      "alias": "迷彩裤",
+      "crc": 2819701068,
+      "bundleName": "equiment_equiment.abassetbundle",
+      "assetName": "迷彩裤.prefab",
+      "dependencielist": [
+        "equiment_equiment.abassetbundle"
+      ]
+    }
+  ]
+}

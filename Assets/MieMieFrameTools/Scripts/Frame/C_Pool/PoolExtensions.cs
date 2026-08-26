@@ -14,7 +14,7 @@ namespace MieMieFrameWork.Pool
         /// </summary>
         public static void PushGameObjectToPool(this GameObject obj)
         {
-            ModuleHub.Instance.GetManager<PoolManager>().PushGameObj(obj);
+            PoolManager.Instance.PushGameObj(obj);
         }
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace MieMieFrameWork.Pool
         /// </summary>
         public static void PushGameObjectToPool(this Component component)
         {
-            ModuleHub.Instance.GetManager<PoolManager>().PushGameObj(component.gameObject);
+            PoolManager.Instance.PushGameObj(component.gameObject);
         }
 
         #endregion
@@ -34,7 +34,7 @@ namespace MieMieFrameWork.Pool
         /// </summary>
         public static void PushObjectToPool(this object obj)
         {
-            ModuleHub.Instance.GetManager<PoolManager>().PushObject(obj);
+            PoolManager.Instance.PushObject(obj);
         }
 
         #endregion

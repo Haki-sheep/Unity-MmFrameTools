@@ -113,9 +113,18 @@ namespace MieMieFrameWork.M_InputSystem
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Attack"",
+                    ""name"": ""LeftAttack"",
                     ""type"": ""Button"",
                     ""id"": ""6c2ab1b8-8984-453a-af3d-a3c78ae1679a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""40a8d919-7998-427c-bfe4-aa21d08f2d79"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -125,7 +134,7 @@ namespace MieMieFrameWork.M_InputSystem
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""852140f2-7766-474d-8707-702459ba45f3"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
@@ -134,7 +143,7 @@ namespace MieMieFrameWork.M_InputSystem
                     ""name"": ""Crouch"",
                     ""type"": ""Button"",
                     ""id"": ""27c5f898-bc57-4ee1-8800-db469aca5fe3"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -143,7 +152,7 @@ namespace MieMieFrameWork.M_InputSystem
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""f1ba0d36-48eb-4cd5-b651-1c94a6531f70"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -170,6 +179,33 @@ namespace MieMieFrameWork.M_InputSystem
                     ""name"": ""Sprint"",
                     ""type"": ""Button"",
                     ""id"": ""641cd816-40e6-41b4-8c3d-04687c349290"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BuildMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""7e6c5b4a-3d2c-4198-8f7e-6a5b4c3d2e1f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""8f7d6c5b-4e3d-4209-9a8f-7b6c5d4e3f20"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Flashlight"",
+                    ""type"": ""Button"",
+                    ""id"": ""a1fbe28d-72d1-4be6-b6d3-e97f26b7d641"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -349,7 +385,7 @@ namespace MieMieFrameWork.M_InputSystem
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
-                    ""action"": ""Attack"",
+                    ""action"": ""LeftAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -360,7 +396,7 @@ namespace MieMieFrameWork.M_InputSystem
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Attack"",
+                    ""action"": ""LeftAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -371,7 +407,7 @@ namespace MieMieFrameWork.M_InputSystem
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Touch"",
-                    ""action"": ""Attack"",
+                    ""action"": ""LeftAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -382,7 +418,7 @@ namespace MieMieFrameWork.M_InputSystem
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Joystick"",
-                    ""action"": ""Attack"",
+                    ""action"": ""LeftAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -393,7 +429,7 @@ namespace MieMieFrameWork.M_InputSystem
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
-                    ""action"": ""Attack"",
+                    ""action"": ""LeftAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -404,7 +440,18 @@ namespace MieMieFrameWork.M_InputSystem
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Attack"",
+                    ""action"": ""LeftAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""730f8bcb-f58a-4091-9461-6420a25a2b94"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""RightAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -521,7 +568,7 @@ namespace MieMieFrameWork.M_InputSystem
                 {
                     ""name"": """",
                     ""id"": ""1c04ea5f-b012-41d1-a6f7-02e963b52893"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
@@ -559,6 +606,39 @@ namespace MieMieFrameWork.M_InputSystem
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9a8e7d6c-5f4e-4310-ab90-8c7d6e5f4a31"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""BuildMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab9f8e7d-605f-4421-bc01-9d8e7f6a5b42"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c6e5f117-9ab3-4ca1-84d9-6c76ce0ee1d2"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Flashlight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1079,6 +1159,94 @@ namespace MieMieFrameWork.M_InputSystem
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""UICommand"",
+            ""id"": ""8f3c2a1e-4b5d-4e6f-9a0b-1c2d3e4f5a6b"",
+            ""actions"": [
+                {
+                    ""name"": ""OpenBag"",
+                    ""type"": ""Button"",
+                    ""id"": ""9a4d3b2f-5c6e-4f70-ab1c-2d3e4f5a6b7c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenSetting"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab5e4c30-6d7f-4081-bc2d-3e4f5a6b7c8d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ItemWheel"",
+                    ""type"": ""Button"",
+                    ""id"": ""bc6f5d41-7e80-4192-cd3e-4f5a6b7c8d9e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenCraft"",
+                    ""type"": ""Button"",
+                    ""id"": ""cf7a6e52-9b02-45d6-a172-8d9e0f1a2b3c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""cd706e52-8f91-42a3-de4f-5a6b7c8d9e0f"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""OpenBag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de817f63-90a2-43b4-ef50-6b7c8d9e0f1a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""OpenSetting"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef928074-a1b3-44c5-f061-7c8d9e0f1a2b"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ItemWheel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d08b7f63-ac13-46e7-b283-9e0f1a2b3c4d"",
+                    ""path"": ""<Keyboard>/n"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""OpenCraft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1148,13 +1316,17 @@ namespace MieMieFrameWork.M_InputSystem
             m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-            m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+            m_Player_LeftAttack = m_Player.FindAction("LeftAttack", throwIfNotFound: true);
+            m_Player_RightAttack = m_Player.FindAction("RightAttack", throwIfNotFound: true);
             m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
             m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_Previous = m_Player.FindAction("Previous", throwIfNotFound: true);
             m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
             m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+            m_Player_BuildMode = m_Player.FindAction("BuildMode", throwIfNotFound: true);
+            m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
+            m_Player_Flashlight = m_Player.FindAction("Flashlight", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1167,12 +1339,19 @@ namespace MieMieFrameWork.M_InputSystem
             m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
             m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+            // UICommand
+            m_UICommand = asset.FindActionMap("UICommand", throwIfNotFound: true);
+            m_UICommand_OpenBag = m_UICommand.FindAction("OpenBag", throwIfNotFound: true);
+            m_UICommand_OpenSetting = m_UICommand.FindAction("OpenSetting", throwIfNotFound: true);
+            m_UICommand_ItemWheel = m_UICommand.FindAction("ItemWheel", throwIfNotFound: true);
+            m_UICommand_OpenCraft = m_UICommand.FindAction("OpenCraft", throwIfNotFound: true);
         }
 
         ~@MmInputAciton()
         {
             UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, MmInputAciton.Player.Disable() has not been called.");
             UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, MmInputAciton.UI.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_UICommand.enabled, "This will cause a leak and performance issues, MmInputAciton.UICommand.Disable() has not been called.");
         }
 
         /// <summary>
@@ -1250,13 +1429,17 @@ namespace MieMieFrameWork.M_InputSystem
         private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Look;
-        private readonly InputAction m_Player_Attack;
+        private readonly InputAction m_Player_LeftAttack;
+        private readonly InputAction m_Player_RightAttack;
         private readonly InputAction m_Player_Interact;
         private readonly InputAction m_Player_Crouch;
         private readonly InputAction m_Player_Jump;
         private readonly InputAction m_Player_Previous;
         private readonly InputAction m_Player_Next;
         private readonly InputAction m_Player_Sprint;
+        private readonly InputAction m_Player_BuildMode;
+        private readonly InputAction m_Player_Rotate;
+        private readonly InputAction m_Player_Flashlight;
         /// <summary>
         /// Provides access to input actions defined in input action map "Player".
         /// </summary>
@@ -1277,9 +1460,13 @@ namespace MieMieFrameWork.M_InputSystem
             /// </summary>
             public InputAction @Look => m_Wrapper.m_Player_Look;
             /// <summary>
-            /// Provides access to the underlying input action "Player/Attack".
+            /// Provides access to the underlying input action "Player/LeftAttack".
             /// </summary>
-            public InputAction @Attack => m_Wrapper.m_Player_Attack;
+            public InputAction @LeftAttack => m_Wrapper.m_Player_LeftAttack;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/RightAttack".
+            /// </summary>
+            public InputAction @RightAttack => m_Wrapper.m_Player_RightAttack;
             /// <summary>
             /// Provides access to the underlying input action "Player/Interact".
             /// </summary>
@@ -1304,6 +1491,18 @@ namespace MieMieFrameWork.M_InputSystem
             /// Provides access to the underlying input action "Player/Sprint".
             /// </summary>
             public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/BuildMode".
+            /// </summary>
+            public InputAction @BuildMode => m_Wrapper.m_Player_BuildMode;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/Rotate".
+            /// </summary>
+            public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/Flashlight".
+            /// </summary>
+            public InputAction @Flashlight => m_Wrapper.m_Player_Flashlight;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1336,9 +1535,12 @@ namespace MieMieFrameWork.M_InputSystem
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @Attack.started += instance.OnAttack;
-                @Attack.performed += instance.OnAttack;
-                @Attack.canceled += instance.OnAttack;
+                @LeftAttack.started += instance.OnLeftAttack;
+                @LeftAttack.performed += instance.OnLeftAttack;
+                @LeftAttack.canceled += instance.OnLeftAttack;
+                @RightAttack.started += instance.OnRightAttack;
+                @RightAttack.performed += instance.OnRightAttack;
+                @RightAttack.canceled += instance.OnRightAttack;
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
@@ -1357,6 +1559,15 @@ namespace MieMieFrameWork.M_InputSystem
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @BuildMode.started += instance.OnBuildMode;
+                @BuildMode.performed += instance.OnBuildMode;
+                @BuildMode.canceled += instance.OnBuildMode;
+                @Rotate.started += instance.OnRotate;
+                @Rotate.performed += instance.OnRotate;
+                @Rotate.canceled += instance.OnRotate;
+                @Flashlight.started += instance.OnFlashlight;
+                @Flashlight.performed += instance.OnFlashlight;
+                @Flashlight.canceled += instance.OnFlashlight;
             }
 
             /// <summary>
@@ -1374,9 +1585,12 @@ namespace MieMieFrameWork.M_InputSystem
                 @Look.started -= instance.OnLook;
                 @Look.performed -= instance.OnLook;
                 @Look.canceled -= instance.OnLook;
-                @Attack.started -= instance.OnAttack;
-                @Attack.performed -= instance.OnAttack;
-                @Attack.canceled -= instance.OnAttack;
+                @LeftAttack.started -= instance.OnLeftAttack;
+                @LeftAttack.performed -= instance.OnLeftAttack;
+                @LeftAttack.canceled -= instance.OnLeftAttack;
+                @RightAttack.started -= instance.OnRightAttack;
+                @RightAttack.performed -= instance.OnRightAttack;
+                @RightAttack.canceled -= instance.OnRightAttack;
                 @Interact.started -= instance.OnInteract;
                 @Interact.performed -= instance.OnInteract;
                 @Interact.canceled -= instance.OnInteract;
@@ -1395,6 +1609,15 @@ namespace MieMieFrameWork.M_InputSystem
                 @Sprint.started -= instance.OnSprint;
                 @Sprint.performed -= instance.OnSprint;
                 @Sprint.canceled -= instance.OnSprint;
+                @BuildMode.started -= instance.OnBuildMode;
+                @BuildMode.performed -= instance.OnBuildMode;
+                @BuildMode.canceled -= instance.OnBuildMode;
+                @Rotate.started -= instance.OnRotate;
+                @Rotate.performed -= instance.OnRotate;
+                @Rotate.canceled -= instance.OnRotate;
+                @Flashlight.started -= instance.OnFlashlight;
+                @Flashlight.performed -= instance.OnFlashlight;
+                @Flashlight.canceled -= instance.OnFlashlight;
             }
 
             /// <summary>
@@ -1623,6 +1846,135 @@ namespace MieMieFrameWork.M_InputSystem
         /// Provides a new <see cref="UIActions" /> instance referencing this action map.
         /// </summary>
         public UIActions @UI => new UIActions(this);
+
+        // UICommand
+        private readonly InputActionMap m_UICommand;
+        private List<IUICommandActions> m_UICommandActionsCallbackInterfaces = new List<IUICommandActions>();
+        private readonly InputAction m_UICommand_OpenBag;
+        private readonly InputAction m_UICommand_OpenSetting;
+        private readonly InputAction m_UICommand_ItemWheel;
+        private readonly InputAction m_UICommand_OpenCraft;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "UICommand".
+        /// </summary>
+        public struct UICommandActions
+        {
+            private @MmInputAciton m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public UICommandActions(@MmInputAciton wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "UICommand/OpenBag".
+            /// </summary>
+            public InputAction @OpenBag => m_Wrapper.m_UICommand_OpenBag;
+            /// <summary>
+            /// Provides access to the underlying input action "UICommand/OpenSetting".
+            /// </summary>
+            public InputAction @OpenSetting => m_Wrapper.m_UICommand_OpenSetting;
+            /// <summary>
+            /// Provides access to the underlying input action "UICommand/ItemWheel".
+            /// </summary>
+            public InputAction @ItemWheel => m_Wrapper.m_UICommand_ItemWheel;
+            /// <summary>
+            /// Provides access to the underlying input action "UICommand/OpenCraft".
+            /// </summary>
+            public InputAction @OpenCraft => m_Wrapper.m_UICommand_OpenCraft;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_UICommand; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="UICommandActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(UICommandActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="UICommandActions" />
+            public void AddCallbacks(IUICommandActions instance)
+            {
+                if (instance == null || m_Wrapper.m_UICommandActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_UICommandActionsCallbackInterfaces.Add(instance);
+                @OpenBag.started += instance.OnOpenBag;
+                @OpenBag.performed += instance.OnOpenBag;
+                @OpenBag.canceled += instance.OnOpenBag;
+                @OpenSetting.started += instance.OnOpenSetting;
+                @OpenSetting.performed += instance.OnOpenSetting;
+                @OpenSetting.canceled += instance.OnOpenSetting;
+                @ItemWheel.started += instance.OnItemWheel;
+                @ItemWheel.performed += instance.OnItemWheel;
+                @ItemWheel.canceled += instance.OnItemWheel;
+                @OpenCraft.started += instance.OnOpenCraft;
+                @OpenCraft.performed += instance.OnOpenCraft;
+                @OpenCraft.canceled += instance.OnOpenCraft;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="UICommandActions" />
+            private void UnregisterCallbacks(IUICommandActions instance)
+            {
+                @OpenBag.started -= instance.OnOpenBag;
+                @OpenBag.performed -= instance.OnOpenBag;
+                @OpenBag.canceled -= instance.OnOpenBag;
+                @OpenSetting.started -= instance.OnOpenSetting;
+                @OpenSetting.performed -= instance.OnOpenSetting;
+                @OpenSetting.canceled -= instance.OnOpenSetting;
+                @ItemWheel.started -= instance.OnItemWheel;
+                @ItemWheel.performed -= instance.OnItemWheel;
+                @ItemWheel.canceled -= instance.OnItemWheel;
+                @OpenCraft.started -= instance.OnOpenCraft;
+                @OpenCraft.performed -= instance.OnOpenCraft;
+                @OpenCraft.canceled -= instance.OnOpenCraft;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="UICommandActions.UnregisterCallbacks(IUICommandActions)" />.
+            /// </summary>
+            /// <seealso cref="UICommandActions.UnregisterCallbacks(IUICommandActions)" />
+            public void RemoveCallbacks(IUICommandActions instance)
+            {
+                if (m_Wrapper.m_UICommandActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="UICommandActions.AddCallbacks(IUICommandActions)" />
+            /// <seealso cref="UICommandActions.RemoveCallbacks(IUICommandActions)" />
+            /// <seealso cref="UICommandActions.UnregisterCallbacks(IUICommandActions)" />
+            public void SetCallbacks(IUICommandActions instance)
+            {
+                foreach (var item in m_Wrapper.m_UICommandActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_UICommandActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="UICommandActions" /> instance referencing this action map.
+        /// </summary>
+        public UICommandActions @UICommand => new UICommandActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         /// <summary>
         /// Provides access to the input control scheme.
@@ -1710,12 +2062,19 @@ namespace MieMieFrameWork.M_InputSystem
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnLook(InputAction.CallbackContext context);
             /// <summary>
-            /// Method invoked when associated input action "Attack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// Method invoked when associated input action "LeftAttack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnAttack(InputAction.CallbackContext context);
+            void OnLeftAttack(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "RightAttack" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnRightAttack(InputAction.CallbackContext context);
             /// <summary>
             /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
@@ -1758,6 +2117,27 @@ namespace MieMieFrameWork.M_InputSystem
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnSprint(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "BuildMode" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnBuildMode(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Rotate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnRotate(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Flashlight" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnFlashlight(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
@@ -1836,6 +2216,42 @@ namespace MieMieFrameWork.M_InputSystem
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+        }
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UICommand" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="UICommandActions.AddCallbacks(IUICommandActions)" />
+        /// <seealso cref="UICommandActions.RemoveCallbacks(IUICommandActions)" />
+        public interface IUICommandActions
+        {
+            /// <summary>
+            /// Method invoked when associated input action "OpenBag" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnOpenBag(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "OpenSetting" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnOpenSetting(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "ItemWheel" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnItemWheel(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "OpenCraft" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnOpenCraft(InputAction.CallbackContext context);
         }
     }
 }

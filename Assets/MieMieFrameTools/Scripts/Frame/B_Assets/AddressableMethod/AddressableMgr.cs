@@ -1,4 +1,4 @@
-namespace MieMieFrameWork
+namespace MieMieFrameWork.AddressableAsset
 {
     using Cysharp.Threading.Tasks;
     using System.Collections.Generic;

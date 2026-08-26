@@ -1,0 +1,23 @@
+{
+    "name": "MieMieUIFrameWork.UI.Editor",
+    "rootNamespace": "MieMieUITools.Editor",
+    "references": [
+        "MieMieUIFrameWork.UI",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "DOTween.dll",
+        "DOTweenEditor.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

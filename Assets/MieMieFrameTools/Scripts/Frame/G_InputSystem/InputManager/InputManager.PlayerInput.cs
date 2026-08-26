@@ -9,6 +9,8 @@ namespace MieMieFrameWork.M_InputSystem
     /// </summary>
     public partial class InputManager
     {
+        //任何输入
+        public bool IsAnyInput => Keyboard.current.anyKey.wasPressedThisFrame;
         #region Player 连续输入
 
         public Vector2 MoveInput =>
@@ -29,8 +31,10 @@ namespace MieMieFrameWork.M_InputSystem
         public bool IsJumpHeld => ReadButtonHeld(inputActions?.Player.Jump);
         public bool IsJumpReleased => ReadButtonReleased(inputActions?.Player.Jump);
 
-        public bool IsAttackPressed => ReadButtonPressed(inputActions?.Player.Attack);
-
+        public bool IsLeftAttackHeld => ReadButtonHeld(inputActions?.Player.LeftAttack);
+        public bool IsRightAttackHeld => ReadButtonHeld(inputActions?.Player.RightAttack);
+        public bool IsLeftAttackPressed => ReadButtonPressed(inputActions?.Player.LeftAttack);
+        public bool IsRightAttackPressed => ReadButtonPressed(inputActions?.Player.RightAttack);
         public bool IsCrouchPressed => ReadButtonPressed(inputActions?.Player.Crouch);
         public bool IsCrouchHeld => ReadButtonHeld(inputActions?.Player.Crouch);
         public bool IsCrouchReleased => ReadButtonReleased(inputActions?.Player.Crouch);
@@ -51,6 +55,30 @@ namespace MieMieFrameWork.M_InputSystem
 
         public bool IsInteractHeld => ReadButtonHeld(inputActions?.Player.Interact);
         public bool IsInteractCanceled => ReadButtonReleased(inputActions?.Player.Interact);
+
+        public bool IsRotatePressed => ReadButtonPressed(inputActions?.Player.Rotate);
+        public bool IsFlashlightPressed => Keyboard.current != null && Keyboard.current.gKey.wasPressedThisFrame;
+
+        #endregion
+
+        #region UI 指针输入
+
+        /// <summary> UI Map 左键点击按下瞬间 </summary>
+        public bool IsUiClickPressed => ReadButtonPressed(inputActions?.UI.Click);
+
+        /// <summary> UI Map 右键点击按下瞬间 </summary>
+        public bool IsUiRightClickPressed => ReadButtonPressed(inputActions?.UI.RightClick);
+
+        /// <summary> UI Map 指针屏幕坐标 </summary>
+        public Vector2 UiPoint
+        {
+            get
+            {
+                if (inputActions == null)
+                    return default;
+                return inputActions.UI.Point.ReadValue<Vector2>();
+            }
+        }
 
         #endregion
 
@@ -82,7 +110,6 @@ namespace MieMieFrameWork.M_InputSystem
             playerActions.Interact.performed += OnInteractPerformed;
             playerActions.Interact.canceled += OnInteractCanceledCallback;
 
-            playerActions.Attack.started += OnAttackStarted;
 
             playerActions.Crouch.started += OnCrouchStarted;
             playerActions.Crouch.canceled += OnCrouchCanceled;
@@ -105,7 +132,6 @@ namespace MieMieFrameWork.M_InputSystem
             playerActions.Interact.performed -= OnInteractPerformed;
             playerActions.Interact.canceled -= OnInteractCanceledCallback;
 
-            playerActions.Attack.started -= OnAttackStarted;
 
             playerActions.Crouch.started -= OnCrouchStarted;
             playerActions.Crouch.canceled -= OnCrouchCanceled;

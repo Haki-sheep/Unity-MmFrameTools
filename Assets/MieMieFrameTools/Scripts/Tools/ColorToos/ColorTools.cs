@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MieMieFrameTools.Archive
 {
@@ -132,6 +134,31 @@ namespace MieMieFrameTools.Archive
                 ((value >> 8) & 0xFF) / 255f,
                 (value & 0xFF) / 255f
             );
+        }
+
+        /// <summary>
+        /// 将 Color 设置到 Image 上
+        /// </summary>
+        /// <param name="image">Image 组件</param>
+        /// <param name="color">颜色</param>
+        /// <param name="alpha">透明度</param>
+        /// <param name="alpha"></param>
+        public static void ImageToColor(Image image, Color color, float alpha){
+            if(image is null) return;
+            if(alpha < 0 || alpha > 1) return;
+            image.color = new Color(color.r, color.g, color.b, alpha);
+        }
+
+        /// <summary>
+        /// 将 Color 设置到 TextMeshProUGUI 上
+        /// </summary>
+        /// <param name="text">TextMeshProUGUI 组件</param>
+        /// <param name="color">颜色</param>
+        /// <param name="alpha">透明度</param>
+        public static void TmpToColor(TextMeshProUGUI text, Color color, float alpha){
+            if(text is null) return;
+            if(alpha < 0 || alpha > 1) return;
+            text.color = new Color(color.r, color.g, color.b, alpha);
         }
     }
 }

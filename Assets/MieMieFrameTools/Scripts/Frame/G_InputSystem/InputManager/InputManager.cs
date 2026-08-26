@@ -34,10 +34,14 @@ namespace MieMieFrameWork.M_InputSystem
             inputActions = new MmInputAciton();
             LoadRebinds();
             SubscribePlayerEvents();
+            SetupUiCommandMap();
             EnablePlayerInput();
         }
 
         #region Map 切换
+
+        /// <summary> UI 指针叠加是否开启 Player 仍可走 </summary>
+        private bool uiPointerOverlayEnabled;
 
         /// <summary>
         /// 启用 Player Map 关闭 UI Map
@@ -50,6 +54,7 @@ namespace MieMieFrameWork.M_InputSystem
             inputActions.UI.Disable();
             inputActions.Player.Enable();
             CurrentMapMode = E_InputMapMode.Player;
+            uiPointerOverlayEnabled = false;
         }
 
         /// <summary>
@@ -63,6 +68,33 @@ namespace MieMieFrameWork.M_InputSystem
             inputActions.Player.Disable();
             inputActions.UI.Enable();
             CurrentMapMode = E_InputMapMode.UI;
+            uiPointerOverlayEnabled = true;
+        }
+
+        /// <summary>
+        /// 叠加启用 UI Map 指针 不关 Player 供开背包等可走动 UI
+        /// </summary>
+        public void EnableUiPointerOverlay()
+        {
+            if (inputActions == null || uiPointerOverlayEnabled)
+                return;
+
+            inputActions.UI.Enable();
+            uiPointerOverlayEnabled = true;
+        }
+
+        /// <summary>
+        /// 关闭 UI 指针叠加 全 UI 模式时不关 UI Map
+        /// </summary>
+        public void DisableUiPointerOverlay()
+        {
+            if (inputActions == null || !uiPointerOverlayEnabled)
+                return;
+
+            if (CurrentMapMode != E_InputMapMode.UI)
+                inputActions.UI.Disable();
+
+            uiPointerOverlayEnabled = false;
         }
 
         /// <summary>
@@ -76,6 +108,7 @@ namespace MieMieFrameWork.M_InputSystem
             inputActions.Player.Disable();
             inputActions.UI.Disable();
             CurrentMapMode = E_InputMapMode.None;
+            uiPointerOverlayEnabled = false;
         }
 
         /// <summary>
@@ -105,6 +138,7 @@ namespace MieMieFrameWork.M_InputSystem
         {
             CancelRebind();
             DisableAllInput();
+            TeardownUiCommandMap();
 
             if (inputActions == null)
                 return;

@@ -36,6 +36,17 @@ namespace MieMieFrameWork.Editor.MmAssets
         public const string ProtocExeAsset = EditorRoot + "/SaveForEditor/Protoc/protoc.exe";
 
         /// <summary>
+        /// MmAsset 编辑器根
+        /// </summary>
+        public const string MmAssetEditorRoot = EditorRoot + "/MmAssetForEditor";
+
+        /// <summary>
+        /// MmAsset 运行时模块根
+        /// </summary>
+        public const string MmAssetModuleRoot =
+            FrameRoot + "/B_Assets/MmAssetsMethod/MmAsset";
+
+        /// <summary>
         /// proto 源文件目录
         /// </summary>
         public const string ProtoSourceFolderAsset = MieMieRoot + "/ARequired/GameSave";

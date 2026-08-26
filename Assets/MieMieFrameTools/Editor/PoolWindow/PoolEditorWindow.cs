@@ -401,7 +401,7 @@ namespace MieMieFrameWork.Editor.PoolEditor
 
             try
             {
-                return ModuleHub.Instance.GetManager<PoolManager>();
+                return PoolManager.Instance;
             }
             catch
             {

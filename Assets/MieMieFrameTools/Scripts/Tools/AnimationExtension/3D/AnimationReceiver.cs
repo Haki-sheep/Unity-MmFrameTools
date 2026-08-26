@@ -10,7 +10,8 @@ namespace MieMieFrameWork.MMAnimation
         Int,
         Float,
         String,
-        Object
+        Object,
+        Bool
     }
 
     public class AnimationReceiver : MonoBehaviour
@@ -169,6 +170,17 @@ namespace MieMieFrameWork.MMAnimation
                 return;
 
             (eventDelegate as Action<object>)?.Invoke(value);
+        }
+
+        /// <summary>
+        /// 触发 Bool 参数动画事件
+        /// </summary>
+        public void OnBoolAnimationEventTriggered(string eventName, bool value)
+        {
+            if (!eventDict.TryGetValue(eventName, out var eventDelegate))
+                return;
+
+            (eventDelegate as Action<bool>)?.Invoke(value);
         }
 
         #endregion

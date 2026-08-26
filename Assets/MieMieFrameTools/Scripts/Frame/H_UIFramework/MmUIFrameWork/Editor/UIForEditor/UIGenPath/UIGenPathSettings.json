@@ -1,0 +1,109 @@
+﻿{
+    "defaultFolder": "Assets/Test",
+    "prefixMappings": [
+        {
+            "prefix": "Img",
+            "componentType": "Image"
+        },
+        {
+            "prefix": "Image",
+            "componentType": "Image"
+        },
+        {
+            "prefix": "Btn",
+            "componentType": "Button"
+        },
+        {
+            "prefix": "Button",
+            "componentType": "Button"
+        },
+        {
+            "prefix": "Text",
+            "componentType": "Text"
+        },
+        {
+            "prefix": "Tmp",
+            "componentType": "TextMeshProUGUI"
+        },
+        {
+            "prefix": "Toggle",
+            "componentType": "Toggle"
+        },
+        {
+            "prefix": "Tg",
+            "componentType": "Toggle"
+        },
+        {
+            "prefix": "Input",
+            "componentType": "InputField"
+        },
+        {
+            "prefix": "Ipt",
+            "componentType": "TMP_InputField"
+        },
+        {
+            "prefix": "Drop",
+            "componentType": "TMP_Dropdown"
+        },
+        {
+            "prefix": "Slider",
+            "componentType": "Slider"
+        },
+        {
+            "prefix": "Scroll",
+            "componentType": "ScrollRect"
+        },
+        {
+            "prefix": "ScrollView",
+            "componentType": "ScrollRect"
+        },
+        {
+            "prefix": "Panel",
+            "componentType": "RectTransform"
+        },
+        {
+            "prefix": "RawImg",
+            "componentType": "RawImage"
+        },
+        {
+            "prefix": "RawImage",
+            "componentType": "RawImage"
+        },
+        {
+            "prefix": "RT",
+            "componentType": "RectTransform"
+        }
+    ],
+    "prefabFolders": [
+        {
+            "guid": "f5121d606772a874d80abc74ff135fc7",
+            "prefabName": "UITemple",
+            "folder": "Assets/_Scripts/UI"
+        },
+        {
+            "guid": "ca4e815a62cc7ab4f88a95d8e1595667",
+            "prefabName": "UIItemWheel",
+            "folder": "Assets/MmUIFrameWork/Widgets/ItemWheel/Runtime/UIFramScripts"
+        },
+        {
+            "guid": "f0942a64680c0a64f895beaf38893276",
+            "prefabName": "GameStartPanel",
+            "folder": "Assets/MmUIFrameWork/Runtime/GameUIFlow/Scripts/GameStartPanel"
+        },
+        {
+            "guid": "d184bb3969928ed49aa1c3875cb68dfe",
+            "prefabName": "TipPanel",
+            "folder": "Assets/MmUIFrameWork/Runtime/GameUIFlow/Scripts/TipPanel"
+        },
+        {
+            "guid": "c0f7715d75d78814ebf172aa3b6d7d23",
+            "prefabName": "PlayerPanel",
+            "folder": "Assets/Scripts/3_UI/GameRuntime/GameUIFlow/Scripts/PlayerPanel/Panel"
+        },
+        {
+            "guid": "4a3100f52529b4a439fec2b36630933f",
+            "prefabName": "SettingPanel",
+            "folder": "Assets/MmUIFrameWork/Runtime/GameUIFlow/Scripts/SettingPanel"
+        }
+    ]
+}

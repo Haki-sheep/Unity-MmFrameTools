@@ -1,0 +1,146 @@
+{
+  "bundleInfoList": [
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsB/Materials/LowPolyWeapons2_MAIN.mat",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsB/Materials/LowPolyWeapons2_MAIN.mat",
+      "crc": 4184109841,
+      "bundleName": "world_world.abassetbundle",
+      "assetName": "LowPolyWeapons2_MAIN.mat",
+      "dependencielist": [
+        "world_world.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsB/Models/Accessories/AmoBox_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsB/Models/Accessories/AmoBox_01.fbx",
+      "crc": 1397805330,
+      "bundleName": "world_world.abassetbundle",
+      "assetName": "AmoBox_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsB/Textures/Weapons2_Texture_01.png",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsB/Textures/Weapons2_Texture_01.png",
+      "crc": 1477996109,
+      "bundleName": "world_world.abassetbundle",
+      "assetName": "Weapons2_Texture_01.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/SearchContainer/AmoBox_01.prefab",
+      "alias": "Assets/Arts/InteranlArts/Prefabs/SearchContainer/AmoBox_01.prefab",
+      "crc": 3295328721,
+      "bundleName": "world_world.abassetbundle",
+      "assetName": "AmoBox_01.prefab",
+      "dependencielist": [
+        "world_world.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Materials/PolygonApocalypse_Material_01_A.mat",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Materials/PolygonApocalypse_Material_01_A.mat",
+      "crc": 818240244,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "PolygonApocalypse_Material_01_A.mat",
+      "dependencielist": [
+        "world_world_equip.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_01.fbx",
+      "crc": 3238966803,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "SM_Chr_Attach_Backpack_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_02.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_02.fbx",
+      "crc": 2259602627,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "SM_Chr_Attach_Backpack_02.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_Large_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_Large_01.fbx",
+      "crc": 2875114390,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "SM_Chr_Attach_Backpack_Large_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_Small_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Chr_Attach_Backpack_Small_01.fbx",
+      "crc": 2387320001,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "SM_Chr_Attach_Backpack_Small_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Emissive_01.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Emissive_01.png",
+      "crc": 3393361662,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "PolygonApocalypse_Emissive_01.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Normal.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Normal.png",
+      "crc": 1932568659,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "PolygonApocalypse_Normal.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/PolygonApocalypse_Texture_01_A.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/PolygonApocalypse_Texture_01_A.png",
+      "crc": 2840058769,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "PolygonApocalypse_Texture_01_A.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/背包/中型背包 中灰棕.prefab",
+      "alias": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/背包/中型背包 中灰棕.prefab",
+      "crc": 2890153300,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "中型背包 中灰棕.prefab",
+      "dependencielist": [
+        "world_world_equip.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/背包/中形背包 高白蓝.prefab",
+      "alias": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/背包/中形背包 高白蓝.prefab",
+      "crc": 3586441823,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "中形背包 高白蓝.prefab",
+      "dependencielist": [
+        "world_world_equip.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/背包/粉色小书包.prefab",
+      "alias": "粉色小书包",
+      "crc": 3144991135,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "粉色小书包.prefab",
+      "dependencielist": [
+        "world_world_equip.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Equiment/背包/蓝色小书包.prefab",
+      "alias": "蓝色小书包",
+      "crc": 3252109285,
+      "bundleName": "world_world_equip.abassetbundle",
+      "assetName": "蓝色小书包.prefab",
+      "dependencielist": [
+        "world_world_equip.abassetbundle"
+      ]
+    }
+  ]
+}

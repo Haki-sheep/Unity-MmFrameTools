@@ -1,0 +1,22 @@
+{
+    "name": "MieMieFrameWork.Runtime",
+    "rootNamespace": "MieMieFrameWork",
+    "references": [
+        "UniTask",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "Unity.InputSystem",
+        "UnityEngine.UI",
+        "MiMieEventBus",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

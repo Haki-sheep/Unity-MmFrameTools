@@ -1,4 +1,4 @@
-namespace MieMieFrameWork
+namespace MieMieFrameWork.AddressableAsset
 {
     /// <summary>
     /// Addressable 资源地址常量

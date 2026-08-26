@@ -1,0 +1,348 @@
+{
+  "bundleInfoList": [
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Materials/LowPolyWeapons_MAIN.mat",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Materials/LowPolyWeapons_MAIN.mat",
+      "crc": 3689298694,
+      "bundleName": "weapon_common.abassetbundle",
+      "assetName": "LowPolyWeapons_MAIN.mat",
+      "dependencielist": [
+        "weapon_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Textures/Texture_01.png",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Textures/Texture_01.png",
+      "crc": 3619431654,
+      "bundleName": "weapon_common.abassetbundle",
+      "assetName": "Texture_01.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/ClawHammer_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/ClawHammer_01.fbx",
+      "crc": 69497235,
+      "bundleName": "weapon_weapon_onehand.abassetbundle",
+      "assetName": "ClawHammer_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Crowbar_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Crowbar_01.fbx",
+      "crc": 1458035396,
+      "bundleName": "weapon_weapon_onehand.abassetbundle",
+      "assetName": "Crowbar_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Machete_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Machete_01.fbx",
+      "crc": 3728743593,
+      "bundleName": "weapon_weapon_onehand.abassetbundle",
+      "assetName": "Machete_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Material/Item/木头.mat",
+      "alias": "Assets/Arts/InteranlArts/Material/Item/木头.mat",
+      "crc": 3658777769,
+      "bundleName": "weapon_weapon_onehand.abassetbundle",
+      "assetName": "木头.mat",
+      "dependencielist": [
+        "weapon_weapon_onehand.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Material/Item/木头.png",
+      "alias": "Assets/Arts/InteranlArts/Material/Item/木头.png",
+      "crc": 3452758427,
+      "bundleName": "weapon_weapon_onehand.abassetbundle",
+      "assetName": "木头.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/单手长柄类/尼泊尔刀.prefab",
+      "alias": "尼泊尔刀",
+      "crc": 2831951258,
+      "bundleName": "weapon_weapon_onehand.abassetbundle",
+      "assetName": "尼泊尔刀.prefab",
+      "dependencielist": [
+        "weapon_common.abassetbundle",
+        "weapon_weapon_onehand.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/单手长柄类/撬棍.prefab",
+      "alias": "撬棍",
+      "crc": 3537767036,
+      "bundleName": "weapon_weapon_onehand.abassetbundle",
+      "assetName": "撬棍.prefab",
+      "dependencielist": [
+        "weapon_common.abassetbundle",
+        "weapon_weapon_onehand.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/单手长柄类/木头.prefab",
+      "alias": "木头",
+      "crc": 2665624700,
+      "bundleName": "weapon_weapon_onehand.abassetbundle",
+      "assetName": "木头.prefab",
+      "dependencielist": [
+        "weapon_weapon_onehand.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/单手长柄类/榔头.prefab",
+      "alias": "榔头",
+      "crc": 1116484546,
+      "bundleName": "weapon_weapon_onehand.abassetbundle",
+      "assetName": "榔头.prefab",
+      "dependencielist": [
+        "weapon_common.abassetbundle",
+        "weapon_weapon_onehand.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/OringinFbx/木头.fbx",
+      "alias": "Assets/Arts/InteranlArts/Prefabs/OringinFbx/木头.fbx",
+      "crc": 2858160116,
+      "bundleName": "weapon_weapon_onehand.abassetbundle",
+      "assetName": "木头.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Knife_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Knife_01.fbx",
+      "crc": 1491833042,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Knife_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Knife_02.fbx",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Knife_02.fbx",
+      "crc": 525068802,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Knife_02.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Materials/PolygonApocalypse_Material_01_A.mat",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Materials/PolygonApocalypse_Material_01_A.mat",
+      "crc": 818240244,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "PolygonApocalypse_Material_01_A.mat",
+      "dependencielist": [
+        "weapon_weapon_small.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Wep_Melee_HuntingKnife_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Models/SM_Wep_Melee_HuntingKnife_01.fbx",
+      "crc": 116661650,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "SM_Wep_Melee_HuntingKnife_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Emissive_01.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Emissive_01.png",
+      "crc": 3393361662,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "PolygonApocalypse_Emissive_01.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Normal.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/Misc/PolygonApocalypse_Normal.png",
+      "crc": 1932568659,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "PolygonApocalypse_Normal.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/PolygonApocalypse_Texture_01_A.png",
+      "alias": "Assets/Arts/ExternalArts/末日城市与模型包/Textures/PolygonApocalypse_Texture_01_A.png",
+      "crc": 2840058769,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "PolygonApocalypse_Texture_01_A.png",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Flashlight_01/Flashlight_01.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Flashlight_01/Flashlight_01.mat",
+      "crc": 562696219,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Flashlight_01.mat",
+      "dependencielist": [
+        "weapon_weapon_small.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Flashlight_01/Glass.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Flashlight_01/Glass.mat",
+      "crc": 456933592,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Glass.mat",
+      "dependencielist": [
+        "weapon_weapon_small.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Flashlight_01_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Flashlight_01_Mesh.FBX",
+      "crc": 4112861346,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Flashlight_01_Mesh.FBX",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Albedo.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Albedo.tga",
+      "crc": 2404656213,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Flashlight_01_Albedo.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Ao.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Ao.tga",
+      "crc": 4144337443,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Flashlight_01_Ao.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Emessive.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Emessive.tga",
+      "crc": 26474356,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Flashlight_01_Emessive.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Glass.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Glass.tga",
+      "crc": 2976015105,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Flashlight_01_Glass.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Metallic.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Metallic.tga",
+      "crc": 2103814432,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Flashlight_01_Metallic.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Normals.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Flashlight_01/Flashlight_01_Normals.tga",
+      "crc": 209082887,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "Flashlight_01_Normals.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/小刀短柄类/小刀.prefab",
+      "alias": "小刀",
+      "crc": 2595915054,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "小刀.prefab",
+      "dependencielist": [
+        "weapon_weapon_small.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/小刀短柄类/手电.prefab",
+      "alias": "手电",
+      "crc": 2634394294,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "手电.prefab",
+      "dependencielist": [
+        "weapon_weapon_small.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/小刀短柄类/普通军刀.prefab",
+      "alias": "普通军刀",
+      "crc": 3323965366,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "普通军刀.prefab",
+      "dependencielist": [
+        "weapon_common.abassetbundle",
+        "weapon_weapon_small.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/小刀短柄类/锯齿军刀.prefab",
+      "alias": "锯齿军刀",
+      "crc": 2296641720,
+      "bundleName": "weapon_weapon_small.abassetbundle",
+      "assetName": "锯齿军刀.prefab",
+      "dependencielist": [
+        "weapon_common.abassetbundle",
+        "weapon_weapon_small.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Baseball_bat_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Baseball_bat_01.fbx",
+      "crc": 330014277,
+      "bundleName": "weapon_weapon_twohand.abassetbundle",
+      "assetName": "Baseball_bat_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Baseball_bat_02.fbx",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/Baseball_bat_02.fbx",
+      "crc": 1410065557,
+      "bundleName": "weapon_weapon_twohand.abassetbundle",
+      "assetName": "Baseball_bat_02.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/FireAx_01.fbx",
+      "alias": "Assets/Arts/ExternalArts/LowPolyModel/LowPolyWeaponsA/Models/HandWeapon/FireAx_01.fbx",
+      "crc": 540363353,
+      "bundleName": "weapon_weapon_twohand.abassetbundle",
+      "assetName": "FireAx_01.fbx",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/双手类/带刺棒球棒.prefab",
+      "alias": "带刺棒球棒",
+      "crc": 3140672624,
+      "bundleName": "weapon_weapon_twohand.abassetbundle",
+      "assetName": "带刺棒球棒.prefab",
+      "dependencielist": [
+        "weapon_common.abassetbundle",
+        "weapon_weapon_twohand.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/双手类/棒球棒.prefab",
+      "alias": "棒球棒",
+      "crc": 2584531589,
+      "bundleName": "weapon_weapon_twohand.abassetbundle",
+      "assetName": "棒球棒.prefab",
+      "dependencielist": [
+        "weapon_common.abassetbundle",
+        "weapon_weapon_twohand.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/Weapon/双手类/消防斧.prefab",
+      "alias": "消防斧",
+      "crc": 3857261472,
+      "bundleName": "weapon_weapon_twohand.abassetbundle",
+      "assetName": "消防斧.prefab",
+      "dependencielist": [
+        "weapon_common.abassetbundle",
+        "weapon_weapon_twohand.abassetbundle"
+      ]
+    }
+  ]
+}

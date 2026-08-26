@@ -1,6 +1,7 @@
 namespace MieMieFrameWork
 {
     using Cysharp.Threading.Tasks;
+    using MieMieFrameWork.Asset;
     using MieMieFrameWork.Pool;
     using System;
     using UnityEngine;
@@ -69,7 +70,7 @@ namespace MieMieFrameWork
                 EffectClipRoot = serviceRoot.Find("EffectRoot");
             }
 
-            AudioSource ef = ModuleHub.Instance.GetManager<PoolManager>().GetGameObj<AudioSource>(efPlayerES, EffectClipRoot);
+            AudioSource ef = PoolManager.Instance.GetGameObj<AudioSource>(efPlayerES, EffectClipRoot);
             try
             {
                 if (ef != null)
@@ -152,7 +153,7 @@ namespace MieMieFrameWork
         public void PlayOneShot(string clipPath, Component component = null,
                     float volumeScale = 1, bool is3d = true, UnityAction callBack = null, float callBacKTime = 0)
         {
-            AudioClip audioClip = AddressableMgr.LoadAsset<AudioClip>(clipPath);
+            AudioClip audioClip = MmAssetMgr.LoadAsset<AudioClip>(clipPath);
             if (audioClip != null) PlayOneShot(audioClip, volumeScale, is3d, component, callBack, callBacKTime);
         }
 
@@ -176,7 +177,7 @@ namespace MieMieFrameWork
             UnityAction callBack = null,
             float callBackTime = 0)
         {
-            AudioClip audioClip = await AddressableMgr.LoadAssetAsync<AudioClip>(clipPath);
+            AudioClip audioClip = await MmAssetMgr.LoadAssetAsync<AudioClip>(clipPath);
             if (audioClip != null)
             {
                 PlayOneShot(audioClip, volumeScale, is3d, component, callBack, callBackTime);

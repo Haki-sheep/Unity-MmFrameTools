@@ -1,4 +1,4 @@
-namespace MieMieFrameWork
+﻿namespace MieMieFrameWork
 {
     using System;
     using System.Collections.Generic;
@@ -8,6 +8,7 @@ namespace MieMieFrameWork
     using MieMieFrameWork.Pool;
     using Sirenix.OdinInspector;
     using UnityEngine;
+    using UnityEngine.Serialization;
 
     /// <summary>
     /// 游戏根节点管理器 - 负责框架核心系统的初始化和管理
@@ -18,6 +19,7 @@ namespace MieMieFrameWork
 
         private readonly Dictionary<Type, IManagerBase> managerDict = new Dictionary<Type, IManagerBase>();
 
+        [FormerlySerializedAs("uICoreMgr")]
         [SerializeField, LabelText("UI管理器(可选)")]
         private MonoBehaviour uiCoreMgrBehaviour;
 
@@ -75,7 +77,7 @@ namespace MieMieFrameWork
             try
             {
                 InitArchiveMgr();
-                InitUICoreMgr();
+                InitUIHub();
                 GetAllManager();
             }
             catch (System.Exception ex)
@@ -139,22 +141,26 @@ namespace MieMieFrameWork
         /// <summary>
         /// 初始化 UI 管理器钩子
         /// </summary>
-        private void InitUICoreMgr()
+        private void InitUIHub()
         {
-            Type uiType = ResolveUICoreMgrType();
+            Type uiType = ResolveUIHubType();
             if (uiType == null)
             {
-                Debug.LogWarning("[ModuleHub] UI 模块未安装或 MieMieFrameWork.UI 程序集未编译 跳过 UICoreMgr 初始化");
+                Debug.LogWarning("[ModuleHub] UI 模块未安装或 MieMieUIFrameWork.UI 程序集未编译 跳过 UIHub 初始化");
                 return;
             }
 
             Component uiComp = uiCoreMgrBehaviour;
-            if (uiComp == null || uiComp.GetType() != uiType)
+            if (uiComp == null || !uiType.IsInstanceOfType(uiComp))
                 uiComp = GetComponent(uiType);
+
+            // UIRoot 与 FrameRoot 常为场景内两个物体 同物体找不到时全局搜一次
+            if (uiComp == null)
+                uiComp = FindAnyObjectByType(uiType, FindObjectsInactive.Include) as Component;
 
             if (uiComp == null)
             {
-                Debug.LogWarning("[ModuleHub] 已安装 UI 模块但未找到 UICoreMgr 组件 请挂到 ModuleHub 同物体或拖入序列化槽");
+                Debug.LogWarning("[ModuleHub] 已安装 UI 模块但未找到 UIHub 组件 请挂到场景 UIRoot 或拖入序列化槽");
                 return;
             }
 
@@ -163,12 +169,12 @@ namespace MieMieFrameWork
         }
 
         /// <summary>
-        /// 解析 MieMieFrameWork.UI.UICoreMgr 类型
+        /// 解析 MmUIFrameWork.Core.UIHub 类型
         /// </summary>
-        private static Type ResolveUICoreMgrType()
+        private static Type ResolveUIHubType()
         {
-            const string uiTypeName = "MieMieFrameWork.UI.UICoreMgr";
-            const string assemblyName = "MieMieFrameWork.UI";
+            const string uiTypeName = "MmUIFrameWork.Core.UIHub";
+            const string assemblyName = "MieMieUIFrameWork.UI";
 
             Type uiType = Type.GetType($"{uiTypeName}, {assemblyName}");
             if (uiType != null)
@@ -193,13 +199,14 @@ namespace MieMieFrameWork
         public bool HasUI => uiCoreMgr != null;
 
         /// <summary>
-        /// 获取 UI 管理器 需引用 MieMieFrameWork.UI 后使用 UICoreMgr 类型
+        /// 获取 UI 管理器 需引用 MieMieUIFrameWork.UI 后使用 UIHub 类型
         /// </summary>
         public T GetUI<T>() where T : class => uiCoreMgr as T;
 
         private void GetAllManager()
         {
             var managers = new List<IManagerBase>();
+            managers.Add(new MieMieFrameWork.Asset.MmAssetBootManager());
             managers.Add(new PoolManager(poolManagerConfig, transform));
             managers.Add(new AudioManager(audioManagerConfig, transform));
             managers.Add(new AsyncTaskManager());

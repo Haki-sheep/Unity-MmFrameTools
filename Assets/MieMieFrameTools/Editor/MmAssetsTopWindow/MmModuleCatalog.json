@@ -102,6 +102,22 @@
             "isBuiltIn": true
         },
         {
+            "id": "mmasset-bundle",
+            "displayName": "MmAsset AB 资源管线",
+            "category": "框架",
+            "description": "AssetBundle 整包/热更 Runtime。编辑器在框架 Assets/MieMieFrameTools/Editor/MmAssetForEditor",
+            "version": "1.0.0",
+            "gitUrl": "",
+            "packageName": "",
+            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/B_Assets/MmAssetsMethod/MmAsset/Runtime/MmAssetFrame.cs",
+            "tags": [
+                "资源",
+                "AB",
+                "热更"
+            ],
+            "isBuiltIn": true
+        },
+        {
             "id": "event-bus",
             "displayName": "EventBus 事件总线",
             "category": "框架",
@@ -496,52 +512,20 @@
             "isBuiltIn": false
         },
         {
-            "id": "mm-builder",
-            "displayName": "体素建造",
+            "id": "mm-build-system",
+            "displayName": "网格化建筑",
             "category": "玩法",
             "subCategory": "世界",
-            "description": "通用体素建造 射线检测 预览 放置破坏 虚拟网格分区与存档 宿主需自备 InputSystem",
+            "description": "放置预览 吸附对齐 占地检测与建造撤销",
             "version": "0.1.0",
-            "gitUrl": "git@github.com:Haki-sheep/MmBuildSystem.git?path=Packages/com.hakisheep.mm-builder",
-            "packageName": "com.hakisheep.mm-builder",
-            "installCheckPath": "Packages/com.hakisheep.mm-builder/package.json",
-            "tags": [
-                "建造",
-                "体素"
-            ],
-            "isBuiltIn": false
-        },
-        {
-            "id": "mm-procedural-building",
-            "displayName": "程序化建筑",
-            "category": "玩法",
-            "subCategory": "世界",
-            "description": "程序化建筑画布 蓝图生成 房间阵列与网格合并优化",
-            "version": "0.1.0",
-            "gitUrl": "git@github.com:Haki-sheep/MmBuildSystem.git?path=Packages/com.hakisheep.mm-procedural-building",
-            "packageName": "com.hakisheep.mm-procedural-building",
-            "installCheckPath": "Packages/com.hakisheep.mm-procedural-building/package.json",
-            "tags": [
-                "建造",
-                "程序化"
-            ],
-            "isBuiltIn": false
-        },
-        {
-            "id": "mm-interaction-system",
-            "displayName": "通用交互",
-            "category": "玩法",
-            "subCategory": "交互",
-            "description": "IInteractable 契约 InteractionDetector SphereCastNonAlloc InteractionManager 聚焦与 Hold 交互",
-            "version": "0.1.0",
-            "gitUrl": "",
+            "gitUrl": "https://github.com/yourname/MmBuildSystem.git",
             "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/G_InputSystem/InputInteract/Core/InteractionManager.cs",
+            "installCheckPath": "Assets/Modules/MmBuildSystem",
             "tags": [
-                "交互",
-                "3C"
+                "建造",
+                "沙盒"
             ],
-            "isBuiltIn": true
+            "isBuiltIn": false
         },
         {
             "id": "mm-minimap-system",
@@ -653,6 +637,23 @@
             "tags": [
                 "编辑器",
                 "性能"
+            ],
+            "isBuiltIn": true
+        },
+        {
+            "id": "mmasset-editor",
+            "displayName": "MmAsset 资源管线",
+            "category": "编辑器拓展",
+            "description": "AB 整包/热更构建 模块配置 运行自检 入口 Tools/MieMieFrameWork/MmAsset/资源管线",
+            "version": "1.0.0",
+            "gitUrl": "",
+            "packageName": "",
+            "installCheckPath": "Assets/MieMieFrameTools/Editor/MmAssetForEditor/RootWindow/BuildWindow.cs",
+            "menuPath": "Tools/MieMieFrameWork/MmAsset/资源管线",
+            "tags": [
+                "编辑器",
+                "资源",
+                "AB"
             ],
             "isBuiltIn": true
         },

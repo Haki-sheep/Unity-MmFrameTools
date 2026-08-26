@@ -40,7 +40,14 @@ namespace MieMieFrameWork.MMAnimation
         /// <returns></returns>
         public static bool IsAnimationAtTag(this Animator animator, string tagName, int layerIndex = 0)
         {
-            return animator.GetCurrentAnimatorStateInfo(layerIndex).IsTag(tagName);
+            if (animator.GetCurrentAnimatorStateInfo(layerIndex).IsTag(tagName))
+                return true;
+
+            if (animator.IsInTransition(layerIndex) &&
+                animator.GetNextAnimatorStateInfo(layerIndex).IsTag(tagName))
+                return true;
+
+            return false;
         }
 
 

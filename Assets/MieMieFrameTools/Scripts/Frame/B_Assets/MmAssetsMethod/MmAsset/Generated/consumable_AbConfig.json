@@ -1,0 +1,915 @@
+{
+  "bundleInfoList": [
+    {
+      "path": "Assets/Arts/ExternalArts/FP_AniamtionClip(仅参考)/FP_AmClips/吃饭与喝水/吃饭/进食_鸡肉_隐藏道具.anim",
+      "alias": "Assets/Arts/ExternalArts/FP_AniamtionClip(仅参考)/FP_AmClips/吃饭与喝水/吃饭/进食_鸡肉_隐藏道具.anim",
+      "crc": 3989269809,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "进食_鸡肉_隐藏道具.anim",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/FP_AniamtionClip(仅参考)/FP_AmClips/吃饭与喝水/喝水/饮水_汽水_开关.anim",
+      "alias": "Assets/Arts/ExternalArts/FP_AniamtionClip(仅参考)/FP_AmClips/吃饭与喝水/喝水/饮水_汽水_开关.anim",
+      "crc": 1659154166,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "饮水_汽水_开关.anim",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/标准第一人称动画资源/08_进食/进食_粥_盘子打开.FBX",
+      "alias": "Assets/Arts/ExternalArts/标准第一人称动画资源/08_进食/进食_粥_盘子打开.FBX",
+      "crc": 2184294530,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "进食_粥_盘子打开.FBX",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/标准第一人称动画资源/08_进食/进食_肉丸_打开.FBX",
+      "alias": "Assets/Arts/ExternalArts/标准第一人称动画资源/08_进食/进食_肉丸_打开.FBX",
+      "crc": 3945616580,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "进食_肉丸_打开.FBX",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/标准第一人称动画资源/09_饮水/饮水_摇摇杯_开关盖.FBX",
+      "alias": "Assets/Arts/ExternalArts/标准第一人称动画资源/09_饮水/饮水_摇摇杯_开关盖.FBX",
+      "crc": 3522257139,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "饮水_摇摇杯_开关盖.FBX",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/标准第一人称动画资源/09_饮水/饮水_柠檬水瓶_开关盖.FBX",
+      "alias": "Assets/Arts/ExternalArts/标准第一人称动画资源/09_饮水/饮水_柠檬水瓶_开关盖.FBX",
+      "crc": 1187599645,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "饮水_柠檬水瓶_开关盖.FBX",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Food/Oringin/FoodAm.anim",
+      "alias": "FoodAm",
+      "crc": 2851429871,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "FoodAm.anim",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Food/Oringin/食物本体动画.controller",
+      "alias": "食物本体动画",
+      "crc": 24452855,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "食物本体动画.controller",
+      "dependencielist": [
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Food/Override/丸子/丸子.overrideController",
+      "alias": "丸子",
+      "crc": 4141452029,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "丸子.overrideController",
+      "dependencielist": [
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Food/Override/沙丁鱼罐头/沙丁鱼罐头.overrideController",
+      "alias": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Food/Override/沙丁鱼罐头/沙丁鱼罐头.overrideController",
+      "crc": 3431290703,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "沙丁鱼罐头.overrideController",
+      "dependencielist": [
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Food/Override/粥/粥.overrideController",
+      "alias": "粥",
+      "crc": 502069063,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "粥.overrideController",
+      "dependencielist": [
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Food/Override/鸡腿/鸡腿.overrideController",
+      "alias": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Food/Override/鸡腿/鸡腿.overrideController",
+      "crc": 577382435,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "鸡腿.overrideController",
+      "dependencielist": [
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Water/Override/啤酒/啤酒.overrideController",
+      "alias": "啤酒",
+      "crc": 2436580547,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "啤酒.overrideController",
+      "dependencielist": [
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Water/Override/摇摇杯/摇摇杯.overrideController",
+      "alias": "摇摇杯",
+      "crc": 4153881274,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "摇摇杯.overrideController",
+      "dependencielist": [
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Water/Override/雪碧/雪碧.overrideController",
+      "alias": "雪碧",
+      "crc": 3212685342,
+      "bundleName": "consumable_common.abassetbundle",
+      "assetName": "雪碧.overrideController",
+      "dependencielist": [
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Chocolate/Chocolate.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Chocolate/Chocolate.mat",
+      "crc": 1766826801,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Chocolate.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Foods_Set_01/Foods_Set_01.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Foods_Set_01/Foods_Set_01.mat",
+      "crc": 2463026023,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Foods_Set_01.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Foods_Set_02/Foods_Set_02.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Foods_Set_02/Foods_Set_02.mat",
+      "crc": 1072196821,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Foods_Set_02.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Fork/Fork.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Fork/Fork.mat",
+      "crc": 1579810912,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Fork.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Jar_Of_Food/Jar_Of_Food_01.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Jar_Of_Food/Jar_Of_Food_01.mat",
+      "crc": 3890759472,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Jar_Of_Food_01.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Lemonade_Bottle/Lemonade_Bottle_01.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Lemonade_Bottle/Lemonade_Bottle_01.mat",
+      "crc": 828783541,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Lemonade_Bottle_01.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Lemonade_Bottle/Lemonade_Bottle_02.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Lemonade_Bottle/Lemonade_Bottle_02.mat",
+      "crc": 1992704357,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Lemonade_Bottle_02.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Shaker/Shaker_01.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Shaker/Shaker_01.mat",
+      "crc": 2182100780,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Shaker_01.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Shaker/Shaker_02.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Shaker/Shaker_02.mat",
+      "crc": 3316665852,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Shaker_02.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Shaker/Shaker_03.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Shaker/Shaker_03.mat",
+      "crc": 4174406732,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Shaker_03.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Soda/Soda_01.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Soda/Soda_01.mat",
+      "crc": 3370791295,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Soda_01.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Soda/Soda_02.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Soda/Soda_02.mat",
+      "crc": 2404010927,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Soda_02.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Soda/Soda_03.mat",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Materials/Soda/Soda_03.mat",
+      "crc": 2989122079,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Soda_03.mat",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Chicken_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Chicken_Mesh.FBX",
+      "crc": 1939622045,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Chicken_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Chocolate_01_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Chocolate_01_Mesh.FBX",
+      "crc": 1580786017,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Chocolate_01_Mesh.FBX",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Chocolate_02_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Chocolate_02_Mesh.FBX",
+      "crc": 3037682274,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Chocolate_02_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Chocolate_03_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Chocolate_03_Mesh.FBX",
+      "crc": 1523396956,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Chocolate_03_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Lemonade_Bottle_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Lemonade_Bottle_Mesh.FBX",
+      "crc": 230971997,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Lemonade_Bottle_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Meatball_Fork_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Meatball_Fork_Mesh.FBX",
+      "crc": 3164334479,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Meatball_Fork_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Meatball_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Meatball_Mesh.FBX",
+      "crc": 3110304969,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Meatball_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Porridge_Plate_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Porridge_Plate_Mesh.FBX",
+      "crc": 344445237,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Porridge_Plate_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Porridge_Spoon_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Porridge_Spoon_Mesh.FBX",
+      "crc": 3663560873,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Porridge_Spoon_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Shaker_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Shaker_Mesh.FBX",
+      "crc": 2563872412,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Shaker_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Soda_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Soda_Mesh.FBX",
+      "crc": 1648252699,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Soda_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Sprats_Fork_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Sprats_Fork_Mesh.FBX",
+      "crc": 2729524158,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Sprats_Fork_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Sprats_Mesh.FBX",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Mesh/Things/Sprats_Mesh.FBX",
+      "crc": 2927289990,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Sprats_Mesh.FBX",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Chocolate/Chocolate_Albedo.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Chocolate/Chocolate_Albedo.tga",
+      "crc": 2573032174,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Chocolate_Albedo.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Chocolate/Chocolate_Ao.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Chocolate/Chocolate_Ao.tga",
+      "crc": 651407224,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Chocolate_Ao.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Chocolate/Chocolate_Metallic.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Chocolate/Chocolate_Metallic.tga",
+      "crc": 3454637153,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Chocolate_Metallic.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Chocolate/Chocolate_Normals.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Chocolate/Chocolate_Normals.tga",
+      "crc": 1356020093,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Chocolate_Normals.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_01/Foods_Set_01_Albedo.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_01/Foods_Set_01_Albedo.tga",
+      "crc": 3441934954,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Foods_Set_01_Albedo.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_01/Foods_Set_01_Ao.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_01/Foods_Set_01_Ao.tga",
+      "crc": 2456733098,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Foods_Set_01_Ao.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_01/Foods_Set_01_Metallic.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_01/Foods_Set_01_Metallic.tga",
+      "crc": 1825736226,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Foods_Set_01_Metallic.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_01/Foods_Set_01_Normals.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_01/Foods_Set_01_Normals.tga",
+      "crc": 3125937372,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Foods_Set_01_Normals.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_02/Foods_Set_02_Albedo.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_02/Foods_Set_02_Albedo.tga",
+      "crc": 2404689609,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Foods_Set_02_Albedo.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_02/Foods_Set_02_Ao.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_02/Foods_Set_02_Ao.tga",
+      "crc": 1744781482,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Foods_Set_02_Ao.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_02/Foods_Set_02_Metallic.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_02/Foods_Set_02_Metallic.tga",
+      "crc": 2737278522,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Foods_Set_02_Metallic.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_02/Foods_Set_02_Normals.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Foods_Set_02/Foods_Set_02_Normals.tga",
+      "crc": 4124018154,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Foods_Set_02_Normals.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Fork/Fork_Albedo.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Fork/Fork_Albedo.tga",
+      "crc": 1441172506,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Fork_Albedo.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Fork/Fork_Ao.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Fork/Fork_Ao.tga",
+      "crc": 382714953,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Fork_Ao.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Fork/Fork_Metallic.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Fork/Fork_Metallic.tga",
+      "crc": 3532196738,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Fork_Metallic.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Fork/Fork_Normals.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Fork/Fork_Normals.tga",
+      "crc": 3939480750,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Fork_Normals.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Jar_Of_Food/Jar_Of_Food_Albedo_01.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Jar_Of_Food/Jar_Of_Food_Albedo_01.tga",
+      "crc": 2042928908,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Jar_Of_Food_Albedo_01.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Jar_Of_Food/Jar_Of_Food_Ao.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Jar_Of_Food/Jar_Of_Food_Ao.tga",
+      "crc": 4062627680,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Jar_Of_Food_Ao.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Jar_Of_Food/Jar_Of_Food_Metallic.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Jar_Of_Food/Jar_Of_Food_Metallic.tga",
+      "crc": 2954253154,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Jar_Of_Food_Metallic.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Jar_Of_Food/Jar_Of_Food_Normals.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Jar_Of_Food/Jar_Of_Food_Normals.tga",
+      "crc": 2827652082,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Jar_Of_Food_Normals.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Lemonade_Bottle/Lemonade_Bottle_Albedo_01.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Lemonade_Bottle/Lemonade_Bottle_Albedo_01.tga",
+      "crc": 417149843,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Lemonade_Bottle_Albedo_01.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Lemonade_Bottle/Lemonade_Bottle_Albedo_02.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Lemonade_Bottle/Lemonade_Bottle_Albedo_02.tga",
+      "crc": 1602046275,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Lemonade_Bottle_Albedo_02.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Lemonade_Bottle/Lemonade_Bottle_Ao.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Lemonade_Bottle/Lemonade_Bottle_Ao.tga",
+      "crc": 3127366958,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Lemonade_Bottle_Ao.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Lemonade_Bottle/Lemonade_Bottle_Metallic.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Lemonade_Bottle/Lemonade_Bottle_Metallic.tga",
+      "crc": 3259310012,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Lemonade_Bottle_Metallic.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Lemonade_Bottle/Lemonade_Bottle_Normal.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Lemonade_Bottle/Lemonade_Bottle_Normal.tga",
+      "crc": 3354566818,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Lemonade_Bottle_Normal.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Albedo_01.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Albedo_01.tga",
+      "crc": 210017497,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Shaker_Albedo_01.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Albedo_02.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Albedo_02.tga",
+      "crc": 1260709385,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Shaker_Albedo_02.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Albedo_03.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Albedo_03.tga",
+      "crc": 1984221113,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Shaker_Albedo_03.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Ao.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Ao.tga",
+      "crc": 2103564526,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Shaker_Ao.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Metallic.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Metallic.tga",
+      "crc": 2595625632,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Shaker_Metallic.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Normal.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Shaker/Shaker_Normal.tga",
+      "crc": 3929877858,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Shaker_Normal.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Albedo_01.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Albedo_01.tga",
+      "crc": 2984087456,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Soda_Albedo_01.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Albedo_02.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Albedo_02.tga",
+      "crc": 4135449968,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Soda_Albedo_02.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Albedo_03.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Albedo_03.tga",
+      "crc": 3407731904,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Soda_Albedo_03.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Albedo_Ao.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Albedo_Ao.tga",
+      "crc": 4135592046,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Soda_Albedo_Ao.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Metallic.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Metallic.tga",
+      "crc": 2119663440,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Soda_Metallic.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Normals.tga",
+      "alias": "Assets/Arts/ExternalArts/第一人称动画配套资源/3D物品资源/Textures/Soda/Soda_Normals.tga",
+      "crc": 2286036613,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "Soda_Normals.tga",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/巧克力/巧克力.prefab",
+      "alias": "巧克力",
+      "crc": 473142564,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "巧克力.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/巧克力/脆脆鲨.prefab",
+      "alias": "脆脆鲨",
+      "crc": 188887735,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "脆脆鲨.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/巧克力/酥脆棒.prefab",
+      "alias": "酥脆棒",
+      "crc": 4083771335,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "酥脆棒.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/摇摇杯/棕色摇摇杯.prefab",
+      "alias": "棕色摇摇杯",
+      "crc": 264783127,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "棕色摇摇杯.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle",
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/摇摇杯/绿色摇摇杯.prefab",
+      "alias": "绿色摇摇杯",
+      "crc": 991939192,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "绿色摇摇杯.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle",
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/摇摇杯/蓝色摇摇杯.prefab",
+      "alias": "蓝色摇摇杯",
+      "crc": 2240665617,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "蓝色摇摇杯.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle",
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/沙丁鱼/沙丁鱼罐头.prefab",
+      "alias": "沙丁鱼罐头",
+      "crc": 2878013561,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "沙丁鱼罐头.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle",
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/沙丁鱼/沙丁鱼罐头叉子.prefab",
+      "alias": "沙丁鱼罐头叉子",
+      "crc": 1870278481,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "沙丁鱼罐头叉子.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/瓶装酒/山啤.prefab",
+      "alias": "山啤",
+      "crc": 53536826,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "山啤.prefab",
+      "dependencielist": [
+        "consumable_common.abassetbundle",
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/瓶装酒/青岛.prefab",
+      "alias": "青岛",
+      "crc": 565346517,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "青岛.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle",
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/粥/粥勺子.prefab",
+      "alias": "粥勺子",
+      "crc": 926482180,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "粥勺子.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/粥/速食粥.prefab",
+      "alias": "速食粥",
+      "crc": 3281498156,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "速食粥.prefab",
+      "dependencielist": [
+        "consumable_common.abassetbundle",
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/肉丸罐头/丸子叉子.prefab",
+      "alias": "丸子叉子",
+      "crc": 1332848611,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "丸子叉子.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/肉丸罐头/速食丸子.prefab",
+      "alias": "速食丸子",
+      "crc": 1524227792,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "速食丸子.prefab",
+      "dependencielist": [
+        "consumable_common.abassetbundle",
+        "consumable_foodandwaterprefab.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/雪碧/苹果味雪碧.prefab",
+      "alias": "苹果味雪碧",
+      "crc": 3986419104,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "苹果味雪碧.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle",
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/雪碧/薄荷味雪碧.prefab",
+      "alias": "薄荷味雪碧",
+      "crc": 2310290832,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "薄荷味雪碧.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle",
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/雪碧/雷霆味雪碧.prefab",
+      "alias": "雷霆味雪碧",
+      "crc": 3415829378,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "雷霆味雪碧.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle",
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Prefabs/Items/Model/FoodAndWater/鸡腿/鸡腿.prefab",
+      "alias": "鸡腿",
+      "crc": 349536422,
+      "bundleName": "consumable_foodandwaterprefab.abassetbundle",
+      "assetName": "鸡腿.prefab",
+      "dependencielist": [
+        "consumable_foodandwaterprefab.abassetbundle",
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/ExternalArts/FP_AniamtionClip(仅参考)/FP_AmClips/吃饭与喝水/吃饭/进食_巧克力01_隐藏道具.anim",
+      "alias": "Assets/Arts/ExternalArts/FP_AniamtionClip(仅参考)/FP_AmClips/吃饭与喝水/吃饭/进食_巧克力01_隐藏道具.anim",
+      "crc": 2268824482,
+      "bundleName": "consumable_foodanimations.abassetbundle",
+      "assetName": "进食_巧克力01_隐藏道具.anim",
+      "dependencielist": []
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Food/Oringin/食物本体动画0.x.controller",
+      "alias": "食物本体动画0.x",
+      "crc": 1713670239,
+      "bundleName": "consumable_foodanimations.abassetbundle",
+      "assetName": "食物本体动画0.x.controller",
+      "dependencielist": [
+        "consumable_common.abassetbundle"
+      ]
+    },
+    {
+      "path": "Assets/Arts/InteranlArts/Aniamtions/ItemAm/Food/Override/巧克力/巧克力系.overrideController",
+      "alias": "巧克力系",
+      "crc": 3100979121,
+      "bundleName": "consumable_foodanimations.abassetbundle",
+      "assetName": "巧克力系.overrideController",
+      "dependencielist": [
+        "consumable_foodanimations.abassetbundle",
+        "consumable_common.abassetbundle"
+      ]
+    }
+  ]
+}

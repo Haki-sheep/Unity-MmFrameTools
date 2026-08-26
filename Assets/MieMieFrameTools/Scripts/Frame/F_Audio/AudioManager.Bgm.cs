@@ -1,6 +1,7 @@
 namespace MieMieFrameWork
 {
     using Cysharp.Threading.Tasks;
+    using MieMieFrameWork.Asset;
     using UnityEngine;
 
     /// <summary>
@@ -77,7 +78,7 @@ namespace MieMieFrameWork
         /// </summary>
         public void PlayerBgAudio(string path, BgAudioType type = BgAudioType.BGM, bool needLoop = true, float volume = -1)
         {
-            AudioClip clip = AddressableMgr.LoadAsset<AudioClip>(path);
+            AudioClip clip = MmAssetMgr.LoadAsset<AudioClip>(path);
             PlayerBgAudio(clip, type, needLoop, volume);
         }
 
@@ -87,7 +88,7 @@ namespace MieMieFrameWork
         public async UniTask PlayerBgAudioAsync(string path, BgAudioType type = BgAudioType.BGM, bool needLoop = true, float volume = 1)
         {
             var sw = System.Diagnostics.Stopwatch.StartNew();
-            AudioClip clip = await AddressableMgr.LoadAssetAsync<AudioClip>(path);
+            AudioClip clip = await MmAssetMgr.LoadAssetAsync<AudioClip>(path);
             sw.Stop();
             Debug.Log($"[AudioManager] 异步加载音频耗时: {sw.ElapsedMilliseconds}ms | Path: {path}");
 
@@ -106,7 +107,7 @@ namespace MieMieFrameWork
         /// </summary>
         public async UniTask<AudioClip> LoadBgClipAsync(string path)
         {
-            return await AddressableMgr.LoadAssetAsync<AudioClip>(path);
+            return await MmAssetMgr.LoadAssetAsync<AudioClip>(path);
         }
 
         /// <summary>

@@ -1,0 +1,28 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/MieMieFrameTools/Editor/UIForEditor/GenerateUITemp.uss?fileID=7433441132597879392&amp;guid=f109a58eeeec6bf4eb17f031ee45d422&amp;type=3#GenerateUITemp" />
+    <ui:VisualElement name="RootElement" style="flex-grow: 1; flex-direction: column; align-items: stretch; justify-content: flex-end; flex-shrink: 0; align-self: stretch;">
+        <ui:Label text="UI模版生成器" name="ToolName" style="align-self: center; align-items: flex-start; justify-content: flex-start; font-size: 30px; height: auto; flex-grow: 0; margin-top: 5px; margin-right: 5px; margin-bottom: 5px; margin-left: 5px;" />
+        <ui:VisualElement name="BaseInfoElement" style="flex-grow: 0; flex-direction: column; align-self: stretch; background-size: 100% 30%; flex-shrink: 0; height: auto;">
+            <ui:TextField label="类名" placeholder-text="(拖入预制体自动生成)" name="ClassName" style="align-items: flex-start; width: auto; flex-grow: 0; background-size: 100% 10%; margin-top: 10px; margin-bottom: 10px;" />
+            <uie:ObjectField label="预制体:" name="PrefabGameObject" type="UnityEngine.GameObject, UnityEngine.CoreModule" style="align-self: stretch; align-items: flex-start; flex-grow: 0; justify-content: flex-start; margin-top: 10px; margin-bottom: 10px;" />
+            <ui:VisualElement name="PathElement" style="flex-direction: row; align-items: center; margin-top: 10px; margin-right: 4px; margin-bottom: 10px; margin-left: 4px; flex-grow: 0;">
+                <ui:TextField label="生成路径 :" placeholder-text="Assets/_Scripts/UI/" name="CheckPath" style="flex-grow: 1; margin-right: 5px;" />
+                <ui:Button text="浏览文件夹" name="SelectButton" style="width: 80px; margin-right: 5px;" />
+                <ui:Button text="恢复默认路径" name="DefaultPahtButton" style="width: 100px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="BindHintSection" style="flex-grow: 1; flex-direction: column; align-self: stretch; margin-top: 8px; margin-right: 8px; margin-bottom: 8px; margin-left: 8px;">
+            <ui:Label text="在 Hierarchy 的 UIContent 及其子节点右侧勾选组件按钮&#10;绿色表示已加入自动生成字段&#10;颜色丢失时可点根节点「反同步」或下方按钮 从 Gen 引用重建勾选" name="BindHintLabel" style="font-size: 12px; color: rgba(190, 220, 255, 0.95); white-space: normal; background-color: rgba(50, 70, 95, 0.35); padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px; border-radius: 3px;" />
+            <ui:Button text="从 Gen 反向同步勾选高亮" name="SyncBindFromGenButton" style="align-self: stretch; height: 26px; margin-top: 6px; font-size: 12px;" />
+        </ui:VisualElement>
+        <ui:Foldout text="路径设置" name="PathSettingsFoldout" value="false" style="margin-left: 8px; margin-right: 8px; margin-bottom: 4px;">
+            <ui:TextField label="默认生成目录" name="DefaultGenFolder" value="Assets/_Scripts/UI/" style="margin-top: 4px; margin-bottom: 4px;" />
+            <ui:VisualElement style="flex-direction: row; flex-wrap: wrap; margin-top: 4px;">
+                <ui:Button text="保存为默认" name="SaveDefaultFolderButton" style="width: 90px; margin-right: 6px;" />
+                <ui:Button text="清空路径记忆" name="ClearPathRecordsButton" style="width: 100px;" />
+            </ui:VisualElement>
+            <ui:Label name="PathRecordHint" text="预制体上次生成目录会自动记忆（仅存 Assets 相对路径）" style="font-size: 11px; color: rgba(180, 180, 180, 0.9); margin-top: 4px; white-space: normal;" />
+        </ui:Foldout>
+        <ui:Button text="生成脚本" name="CreatButton" style="align-self: stretch; height: 30px; margin: 8px; font-size: 14px; -unity-font-style: bold;" />
+    </ui:VisualElement>
+</ui:UXML>

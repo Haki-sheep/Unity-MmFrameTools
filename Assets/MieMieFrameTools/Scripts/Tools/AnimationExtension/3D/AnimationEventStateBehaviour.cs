@@ -1,10 +1,9 @@
-
-
 namespace MieMieFrameWork.MMAnimation
 {
     using System;
     using System.Collections.Generic;
     using UnityEngine;
+
     [Serializable]
     public class AnimationEventInfo
     {
@@ -17,6 +16,7 @@ namespace MieMieFrameWork.MMAnimation
         public float floatValue;
         public string stringValue;
         public UnityEngine.Object objectValue;
+        public bool boolValue;
         public bool isTrigger = false;
 
         /// <summary>
@@ -29,18 +29,24 @@ namespace MieMieFrameWork.MMAnimation
     {
         [SerializeField] private List<AnimationEventInfo> animationEventInfoList = new();
         private AnimationReceiver reciver;
-        private float animationStartTime; 
+        private float animationStartTime;
         private float previewFrameTime;
-        private bool isFirstFrame = true; 
+        private bool isFirstFrame = true;
+
+        /// <summary> 按 triggerTime 排序后的下标缓存 </summary>
+        private readonly List<int> sortedEventIndexList = new();
+
+        /// <summary> 缓存对应的事件条数 </summary>
+        private int sortedCacheCount = -1;
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            animationStartTime = stateInfo.normalizedTime; // 记录进入时的归一化时间
+            animationStartTime = stateInfo.normalizedTime;
             previewFrameTime = animationStartTime;
-            isFirstFrame = true; // 重置第一帧标记
+            isFirstFrame = true;
             reciver ??= animator.GetComponent<AnimationReceiver>();
+            RebuildSortedEventIndexList(true);
 
-            // 重置所有事件的触发状态
             foreach (var item in animationEventInfoList)
             {
                 item.isTrigger = false;
@@ -51,14 +57,12 @@ namespace MieMieFrameWork.MMAnimation
         {
             float currentTime = stateInfo.normalizedTime;
 
-            // 首帧将预览时间锚定在进入点 避免单帧跨度过大时漏掉早期触发点
             if (isFirstFrame)
             {
                 isFirstFrame = false;
                 previewFrameTime = animationStartTime;
             }
 
-            // 计算相对于动画开始时间的归一化时间
             float normalizedCurrentTime = (currentTime - animationStartTime) % 1f;
             if (normalizedCurrentTime < 0) normalizedCurrentTime += 1f;
 
@@ -67,21 +71,19 @@ namespace MieMieFrameWork.MMAnimation
 
             bool inTransition = animator.IsInTransition(layerIndex);
 
-            foreach (var item in animationEventInfoList)
+            RebuildSortedEventIndexList(false);
+            int sortedCount = sortedEventIndexList.Count;
+            for (int order = 0; order < sortedCount; order++)
             {
-                //是否已经循环 - 使用相对时间
-                bool looped = normalizedCurrentTime < normalizedPreviewTime;
+                var item = animationEventInfoList[sortedEventIndexList[order]];
 
-                //如果是循环触发模式且动画循环了，重置触发标记
+                bool looped = normalizedCurrentTime < normalizedPreviewTime;
                 if (looped && !item.triggerOnce)
-                {
                     item.isTrigger = false;
-                }
 
                 if (item.isTrigger)
                     continue;
 
-                // 等待过渡结束模式 融合期间不触发 过渡结束后补发
                 if (item.waitTransitionEnd)
                 {
                     if (inTransition)
@@ -96,17 +98,39 @@ namespace MieMieFrameWork.MMAnimation
                     continue;
                 }
 
-                //触发点检测 - 使用相对时间
-                bool onTriggerPoint = normalizedPreviewTime <= item.triggerTime && normalizedCurrentTime >= item.triggerTime;
-
-                // 检测触发点
+                bool onTriggerPoint = normalizedPreviewTime <= item.triggerTime
+                    && normalizedCurrentTime >= item.triggerTime;
                 if (onTriggerPoint)
                 {
                     item.isTrigger = true;
                     TriggerEvent(item, normalizedCurrentTime, normalizedPreviewTime);
                 }
             }
+
             previewFrameTime = currentTime;
+        }
+
+        /// <summary>
+        /// 重建按 triggerTime 升序的下标 列表不变则复用
+        /// </summary>
+        private void RebuildSortedEventIndexList(bool force)
+        {
+            int eventCount = animationEventInfoList.Count;
+            if (!force && sortedCacheCount == eventCount && sortedEventIndexList.Count == eventCount)
+                return;
+
+            sortedEventIndexList.Clear();
+            for (int i = 0; i < eventCount; i++)
+                sortedEventIndexList.Add(i);
+
+            sortedEventIndexList.Sort((leftIndex, rightIndex) =>
+            {
+                float leftTime = animationEventInfoList[leftIndex].triggerTime;
+                float rightTime = animationEventInfoList[rightIndex].triggerTime;
+                int timeCompare = leftTime.CompareTo(rightTime);
+                return timeCompare != 0 ? timeCompare : leftIndex.CompareTo(rightIndex);
+            });
+            sortedCacheCount = eventCount;
         }
 
         /// <summary>
@@ -114,6 +138,9 @@ namespace MieMieFrameWork.MMAnimation
         /// </summary>
         private void TriggerEvent(AnimationEventInfo item, float normalizedCurrentTime, float normalizedPreviewTime)
         {
+            if (reciver == null)
+                return;
+
             switch (item.paramType)
             {
                 case E_AniamtionParamType.None:
@@ -131,13 +158,19 @@ namespace MieMieFrameWork.MMAnimation
                 case E_AniamtionParamType.Object:
                     reciver.OnObjectAnimationEventTriggered(item.eventName, item.objectValue);
                     break;
+                case E_AniamtionParamType.Bool:
+                    reciver.OnBoolAnimationEventTriggered(item.eventName, item.boolValue);
+                    break;
             }
 
+#if UNITY_EDITOR
             Debug.Log($"AnimationEvent:{item.eventName} + " +
                  $"TriggerNomalizaTime:{item.triggerTime} + " +
                  $"CurrentRelativeTime:{normalizedCurrentTime} + " +
                  $"Offset:{normalizedCurrentTime - normalizedPreviewTime} + " +
-                 $"WaitTransitionEnd:{item.waitTransitionEnd}");
+                 $"WaitTransitionEnd:{item.waitTransitionEnd} + " +
+                 $"ParamType:{item.paramType}");
+#endif
         }
     }
 }
