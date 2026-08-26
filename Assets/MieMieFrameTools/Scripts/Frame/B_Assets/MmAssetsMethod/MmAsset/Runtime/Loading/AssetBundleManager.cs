@@ -31,6 +31,8 @@ namespace MieMieFrameWork.Asset
         public AssetBundle assetsBundle;
         /// <summary>已加载资源对象</summary>
         public UnityEngine.Object assetObj;
+        /// <summary>资源引用计数</summary>
+        public int assetRefCount;
     }
 
     /// <summary>
@@ -57,6 +59,19 @@ namespace MieMieFrameWork.Asset
             bundle = null;
             referenceCount = 0;
         }
+    }
+
+    /// <summary>
+    /// 进行中的 AB 加载
+    /// </summary>
+    internal sealed class BundleLoadingOperation
+    {
+        /// <summary>异步完成源</summary>
+        public UniTaskCompletionSource<AssetBundle> source;
+        /// <summary>Unity 加载请求</summary>
+        public AssetBundleCreateRequest request;
+        /// <summary>内存解密字节</summary>
+        public byte[] decryptedByteList;
     }
 
     /// <summary>
@@ -87,7 +102,7 @@ namespace MieMieFrameWork.Asset
         /// <summary>
         /// 进行中 AB 加载任务字典
         /// </summary>
-        private readonly Dictionary<string, UniTaskCompletionSource<AssetBundle>> loadingBundleSourceDict = new(StringComparer.OrdinalIgnoreCase);
+        private readonly Dictionary<string, BundleLoadingOperation> loadingBundleOperationDict = new(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// 资源包缓存对象池
@@ -109,8 +124,7 @@ namespace MieMieFrameWork.Asset
             if (string.IsNullOrEmpty(configPath))
                 return false;
 
-            string loadPath = PrepareDecryptedPath(bundleModuleEnum, configPath);
-            var configBundle = AssetBundle.LoadFromFile(loadPath);
+            var configBundle = LoadBundleFromSource(configPath);
             if (configBundle == null)
                 return false;
 
@@ -136,12 +150,11 @@ namespace MieMieFrameWork.Asset
             if (string.IsNullOrEmpty(configPath))
                 return false;
 
-            string loadPath = await PrepareDecryptedPathAsync(
-                bundleModuleEnum,
-                configPath,
-                cancellationToken);
-            var configBundle = await AssetBundle.LoadFromFileAsync(loadPath)
-                .ToUniTask(cancellationToken: cancellationToken);
+            byte[] decryptedByteList = TryDecryptBundleBytes(configPath);
+            var configRequest = decryptedByteList != null
+                ? AssetBundle.LoadFromMemoryAsync(decryptedByteList)
+                : AssetBundle.LoadFromFileAsync(configPath);
+            var configBundle = await configRequest.ToUniTask(cancellationToken: cancellationToken);
             if (configBundle == null)
                 return false;
 
@@ -187,6 +200,19 @@ namespace MieMieFrameWork.Asset
         #region AB 加载
 
         /// <summary>
+        /// 缓存命中时对资源条目本体与依赖包叠加引用
+        /// </summary>
+        public void RetainBundle(BundleItem bundleItem)
+        {
+            if (bundleItem == null)
+                return;
+
+            RetainSingle(bundleItem.bundleName, bundleItem.bundleModuleEnum);
+            foreach (string dependency in bundleItem.dependencyList)
+                RetainSingle(dependency, bundleItem.bundleModuleEnum);
+        }
+
+        /// <summary>
         /// 同步加载资源条目及依赖包
         /// </summary>
         public BundleItem LoadAssetBundle(uint crc)
@@ -194,9 +220,7 @@ namespace MieMieFrameWork.Asset
             if (!bundleItemDict.TryGetValue(crc, out var bundleItem))
                 return null;
 
-            if (bundleItem.assetsBundle == null)
-                bundleItem.assetsBundle = LoadBundle(bundleItem.bundleName, bundleItem.bundleModuleEnum);
-
+            bundleItem.assetsBundle = LoadBundle(bundleItem.bundleName, bundleItem.bundleModuleEnum);
             foreach (string dependency in bundleItem.dependencyList)
                 LoadBundle(dependency, bundleItem.bundleModuleEnum);
             return bundleItem;
@@ -209,14 +233,10 @@ namespace MieMieFrameWork.Asset
             BundleItem bundleItem,
             CancellationToken cancellationToken = default)
         {
-            if (bundleItem.assetsBundle == null)
-            {
-                bundleItem.assetsBundle = await LoadBundleAsync(
-                    bundleItem.bundleName,
-                    bundleItem.bundleModuleEnum,
-                    cancellationToken);
-            }
-
+            bundleItem.assetsBundle = await LoadBundleAsync(
+                bundleItem.bundleName,
+                bundleItem.bundleModuleEnum,
+                cancellationToken);
             foreach (string dependency in bundleItem.dependencyList)
             {
                 await LoadBundleAsync(
@@ -239,14 +259,24 @@ namespace MieMieFrameWork.Asset
                 return cache.bundle;
             }
 
+            if (loadingBundleOperationDict.TryGetValue(cacheKey, out var operation)
+                && operation.request != null)
+            {
+                var waitingBundle = operation.request.assetBundle;
+                if (waitingBundle == null)
+                {
+                    Debug.LogWarning("同步请求撞上进行中的异步加载 " + abName + " 本次返回null");
+                    return null;
+                }
+                return CompleteBundleLoad(cacheKey, bundleModuleEnum, abName, waitingBundle);
+            }
+
             string sourcePath = BundleSettings.Instance.ResolveBundleFilePath(bundleModuleEnum, abName);
-            string loadPath = PrepareDecryptedPath(bundleModuleEnum, sourcePath);
-            var bundle = AssetBundle.LoadFromFile(loadPath);
+            var bundle = LoadBundleFromSource(sourcePath);
             if (bundle == null)
                 return null;
 
-            AddBundleCache(cacheKey, bundleModuleEnum, abName, bundle);
-            return bundle;
+            return CompleteBundleLoad(cacheKey, bundleModuleEnum, abName, bundle);
         }
 
         /// <summary>
@@ -264,40 +294,44 @@ namespace MieMieFrameWork.Asset
                 return cache.bundle;
             }
 
-            if (loadingBundleSourceDict.TryGetValue(cacheKey, out var runningSource))
+            if (loadingBundleOperationDict.TryGetValue(cacheKey, out var runningOperation))
             {
-                var runningBundle = await runningSource.Task.AttachExternalCancellation(cancellationToken);
+                var runningBundle = await runningOperation.source.Task
+                    .AttachExternalCancellation(cancellationToken);
                 if (loadedBundleDict.TryGetValue(cacheKey, out var runningCache))
                     runningCache.referenceCount++;
                 return runningBundle;
             }
 
-            var loadingSource = new UniTaskCompletionSource<AssetBundle>();
-            loadingBundleSourceDict.Add(cacheKey, loadingSource);
+            var loadingOperation = new BundleLoadingOperation
+            {
+                source = new UniTaskCompletionSource<AssetBundle>(),
+            };
+            loadingBundleOperationDict.Add(cacheKey, loadingOperation);
             try
             {
                 string sourcePath = BundleSettings.Instance.ResolveBundleFilePath(bundleModuleEnum, abName);
-                string loadPath = await PrepareDecryptedPathAsync(
-                    bundleModuleEnum,
-                    sourcePath,
-                    cancellationToken);
-                var bundle = await AssetBundle.LoadFromFileAsync(loadPath)
-                    .ToUniTask(cancellationToken: cancellationToken);
+                byte[] decryptedByteList = TryDecryptBundleBytes(sourcePath);
+                loadingOperation.decryptedByteList = decryptedByteList;
+                loadingOperation.request = decryptedByteList != null
+                    ? AssetBundle.LoadFromMemoryAsync(decryptedByteList)
+                    : AssetBundle.LoadFromFileAsync(sourcePath);
+                var bundle = await loadingOperation.request.ToUniTask(cancellationToken: cancellationToken);
                 if (bundle == null)
                     throw new IOException("异步加载资源包失败 " + sourcePath);
 
-                AddBundleCache(cacheKey, bundleModuleEnum, abName, bundle);
-                loadingSource.TrySetResult(bundle);
+                CompleteBundleLoad(cacheKey, bundleModuleEnum, abName, bundle);
+                loadingOperation.source.TrySetResult(bundle);
                 return bundle;
             }
             catch (Exception exception)
             {
-                loadingSource.TrySetException(exception);
+                loadingOperation.source.TrySetException(exception);
                 throw;
             }
             finally
             {
-                loadingBundleSourceDict.Remove(cacheKey);
+                loadingBundleOperationDict.Remove(cacheKey);
             }
         }
 
@@ -313,8 +347,10 @@ namespace MieMieFrameWork.Asset
             ReleaseBundle(bundleItem.bundleName, bundleItem.bundleModuleEnum, unloadAllLoadedObjects);
             foreach (string dependency in bundleItem.dependencyList)
                 ReleaseBundle(dependency, bundleItem.bundleModuleEnum, unloadAllLoadedObjects);
-            bundleItem.assetsBundle = null;
-            bundleItem.assetObj = null;
+
+            string cacheKey = CreateCacheKey(bundleItem.bundleModuleEnum, bundleItem.bundleName);
+            if (!loadedBundleDict.ContainsKey(cacheKey))
+                bundleItem.assetsBundle = null;
         }
 
         /// <summary>
@@ -402,7 +438,13 @@ namespace MieMieFrameWork.Asset
             var removeBundleNameList = new List<string>();
             foreach (var item in bundleItemListDict)
             {
-                if (item.Value.Count > 0 && item.Value[0].bundleModuleEnum == bundleModuleEnum)
+                var bundleItemList = item.Value;
+                for (int itemIndex = bundleItemList.Count - 1; itemIndex >= 0; itemIndex--)
+                {
+                    if (bundleItemList[itemIndex].bundleModuleEnum == bundleModuleEnum)
+                        bundleItemList.RemoveAt(itemIndex);
+                }
+                if (bundleItemList.Count == 0)
                     removeBundleNameList.Add(item.Key);
             }
             foreach (string bundleName in removeBundleNameList)
@@ -440,48 +482,55 @@ namespace MieMieFrameWork.Asset
 #endif
 
         /// <summary>
-        /// 获取同步可加载路径
+        /// 加密包解密到内存 未加密返回 null
         /// </summary>
-        private static string PrepareDecryptedPath(
-            BundleModuleEnum bundleModuleEnum,
-            string sourcePath)
+        private static byte[] TryDecryptBundleBytes(string sourcePath)
         {
-            if (!BundleSettings.Instance.bundleEncryptToggle.isEncrypt
-                || !AES.IsEncryptedFile(sourcePath))
-                return sourcePath;
-
-            string decryptedPath = BundleSettings.Instance.GetDecryptedBundlePath(
-                bundleModuleEnum,
-                Path.GetFileName(sourcePath));
-            AES.AESFileDecryptToFile(
+            if (!BundleSettings.Instance.bundleEncryptToggle.isEncrypt)
+                return null;
+            return AES.AESFileByteDecrypt(
                 sourcePath,
-                decryptedPath,
                 BundleSettings.Instance.bundleEncryptToggle.encryptKey);
-            return decryptedPath;
         }
 
         /// <summary>
-        /// 获取异步可加载路径
+        /// 从磁盘或内存打开 AB
         /// </summary>
-        private static async UniTask<string> PrepareDecryptedPathAsync(
-            BundleModuleEnum bundleModuleEnum,
-            string sourcePath,
-            CancellationToken cancellationToken)
+        private static AssetBundle LoadBundleFromSource(string sourcePath)
         {
-            if (!BundleSettings.Instance.bundleEncryptToggle.isEncrypt
-                || !AES.IsEncryptedFile(sourcePath))
-                return sourcePath;
+            byte[] decryptedByteList = TryDecryptBundleBytes(sourcePath);
+            return decryptedByteList != null
+                ? AssetBundle.LoadFromMemory(decryptedByteList)
+                : AssetBundle.LoadFromFile(sourcePath);
+        }
 
-            string decryptedPath = BundleSettings.Instance.GetDecryptedBundlePath(
-                bundleModuleEnum,
-                Path.GetFileName(sourcePath));
-            await UniTask.RunOnThreadPool(
-                () => AES.AESFileDecryptToFile(
-                    sourcePath,
-                    decryptedPath,
-                    BundleSettings.Instance.bundleEncryptToggle.encryptKey),
-                cancellationToken: cancellationToken);
-            return decryptedPath;
+        /// <summary>
+        /// 对已加载资源包叠加引用 未加载则静默忽略
+        /// </summary>
+        private void RetainSingle(string abName, BundleModuleEnum bundleModuleEnum)
+        {
+            string cacheKey = CreateCacheKey(bundleModuleEnum, abName);
+            if (loadedBundleDict.TryGetValue(cacheKey, out var cache))
+                cache.referenceCount++;
+        }
+
+        /// <summary>
+        /// 写入已加载缓存或叠加引用
+        /// </summary>
+        private AssetBundle CompleteBundleLoad(
+            string cacheKey,
+            BundleModuleEnum bundleModuleEnum,
+            string abName,
+            AssetBundle bundle)
+        {
+            if (loadedBundleDict.TryGetValue(cacheKey, out var cache))
+            {
+                cache.referenceCount++;
+                return cache.bundle;
+            }
+
+            AddBundleCache(cacheKey, bundleModuleEnum, abName, bundle);
+            return bundle;
         }
 
         /// <summary>

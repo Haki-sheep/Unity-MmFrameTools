@@ -26,6 +26,9 @@ public interface IResourcesInterface
     /// <summary>异步加载资源 不实例化</summary>
     UniTask<T> LoadResourceAsync<T>(string path, CancellationToken cancellationToken = default) where T : UnityEngine.Object;
 
+    /// <summary>释放 LoadResource 引用 减到零卸载对应 AB</summary>
+    void ReleaseAsset(string path);
+
     /// <summary>同步克隆预制体</summary>
     GameObject Instantiate(string path,
                            Transform parent = null,

@@ -66,12 +66,12 @@ public sealed class ResourceManager : IResourcesInterface
         bool hasBundleItem = bundleManager.TryGetBundleItem(path, out var bundleItem);
         string assetPath = hasBundleItem ? bundleItem.path : path;
         uint crc = hasBundleItem ? bundleItem.crc : Crc32.GetCrc32(assetPath);
-        if (loadedAssetDict.TryGetValue(crc, out var loadedItem) && loadedItem.assetObj != null)
-            return loadedItem.assetObj as T;
 
 #if UNITY_EDITOR
         if (BundleSettings.Instance.loadAssetType == E_LoadAssetType.Editor)
         {
+            if (TryRetainCachedAsset<T>(crc, out var editorCachedAsset))
+                return editorCachedAsset;
             var editorAsset = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetPath);
             CacheLoadedAsset(crc, bundleItem, assetPath, editorAsset);
             return editorAsset;
@@ -82,6 +82,12 @@ public sealed class ResourceManager : IResourcesInterface
         {
             Debug.LogError("资源地址不存在 " + path);
             return null;
+        }
+
+        if (TryRetainCachedAsset<T>(crc, out var cachedAsset))
+        {
+            bundleManager.RetainBundle(bundleItem);
+            return cachedAsset;
         }
 
         bundleItem = bundleManager.LoadAssetBundle(crc);
@@ -105,12 +111,12 @@ public sealed class ResourceManager : IResourcesInterface
         bool hasBundleItem = bundleManager.TryGetBundleItem(path, out var bundleItem);
         string assetPath = hasBundleItem ? bundleItem.path : path;
         uint crc = hasBundleItem ? bundleItem.crc : Crc32.GetCrc32(assetPath);
-        if (loadedAssetDict.TryGetValue(crc, out var loadedItem) && loadedItem.assetObj != null)
-            return loadedItem.assetObj as T;
 
 #if UNITY_EDITOR
         if (BundleSettings.Instance.loadAssetType == E_LoadAssetType.Editor)
         {
+            if (TryRetainCachedAsset<T>(crc, out var editorCachedAsset))
+                return editorCachedAsset;
             var editorAsset = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetPath);
             CacheLoadedAsset(crc, bundleItem, assetPath, editorAsset);
             return editorAsset;
@@ -120,7 +126,14 @@ public sealed class ResourceManager : IResourcesInterface
         if (!hasBundleItem)
             return null;
 
+        if (TryRetainCachedAsset<T>(crc, out var cachedAsset))
+        {
+            bundleManager.RetainBundle(bundleItem);
+            return cachedAsset;
+        }
+
         await bundleManager.LoadAssetBundleAsync(bundleItem, cancellationToken);
+
         var asset = bundleItem.assetObj as T;
         if (asset == null)
         {
@@ -141,6 +154,22 @@ public sealed class ResourceManager : IResourcesInterface
     }
 
     /// <summary>
+    /// 命中缓存则叠加引用
+    /// </summary>
+    private bool TryRetainCachedAsset<T>(uint crc, out T asset) where T : UnityEngine.Object
+    {
+        if (loadedAssetDict.TryGetValue(crc, out var loadedItem) && loadedItem.assetObj != null)
+        {
+            loadedItem.assetRefCount++;
+            asset = loadedItem.assetObj as T;
+            return true;
+        }
+
+        asset = null;
+        return false;
+    }
+
+    /// <summary>
     /// 缓存已加载资源
     /// </summary>
     private void CacheLoadedAsset(
@@ -152,6 +181,12 @@ public sealed class ResourceManager : IResourcesInterface
         if (asset == null)
             return;
 
+        if (loadedAssetDict.TryGetValue(crc, out var loadedItem) && loadedItem.assetObj != null)
+        {
+            loadedItem.assetRefCount++;
+            return;
+        }
+
         bundleItem ??= new BundleItem
         {
             path = path,
@@ -159,6 +194,7 @@ public sealed class ResourceManager : IResourcesInterface
             dependencyList = new List<string>(),
         };
         bundleItem.assetObj = asset;
+        bundleItem.assetRefCount = 1;
         loadedAssetDict[crc] = bundleItem;
     }
 
@@ -351,6 +387,7 @@ public sealed class ResourceManager : IResourcesInterface
         if (objectPoolDict.TryGetValue(cacheObject.crc, out var objectStack) && cacheObject.isPooled)
             RemoveStackItem(objectStack, cacheObject);
         UnityEngine.Object.Destroy(cacheObject.obj);
+        ReleaseAsset(cacheObject.path);
         cacheObject.Release();
         cacheObjectPool.Recycle(cacheObject);
     }
@@ -483,6 +520,34 @@ public sealed class ResourceManager : IResourcesInterface
                 image.SetNativeSize();
         }
         return sprite;
+    }
+
+    /// <summary>
+    /// 释放 LoadResource 引用 减到零卸载对应 AB
+    /// </summary>
+    public void ReleaseAsset(string path)
+    {
+        uint crc = ResolveCrc(path);
+        if (!loadedAssetDict.TryGetValue(crc, out var bundleItem))
+            return;
+
+        bundleItem.assetRefCount--;
+#if UNITY_EDITOR
+        if (BundleSettings.Instance.loadAssetType == E_LoadAssetType.Editor)
+        {
+            if (bundleItem.assetRefCount > 0)
+                return;
+            bundleItem.assetObj = null;
+            loadedAssetDict.Remove(crc);
+            return;
+        }
+#endif
+        AssetBundleManager.Instance.ReleaseAssets(bundleItem);
+        if (bundleItem.assetRefCount > 0)
+            return;
+
+        bundleItem.assetObj = null;
+        loadedAssetDict.Remove(crc);
     }
 
     /// <summary>

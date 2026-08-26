@@ -83,11 +83,11 @@ namespace MieMieFrameWork.Asset
         }
 
         /// <summary>
-        /// 释放 LoadAsset 引用 当前映射为整表清理入口的轻量占位
+        /// 释放 LoadAsset 引用 减到零卸载对应 AB
         /// </summary>
         public static void ReleaseAsset(string address)
         {
-            // MmAsset 资源引用按 BundleItem/CRC 管理 单地址释放待后续补齐
+            Resources.ReleaseAsset(address);
         }
 
         /// <summary>
