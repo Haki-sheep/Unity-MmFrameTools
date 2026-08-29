@@ -16,12 +16,19 @@
       "dependencies": {},
       "hash": "ceac8d6946b1125fe782cd171fbcb245b567dbf9"
     },
-    "com.hakisheep.mm-eventbus": {
-      "version": "git@github.com:Haki-sheep/MmCSharp-EventBus.git?path=unity",
+    "com.github.messagepack-csharp": {
+      "version": "https://github.com/MessagePack-CSharp/MessagePack-CSharp.git?path=src/MessagePack.UnityClient/Assets/Scripts/MessagePack#v3.1.8",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "12ef92788cc223fea8e0859ed16b8b842e4288cd"
+      "hash": "9f80a327ae139203c1e48fa678f95cf45e878963"
+    },
+    "com.kyrylokuzyk.primetween": {
+      "version": "1.4.11",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.org"
     },
     "com.unity.addressables": {
       "version": "2.9.1",

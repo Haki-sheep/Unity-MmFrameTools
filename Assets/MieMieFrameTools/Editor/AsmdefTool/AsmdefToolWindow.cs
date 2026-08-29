@@ -407,12 +407,11 @@ namespace MieMieFrameWork.Editor.AsmdefTool
                     referenceHash.Add("Unity.Addressables");
                     referenceHash.Add("Unity.ResourceManager");
                 }
-                else if (ns.StartsWith("MiMieFSM.Unity", StringComparison.Ordinal))
-                    referenceHash.Add("MiMieFSM.Unity");
-                else if (ns.StartsWith("MiMieFSM", StringComparison.Ordinal))
-                    referenceHash.Add("MiMieFSM");
+                else if (ns.StartsWith("MiMieFSM.Unity", StringComparison.Ordinal)
+                         || ns.StartsWith("MiMieFSM", StringComparison.Ordinal))
+                    referenceHash.Add("MieMieFrameWork.Runtime");
                 else if (ns.StartsWith("MiMieEventBus", StringComparison.Ordinal))
-                    referenceHash.Add("MiMieEventBus");
+                    referenceHash.Add("MieMieFrameWork.Runtime");
                 else if (ns.StartsWith("MieMieUIFrameWork.UI", StringComparison.Ordinal))
                     referenceHash.Add("MieMieUIFrameWork.UI");
                 else if (ns.StartsWith("MieMieFrameWork", StringComparison.Ordinal))
@@ -423,8 +422,6 @@ namespace MieMieFrameWork.Editor.AsmdefTool
                     referenceHash.Add("MmInventory.ItemData");
                     referenceHash.Add("LubanTableData.Gen");
                 }
-                else if (ns.StartsWith("DG.Tweening", StringComparison.Ordinal))
-                    precompiledHash.Add("DOTween.dll");
                 else if (ns.StartsWith("Newtonsoft.Json", StringComparison.Ordinal))
                     precompiledHash.Add("Newtonsoft.Json.dll");
                 else if (ns.StartsWith("Sirenix.OdinInspector.Editor", StringComparison.Ordinal))

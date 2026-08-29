@@ -65,9 +65,6 @@ namespace MieMieFrameWork.Editor.MmAssets
             {
                 if (IsUpmPackageResolved(entry.packageName))
                 {
-                    if (entry.packageName == "com.hakisheep.mm-saver" && !IsArchiveRuntimeReady())
-                        return false;
-
                     return true;
                 }
             }
@@ -87,29 +84,6 @@ namespace MieMieFrameWork.Editor.MmAssets
 
             if (normalized.StartsWith("Packages/", System.StringComparison.OrdinalIgnoreCase))
                 return AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(normalized) != null;
-
-            return false;
-        }
-
-        /// <summary>
-        /// 存档运行时程序集是否已编译就绪
-        /// </summary>
-        public static bool IsArchiveRuntimeReady()
-        {
-            const string archiveTypeName = "MiMieSaver.ArchiveMgr";
-            const string assemblyName = "MiMieSaver";
-
-            if (Type.GetType($"{archiveTypeName}, {assemblyName}") != null)
-                return true;
-
-            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                if (assembly.GetName().Name != assemblyName)
-                    continue;
-
-                if (assembly.GetType(archiveTypeName) != null)
-                    return true;
-            }
 
             return false;
         }

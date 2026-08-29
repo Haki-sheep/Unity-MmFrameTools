@@ -26,16 +26,6 @@ namespace MieMieFrameWork.Editor.MmAssets
         public const string MmGameEventsAsset = FrameRoot + "/D_EventCenter/Mono/MmGameEvents.cs";
 
         /// <summary>
-        /// Protobuf 设置 JSON
-        /// </summary>
-        public const string ProtobufSettingsAsset = EditorRoot + "/Protobuf/protobuf_settings.json";
-
-        /// <summary>
-        /// protoc 可执行文件
-        /// </summary>
-        public const string ProtocExeAsset = EditorRoot + "/SaveForEditor/Protoc/protoc.exe";
-
-        /// <summary>
         /// MmAsset 编辑器根
         /// </summary>
         public const string MmAssetEditorRoot = EditorRoot + "/MmAssetForEditor";
@@ -46,14 +36,5 @@ namespace MieMieFrameWork.Editor.MmAssets
         public const string MmAssetModuleRoot =
             FrameRoot + "/B_Assets/MmAsset";
 
-        /// <summary>
-        /// proto 源文件目录
-        /// </summary>
-        public const string ProtoSourceFolderAsset = MieMieRoot + "/ARequired/GameSave";
-
-        /// <summary>
-        /// proto 生成 C# 输出目录
-        /// </summary>
-        public const string ProtoOutputFolderAsset = MieMieRoot + "/ARequired/GameSave/Generated";
     }
 }

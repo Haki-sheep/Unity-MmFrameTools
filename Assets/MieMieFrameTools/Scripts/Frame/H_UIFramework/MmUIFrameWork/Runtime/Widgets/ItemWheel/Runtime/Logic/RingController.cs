@@ -1,4 +1,4 @@
-using DG.Tweening;
+using PrimeTween;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,9 +18,6 @@ public class RingController : MonoBehaviour, IRingBehaviour
     private Vector3 originalScale;
     private Color originalRingColor;
 
-    private Tween scaleTween;
-    private Tween colorTween;
-
     private void Awake()
     {
         ringDraw = GetComponent<RingDraw>();
@@ -33,12 +30,6 @@ public class RingController : MonoBehaviour, IRingBehaviour
     private void Start()
     {
         itemIcon = GetComponentInChildren<Image>();
-    }
-
-    private void OnDestroy()
-    {
-        scaleTween?.Kill();
-        colorTween?.Kill();
     }
 
     /// <summary>
@@ -67,19 +58,13 @@ public class RingController : MonoBehaviour, IRingBehaviour
     /// </summary>
     private void OnEnterAnimation()
     {
-        KillActiveTween();
-
-        scaleTween = transform
-            .DOScale(originalScale * scaleUpFactor, tweenDuration)
-            .SetEase(Ease.OutBack, backEaseAmplitude)
-            .SetUpdate(true);
+        Tween.Scale(transform, originalScale * scaleUpFactor, tweenDuration,
+            ease: Easing.Overshoot(backEaseAmplitude), useUnscaledTime: true);
 
         if (ringDraw != null)
         {
-            colorTween = ringDraw
-                .DOColor(highlightColor, tweenDuration)
-                .SetEase(Ease.OutQuad)
-                .SetUpdate(true);
+            Tween.Color(ringDraw, highlightColor, tweenDuration,
+                ease: Ease.OutQuad, useUnscaledTime: true);
         }
     }
 
@@ -88,30 +73,13 @@ public class RingController : MonoBehaviour, IRingBehaviour
     /// </summary>
     private void OnExitAnimation()
     {
-        KillActiveTween();
-
-        scaleTween = transform
-            .DOScale(originalScale, tweenDuration)
-            .SetEase(Ease.InOutSine)
-            .SetUpdate(true);
+        Tween.Scale(transform, originalScale, tweenDuration,
+            ease: Ease.InOutSine, useUnscaledTime: true);
 
         if (ringDraw != null)
         {
-            colorTween = ringDraw
-                .DOColor(originalRingColor, tweenDuration)
-                .SetEase(Ease.InOutSine)
-                .SetUpdate(true);
+            Tween.Color(ringDraw, originalRingColor, tweenDuration,
+                ease: Ease.InOutSine, useUnscaledTime: true);
         }
-    }
-
-    /// <summary>
-    /// 清理当前扇环上的补间
-    /// </summary>
-    private void KillActiveTween()
-    {
-        scaleTween?.Kill();
-        colorTween?.Kill();
-        scaleTween = null;
-        colorTween = null;
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MieMieFrameWork;
+using MieMieFrameWork.Asset;
 using MieMieFrameWork.Pool;
 using UnityEditor;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace MieMieFrameWork.Editor.PoolEditor
         private enum E_Tab
         {
             Dashboard,
+            MmAssetPool,
             Prewarm,
             Radar,
             Scan
@@ -24,6 +26,7 @@ namespace MieMieFrameWork.Editor.PoolEditor
         private E_Tab currentTab = E_Tab.Dashboard;
         private Vector2 scrollPos;
         private readonly List<GameObjPoolReporter> poolInfoList = new();
+        private readonly List<MmAssetPoolReporter> mmAssetPoolInfoList = new();
         private readonly List<PrewarmPresetEntry> prewarmPresetList = new();
         private readonly List<PoolRadarEntry> radarEntryList = new();
         private readonly List<string> poolableTypeNameList = new();
@@ -66,7 +69,8 @@ namespace MieMieFrameWork.Editor.PoolEditor
 
         private void OnEditorUpdate()
         {
-            if (!Application.isPlaying || currentTab != E_Tab.Dashboard)
+            if (!Application.isPlaying
+                || (currentTab != E_Tab.Dashboard && currentTab != E_Tab.MmAssetPool))
                 return;
 
             if (EditorApplication.timeSinceStartup - lastRefreshTime > 0.25d)
@@ -80,7 +84,9 @@ namespace MieMieFrameWork.Editor.PoolEditor
         {
             DrawHeader();
             EditorGUILayout.Space(4);
-            currentTab = (E_Tab)GUILayout.Toolbar((int)currentTab, new[] { "实时监控", "预热工坊", "场景雷达", "IPoolable扫描" });
+            currentTab = (E_Tab)GUILayout.Toolbar(
+                (int)currentTab,
+                new[] { "实时监控", "MmAsset 资源池", "预热工坊", "场景雷达", "IPoolable扫描" });
             EditorGUILayout.Space(6);
 
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
@@ -88,6 +94,9 @@ namespace MieMieFrameWork.Editor.PoolEditor
             {
                 case E_Tab.Dashboard:
                     DrawDashboardTab();
+                    break;
+                case E_Tab.MmAssetPool:
+                    DrawMmAssetPoolTab();
                     break;
                 case E_Tab.Prewarm:
                     DrawPrewarmTab();
@@ -154,6 +163,69 @@ namespace MieMieFrameWork.Editor.PoolEditor
 
             EditorGUILayout.Space(4);
             EditorGUILayout.LabelField($"汇总  借出 {totalActive}  闲置 {totalPooled}  累计 {totalCreated}  池数 {poolInfoList.Count}", EditorStyles.helpBox);
+        }
+
+        private void DrawMmAssetPoolTab()
+        {
+            if (!Application.isPlaying)
+            {
+                EditorGUILayout.HelpBox("进入 Play 模式后查看 MmAsset 资源池状态", MessageType.Info);
+                return;
+            }
+
+            MmAssetFrame mmAssetFrame = MmAssetFrame.Instance;
+            if (mmAssetFrame == null || mmAssetFrame.Resources == null)
+            {
+                EditorGUILayout.HelpBox("运行时未找到 MmAsset 资源服务", MessageType.Warning);
+                return;
+            }
+
+            IResourcesInterface resources = mmAssetFrame.Resources;
+            resources.CollectPoolInfoList(mmAssetPoolInfoList);
+
+            int totalActive = 0;
+            int totalPooled = 0;
+            int totalCreated = 0;
+            for (int i = 0; i < mmAssetPoolInfoList.Count; i++)
+            {
+                MmAssetPoolReporter info = mmAssetPoolInfoList[i];
+                totalActive += info.ActiveCount;
+                totalPooled += info.PooledCount;
+                totalCreated += info.TotalCreated;
+            }
+
+            EditorGUILayout.LabelField(
+                $"资源缓存 {resources.LoadedAssetCount}  资源实例池 {mmAssetPoolInfoList.Count}",
+                EditorStyles.helpBox);
+
+            if (mmAssetPoolInfoList.Count == 0)
+            {
+                EditorGUILayout.HelpBox("暂无 MmAsset 实例池 先通过 MmAsset 实例化或预加载一次", MessageType.None);
+                return;
+            }
+
+            for (int i = 0; i < mmAssetPoolInfoList.Count; i++)
+            {
+                MmAssetPoolReporter info = mmAssetPoolInfoList[i];
+                using (new EditorGUILayout.VerticalScope(EditorStyles.helpBox))
+                {
+                    string resourceName = string.IsNullOrEmpty(info.ResourcePath)
+                        ? $"CRC {info.PoolKey}"
+                        : info.ResourcePath;
+                    EditorGUILayout.LabelField(resourceName, EditorStyles.boldLabel);
+                    DrawBar("活跃", info.ActiveCount, info.TotalCreated, new Color(1f, 0.55f, 0.2f));
+                    DrawBar("闲置", info.PooledCount, info.TotalCreated, new Color(0.3f, 0.75f, 1f));
+                    EditorGUILayout.LabelField(
+                        $"CRC {info.PoolKey}  活跃 {info.ActiveCount}  闲置 {info.PooledCount}",
+                        EditorStyles.miniLabel);
+                }
+
+                EditorGUILayout.Space(4);
+            }
+
+            EditorGUILayout.LabelField(
+                $"汇总  活跃 {totalActive}  闲置 {totalPooled}  累计 {totalCreated}",
+                EditorStyles.helpBox);
         }
 
         private void DrawPoolInfoCard(GameObjPoolReporter info)

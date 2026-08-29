@@ -1,13 +1,16 @@
 {
     "name": "MieMieFrameWork.Runtime",
     "rootNamespace": "MieMieFrameWork",
-    "references": [
-        "UniTask",
+ "references": [
+  "PrimeTween.Runtime",
+  "UniTask",
+        "MessagePack.Unity",
+        "MessagePack",
+        "MessagePack.Annotations",
         "Unity.Addressables",
         "Unity.ResourceManager",
         "Unity.InputSystem",
         "UnityEngine.UI",
-        "MiMieEventBus",
         "Unity.TextMeshPro"
     ],
     "includePlatforms": [],

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -11,8 +12,15 @@ namespace MieMieFrameWork.Asset
 {
 public interface IResourcesInterface
 {
+    int LoadedAssetCount { get; }
+
     /// <summary>初始化并订阅热更内部事件</summary>
     void Init(IHotAssets hotAssets);
+
+    /// <summary>
+    /// 收集资源实例池快照
+    /// </summary>
+    void CollectPoolInfoList(List<MmAssetPoolReporter> resultList);
 
     /// <summary>预克隆count个实例并回收到对象池</summary>
     void PreLoadObj(string path, int count = 1);

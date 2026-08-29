@@ -3,8 +3,6 @@
     "rootNamespace": "MieMieFrameWork",
     "references": [
         "MieMieFrameWork.Runtime",
-        "MiMieEventBus",
-        "MiMieFSM",
         "UniTask",
         "Unity.Addressables",
         "Unity.ResourceManager",

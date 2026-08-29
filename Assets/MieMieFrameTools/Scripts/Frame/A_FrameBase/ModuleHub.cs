@@ -37,7 +37,7 @@
         private AudioManager.AudioManagerConfig audioManagerConfig = new AudioManager.AudioManagerConfig();
 
         /// <summary>
-        /// 存档管理器实例 未安装 com.hakisheep.mm-saver 时为 null
+        /// 存档管理器实例 未编译存档核心时为 null
         /// </summary>
         private object archiveMgr;
 
@@ -94,7 +94,7 @@
             Type archiveType = ResolveArchiveMgrType();
             if (archiveType == null)
             {
-                Debug.LogWarning("[ModuleHub] 存档模块未安装或 MiMieSaver 程序集未编译 跳过 ArchiveMgr 初始化");
+                Debug.LogWarning("[ModuleHub] 存档核心未编译 跳过 ArchiveMgr 初始化");
                 return;
             }
 
@@ -109,17 +109,13 @@
         private static Type ResolveArchiveMgrType()
         {
             const string archiveTypeName = "MiMieSaver.ArchiveMgr";
-            const string assemblyName = "MiMieSaver";
 
-            Type archiveType = Type.GetType($"{archiveTypeName}, {assemblyName}");
+            Type archiveType = Type.GetType(archiveTypeName);
             if (archiveType != null)
                 return archiveType;
 
             foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
             {
-                if (assembly.GetName().Name != assemblyName)
-                    continue;
-
                 archiveType = assembly.GetType(archiveTypeName);
                 if (archiveType != null)
                     return archiveType;
@@ -134,7 +130,7 @@
         public bool HasArchive => archiveMgr != null;
 
         /// <summary>
-        /// 获取存档管理器 需引用 MiMieSaver 后使用 IArchiveMgr 等类型
+        /// 获取存档管理器 使用 MiMieSaver 命名空间下的 IArchiveMgr 等类型
         /// </summary>
         public T GetArchive<T>() where T : class => archiveMgr as T;
 

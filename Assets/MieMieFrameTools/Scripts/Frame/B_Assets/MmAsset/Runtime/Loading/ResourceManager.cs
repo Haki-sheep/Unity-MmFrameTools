@@ -44,6 +44,8 @@ public sealed class ResourceManager : IResourcesInterface
     /// </summary>
     private IHotAssets hotAssets;
 
+    public int LoadedAssetCount => loadedAssetDict.Count;
+
     /// <summary>
     /// 初始化并订阅热更内部事件
     /// </summary>
@@ -53,6 +55,41 @@ public sealed class ResourceManager : IResourcesInterface
             this.hotAssets.BundleDownloaded -= OnBundleDownloaded;
         this.hotAssets = hotAssets;
         this.hotAssets.BundleDownloaded += OnBundleDownloaded;
+    }
+
+    /// <summary>
+    /// 收集资源实例池快照
+    /// </summary>
+    public void CollectPoolInfoList(List<MmAssetPoolReporter> resultList)
+    {
+        resultList.Clear();
+
+        var poolInfoDict = new Dictionary<uint, MmAssetPoolReporter>();
+        foreach (var cacheObject in allObjectDict.Values)
+        {
+            if (!poolInfoDict.TryGetValue(cacheObject.crc, out var poolInfo))
+            {
+                poolInfo = new MmAssetPoolReporter
+                {
+                    PoolKey = cacheObject.crc,
+                    ResourcePath = cacheObject.path
+                };
+            }
+
+            if (cacheObject.isPooled)
+                poolInfo.PooledCount++;
+            else
+                poolInfo.ActiveCount++;
+
+            poolInfoDict[cacheObject.crc] = poolInfo;
+        }
+
+        resultList.AddRange(poolInfoDict.Values);
+        resultList.Sort((left, right) =>
+        {
+            int pathCompare = string.CompareOrdinal(left.ResourcePath, right.ResourcePath);
+            return pathCompare != 0 ? pathCompare : left.PoolKey.CompareTo(right.PoolKey);
+        });
     }
 
     #region 资源加载

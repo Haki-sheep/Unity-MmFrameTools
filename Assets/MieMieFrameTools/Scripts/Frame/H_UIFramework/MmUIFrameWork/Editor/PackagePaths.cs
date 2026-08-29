@@ -31,9 +31,6 @@ namespace MieMieUITools.Editor
         /// <summary> StandUI 预制体根目录 </summary>
         public static string StandUIPrefabsRoot => $"{PackageRoot}/StandUIPrefabs";
 
-        /// <summary> DOTween 预设目录 </summary>
-        public static string DoTweenPresetsRoot => $"{PackageRoot}/Runtime/Widgets/DoTweenAnimExtension/Presets";
-
         /// <summary> 跳字系统根目录 </summary>
         public static string FloatingTextRoot => $"{PackageRoot}/Runtime/Widgets/FloatingTextSystem";
 

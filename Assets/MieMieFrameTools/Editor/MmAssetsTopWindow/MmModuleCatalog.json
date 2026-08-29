@@ -33,7 +33,7 @@
             "id": "ui-frame",
             "displayName": "HakiMm UI 框架",
             "category": "框架",
-            "description": "UICoreMgr、面板加载、UI 生命周期与 DoTweenAnim 序列工具。编辑器生成器随包附带无需单独导入。",
+            "description": "UICoreMgr、面板加载与 UI 生命周期工具。编辑器生成器随包附带无需单独导入。",
             "version": "1.0.6",
             "gitUrl": "git@github.com:Haki-sheep/MmUIFrameWork.git?path=Assets/MmUIFrameWork",
             "packageName": "com.hakisheep.mm-uiframe",
@@ -49,11 +49,11 @@
             "displayName": "存档系统",
             "category": "框架",
             "subCategory": "可选模块",
-            "description": "ArchiveMgr 存档读写，支持 Protobuf 等序列化扩展。",
-            "version": "1.0.3",
-            "gitUrl": "git@github.com:Haki-sheep/MmCSharp-Saver.git?path=unity",
-            "packageName": "com.hakisheep.mm-saver",
-            "installCheckPath": "Packages/com.hakisheep.mm-saver/package.json",
+            "description": "ArchiveMgr 存档读写，基于 MessagePack-CSharp 二进制序列化。",
+            "version": "1.0.0",
+            "gitUrl": "",
+            "packageName": "",
+            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/I_Save/Core/ArchiveMgr.cs",
             "tags": [
                 "存档"
             ],
@@ -139,30 +139,30 @@
             "displayName": "EventBus 事件总线",
             "category": "框架",
             "subCategory": "可选模块",
-            "description": "EventKey 结构体 EventBusCore 运行时 MiMieEventBus。框架壳在 D_EventCenter/Mono",
+            "description": "EventKey 结构体 EventBusCore 与 Unity 桥接运行时实现。框架壳在 D_EventCenter/Mono",
             "version": "1.0.0",
-            "gitUrl": "git@github.com:Haki-sheep/MmCSharp-EventBus.git?path=unity",
-            "packageName": "com.hakisheep.mm-eventbus",
-            "installCheckPath": "Packages/com.hakisheep.mm-eventbus/package.json",
+            "gitUrl": "",
+            "packageName": "",
+            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/D_EventCenter/Core/EventBusCore.cs",
             "tags": [
                 "事件"
             ],
-            "isBuiltIn": false
+            "isBuiltIn": true
         },
         {
             "id": "fsm-library",
             "displayName": "FSM 库",
             "category": "框架",
             "subCategory": "可选模块",
-            "description": "UpdateFsm + ChainedFsm 运行时 MiMieFSM 库。编辑器生成器在框架 Assets/MieMieFrameTools/Editor/FsmForEditor",
-            "version": "1.0.0",
-            "gitUrl": "git@github.com:Haki-sheep/MmCSharp-FSM.git?path=unity",
-            "packageName": "com.hakisheep.mm-fsm",
-            "installCheckPath": "Packages/com.hakisheep.mm-fsm/package.json",
+            "description": "UpdateFsm + ChainedFsm 运行时 MiMieFSM 核心。编辑器生成器在框架 Assets/MieMieFrameTools/Editor/FsmForEditor",
+            "version": "1.0.2",
+            "gitUrl": "",
+            "packageName": "",
+            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/J_FSM/UpdateFsm/StateMachine.cs",
             "tags": [
                 "FSM"
             ],
-            "isBuiltIn": false
+            "isBuiltIn": true
         },
         {
             "id": "dmvc",
@@ -289,17 +289,16 @@
             "isBuiltIn": true
         },
         {
-            "id": "plugin-dotween",
-            "displayName": "DOTween Pro",
+            "id": "plugin-primetween",
+            "displayName": "PrimeTween",
             "category": "插件",
-            "description": "Demigiant 商业补间动画库 DOTween 与 DOTween Pro 含 UI 音频 Physics 等模块 Mm UI Frame DoTweenAnim 依赖",
-            "version": "内置",
-            "gitUrl": "http://dotween.demigiant.com",
-            "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Plugins/Demigiant/DOTween/DOTween.dll",
+            "description": "高性能补间动画库 PrimeTween 用于 UI 与通用动画。",
+            "version": "1.4.11",
+            "gitUrl": "https://github.com/KyryloKuzyk/PrimeTween",
+            "packageName": "com.kyrylokuzyk.primetween",
+            "installCheckPath": "Packages/com.kyrylokuzyk.primetween/package.json",
             "tags": [
                 "第三方",
-                "商业",
                 "动画"
             ],
             "isBuiltIn": true
@@ -383,14 +382,14 @@
             "isBuiltIn": false
         },
         {
-            "id": "plugin-google-protobuf",
-            "displayName": "Google.Protobuf",
+            "id": "plugin-messagepack",
+            "displayName": "MessagePack-CSharp",
             "category": "插件",
-            "description": "Google Protobuf 运行时 DLL 配合框架 proto 生成器与存档序列化",
-            "version": "内置",
-            "gitUrl": "https://developers.google.com/protocol-buffers",
-            "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Plugins/Protobuf/Google.Protobuf.dll",
+            "description": "MessagePack-CSharp 二进制序列化运行时与 AOT 源生成器",
+            "version": "3.1.8",
+            "gitUrl": "https://github.com/MessagePack-CSharp/MessagePack-CSharp",
+            "packageName": "com.github.messagepack-csharp",
+            "installCheckPath": "Assets/MieMieFrameTools/Plugins/MessagePack/MessagePack.dll",
             "tags": [
                 "第三方",
                 "序列化",
@@ -419,7 +418,7 @@
             "displayName": "网格背包",
             "category": "玩法",
             "subCategory": "库存",
-            "description": "通用网格背包 Runtime/Editor 与默认预制体 支持跨容器交互 宿主需自备 Odin 与 DOTween",
+            "description": "通用网格背包 Runtime/Editor 与默认预制体 支持跨容器交互 宿主需自备 Odin",
             "version": "0.1.0",
             "gitUrl": "git@github.com:Haki-sheep/Mm-GridInventory.git?path=Packages/com.hakisheep.grid-inventory",
             "packageName": "com.hakisheep.grid-inventory",
@@ -561,23 +560,6 @@
             "isBuiltIn": false
         },
         {
-            "id": "protobuf-tools",
-            "displayName": "Protobuf Generator",
-            "category": "编辑器拓展",
-            "description": "proto 编译与 C# 生成 配置位于 Editor/Protobuf/protobuf_settings.json",
-            "version": "1.0.0",
-            "gitUrl": "",
-            "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Editor/SaveForEditor/Protobuf/ProtobufGeneratorWindow.cs",
-            "menuPath": "Tools/MieMieFrameWork/Protobuf/Protobuf Generator",
-            "tags": [
-                "编辑器",
-                "生成器",
-                "存档"
-            ],
-            "isBuiltIn": true
-        },
-        {
             "id": "folder-tools",
             "displayName": "Folder Tools",
             "category": "编辑器拓展",
@@ -645,7 +627,7 @@
             "id": "pool-editor",
             "displayName": "Object Pool Editor",
             "category": "编辑器拓展",
-            "description": "对象池预热配置 运行时雷达与池状态监控",
+            "description": "C_Pool 对象池预热与运行时监控 MmAsset 资源实例池查看",
             "version": "1.0.0",
             "gitUrl": "",
             "packageName": "",
