@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace MieMieFrameWork.Asset
 {
-public class BuildWindow : OdinMenuEditorWindow
+public class BuildWindow : OdinMenuEditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
 {
     /// <summary>
     /// 总览页面
@@ -37,7 +37,6 @@ public class BuildWindow : OdinMenuEditorWindow
     /// <summary>
     /// 打开窗口
     /// </summary>
-    [MenuItem("Tools/MieMieFrameWork/MmAsset/资源管线")]
     public static void OpenWindow()
     {
         var window = GetWindow<BuildWindow>();
@@ -106,6 +105,14 @@ public class BuildWindow : OdinMenuEditorWindow
     {
         buildBundleWindow.Init();
         buildHotPatchWindow.Init();
+    }
+
+    /// <summary>
+    /// 绘制嵌入式资源管线
+    /// </summary>
+    public void DrawEmbeddedGUI()
+    {
+        OnImGUI();
     }
 }
 }

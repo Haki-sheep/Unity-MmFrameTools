@@ -1,5 +1,6 @@
 namespace MieMieFrameWork
 {
+    using MieMieFrameWork.Pool;
     using Sirenix.OdinInspector;
     using System;
     using System.Collections.Generic;
@@ -113,6 +114,7 @@ namespace MieMieFrameWork
 
         public void Init()
         {
+            effectPoolHandle = PoolManager.Instance.GetPool(efPlayerES);
             ChangeGlobalVolume();
             OnSelectMute();
             OnSelectLoop();
@@ -141,6 +143,11 @@ namespace MieMieFrameWork
 
         /// <summary>特效音对象池根节点</summary>
         private Transform EffectClipRoot;
+
+        /// <summary>
+        /// 特效音对象池句柄
+        /// </summary>
+        private PoolHandle effectPoolHandle;
 
         #endregion
 

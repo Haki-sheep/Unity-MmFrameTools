@@ -8,7 +8,7 @@ namespace MieMieFrameWork.Editor.MmAssets
     public class MmAssetsTopWindow : OdinMenuEditorWindow
     {
         /// <summary>
-        /// 模块中枢左侧分类页签顺序
+        /// 模块中心左侧分类页签顺序
         /// </summary>
         private static readonly string[] CategoryOrder = { "框架", "工具", "插件", "编辑器拓展", "玩法" };
 
@@ -28,10 +28,10 @@ namespace MieMieFrameWork.Editor.MmAssets
             "可选模块"
         };
 
-        [MenuItem("Tools/MieMieFrameWork/模块中枢", priority = -1000)]
+        [MenuItem("Tools/MieMieFrameWork/模块中心", priority = -1000)]
         private static void Open()
         {
-            GetWindow<MmAssetsTopWindow>("MieMie 模块中枢").Show();
+            GetWindow<MmAssetsTopWindow>("MieMie 模块中心").Show();
         }
 
         protected override void OnEnable()

@@ -12,7 +12,7 @@ namespace MieMieFrameWork.FSM
     /// <summary>
     /// TickFSM 黑板枚举生成与调试窗口
     /// </summary>
-    public class TickFSMWindow : EditorWindow
+    public class TickFSMWindow : EditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
     {
         private const string DefaultOutputFolder = "Assets/Scripts/Game/Fsm/UpdateFsm";
         private const string DefaultEnumName = "EBlockBoardParme";
@@ -74,7 +74,6 @@ namespace MieMieFrameWork.FSM
         /// </summary>
         private float debugLineHeight = 24f;
 
-        [MenuItem("Tools/MieMieFrameWork/FSM/TickFSMWindow")]
         public static void Open()
         {
             TickFSMWindow window = GetWindow<TickFSMWindow>("TickFSMWindow");
@@ -91,6 +90,11 @@ namespace MieMieFrameWork.FSM
         private void OnDisable()
         {
             SavePrefs();
+        }
+
+        public void DrawEmbeddedGUI()
+        {
+            OnGUI();
         }
 
         private void OnGUI()

@@ -11,9 +11,8 @@ namespace MieMieFrameWork.Editor.SaveForEditor
     /// <summary>
     /// 存档系统编辑器管理窗口
     /// </summary>
-    public class ArchiveEditorWindow : EditorWindow
+    public class ArchiveEditorWindow : EditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
     {
-        private const string MenuPath = "Tools/MieMieFrameWork/Save System";
         private const float MinWindowWidth = 620f;
         private const float MinWindowHeight = 420f;
         private const long BytesPerKilobyte = 1024L;
@@ -37,7 +36,6 @@ namespace MieMieFrameWork.Editor.SaveForEditor
         /// <summary>
         /// 打开存档系统编辑器窗口
         /// </summary>
-        [MenuItem(MenuPath)]
         public static void Open()
         {
             ArchiveEditorWindow window = GetWindow<ArchiveEditorWindow>("存档系统");
@@ -88,6 +86,11 @@ namespace MieMieFrameWork.Editor.SaveForEditor
         /// <summary>
         /// 绘制窗口内容
         /// </summary>
+        public void DrawEmbeddedGUI()
+        {
+            OnGUI();
+        }
+
         private void OnGUI()
         {
             DrawHeader();

@@ -13,7 +13,7 @@ namespace MieMieFrameWork.DMVC
     /// <summary>
     /// DMVC 代码生成器
     /// </summary>
-    public class DMVCCodeGeneratorWindow : EditorWindow
+    public class DMVCCodeGeneratorWindow : EditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
     {
         private enum BehaviourInterface
         {
@@ -70,7 +70,6 @@ namespace MieMieFrameWork.DMVC
         /// <summary>
         /// 打开窗口
         /// </summary>
-        [MenuItem("Tools/MieMieFrameWork/DMVC/Code Generator")]
         public static void Open()
         {
             DMVCCodeGeneratorWindow window = GetWindow<DMVCCodeGeneratorWindow>("DMVC 代码生成器");
@@ -81,6 +80,11 @@ namespace MieMieFrameWork.DMVC
         {
             minSize = new Vector2(420f, 480f);
             RefreshWorldTypes();
+        }
+
+        public void DrawEmbeddedGUI()
+        {
+            OnGUI();
         }
 
         private void OnGUI()

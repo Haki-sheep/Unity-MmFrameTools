@@ -29,7 +29,7 @@ public class FloatingTextEditorWindow : EditorWindow
     private Vector2 m_Scroll;
     private string m_LastMessage = string.Empty;
 
-    [MenuItem("Tools/MieMieUIFrameWork/FloatingEditor")]
+    [MenuItem("Tools/MieMieFrameWork/UI中心/FloatingEditor")]
     public static void Open()
     {
         var wnd = GetWindow<FloatingTextEditorWindow>();

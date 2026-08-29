@@ -56,7 +56,7 @@ namespace MieMieFrameWork.DMVC.Editor
         {
             EditorGUILayout.HelpBox(
                 "未检测到 MiMieDMVC 运行时库\n" +
-                "请先在模块中枢安装 DMVC 库 或通过 Package Manager 添加\n" +
+                "请先在模块中心安装 DMVC 库 或通过 Package Manager 添加\n" +
                 PackageName + "\n" +
                 GitInstallUrl,
                 MessageType.Warning);

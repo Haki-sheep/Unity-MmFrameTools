@@ -13,14 +13,12 @@ namespace MieMieFrameWork.Editor
     {
         #region 查看路径菜单
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Open/Assets")]
         public static void OpenAssetsFolder()
         {
             OpenFolder(Application.dataPath);
         }
 
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Open/Archive Data")]
         public static void OpenSaveDataFolder()
         {
             // // 尝试获取SaveManager实例
@@ -54,7 +52,6 @@ namespace MieMieFrameWork.Editor
             // }
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Open/StreamingAssets")]
         public static void OpenStreamingAssetsFolder()
         {
             string path = Application.streamingAssetsPath;
@@ -68,19 +65,16 @@ namespace MieMieFrameWork.Editor
             }
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Open/Persistent Data")]
         public static void OpenPersistentDataFolder()
         {
             OpenFolder(Application.persistentDataPath);
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Open/Temp")]
         public static void OpenTempFolder()
         {
             OpenFolder(Application.dataPath + "/../Temp");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Open/Logs")]
         public static void OpenLogsFolder()
         {
             OpenFolder(Application.dataPath + "/../Logs");
@@ -91,67 +85,56 @@ namespace MieMieFrameWork.Editor
 
         #region 创建路径菜单
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/StreamingAssets")]
         public static void CreateStreamingAssetsFolder()
         {
             CreateFolder(Application.streamingAssetsPath, "StreamingAssets");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/Resources")]
         public static void CreateResourcesFolder()
         {
             CreateFolder(Application.dataPath + "/Resources", "Resources");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/Editor")]
         public static void CreateEditorFolder()
         {
             CreateFolder(Application.dataPath + "/Editor", "Editor");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/Plugins")]
         public static void CreatePluginsFolder()
         {
             CreateFolder(Application.dataPath + "/Plugins", "Plugins");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/Scripts")]
         public static void CreateScriptsFolder()
         {
             CreateFolder(Application.dataPath + "/Scripts", "Scripts");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/Prefabs")]
         public static void CreatePrefabsFolder()
         {
             CreateFolder(Application.dataPath + "/Prefabs", "Prefabs");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/Materials")]
         public static void CreateMaterialsFolder()
         {
             CreateFolder(Application.dataPath + "/Materials", "Materials");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/Textures")]
         public static void CreateTexturesFolder()
         {
             CreateFolder(Application.dataPath + "/Textures", "Textures");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/Audio")]
         public static void CreateAudioFolder()
         {
             CreateFolder(Application.dataPath + "/Audio", "Audio");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/Animations")]
         public static void CreateAnimationsFolder()
         {
             CreateFolder(Application.dataPath + "/Animations", "Animations");
         }
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Create/Common Structure")]
         public static void CreateCommonFolderStructure()
         {
             string[] folders = {

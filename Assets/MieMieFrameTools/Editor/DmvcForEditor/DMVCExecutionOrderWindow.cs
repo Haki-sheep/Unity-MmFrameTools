@@ -13,7 +13,7 @@ namespace MieMieFrameWork.DMVC
     /// <summary>
     /// DMVC 执行顺序生成器
     /// </summary>
-    public class DMVCExecutionOrderWindow : EditorWindow
+    public class DMVCExecutionOrderWindow : EditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
     {
         /// <summary>
         /// World 类型列表
@@ -58,7 +58,6 @@ namespace MieMieFrameWork.DMVC
         /// <summary>
         /// 打开窗口
         /// </summary>
-        [MenuItem("Tools/MieMieFrameWork/DMVC/Execution Order")]
         public static void Open()
         {
             DMVCExecutionOrderWindow window = GetWindow<DMVCExecutionOrderWindow>("DMVC 执行顺序");
@@ -71,6 +70,11 @@ namespace MieMieFrameWork.DMVC
             RefreshWorldTypes();
             SetDefaultClassName();
             ScanBehaviourTypes();
+        }
+
+        public void DrawEmbeddedGUI()
+        {
+            OnGUI();
         }
 
         private void OnGUI()

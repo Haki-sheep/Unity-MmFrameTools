@@ -7,16 +7,20 @@ using UnityEngine;
 
 namespace MieMieFrameWork.Editor
 {
-    public class FolderBookmarkWindow : EditorWindow
+    public class FolderBookmarkWindow : EditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
     {
         private Vector2 _scroll;
         private readonly Dictionary<string, Texture2D> _iconFieldCache = new();
 
-        [MenuItem("Tools/MieMieFrameWork/Folder/Folder Bookmarks")]
         public static void Open() 
         {
             GetWindow<FolderBookmarkWindow>("文件夹收藏");
         } 
+
+        public void DrawEmbeddedGUI()
+        {
+            OnGUI();
+        }
 
         private void OnGUI()
         {

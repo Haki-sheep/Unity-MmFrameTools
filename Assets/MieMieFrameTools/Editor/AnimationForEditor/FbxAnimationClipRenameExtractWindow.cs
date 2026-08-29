@@ -9,7 +9,7 @@ namespace MieMieFrameWork.Editor.Animation
     /// <summary>
     /// 将 FBX 内嵌动画改名为与文件同名 并可提取为独立 AnimationClip
     /// </summary>
-    public sealed class FbxAnimationClipRenameExtractWindow : EditorWindow
+    public sealed class FbxAnimationClipRenameExtractWindow : EditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
     {
         /// <summary> 待处理 FBX </summary>
         private readonly List<Object> fbxObjectList = new List<Object>();
@@ -29,12 +29,16 @@ namespace MieMieFrameWork.Editor.Animation
         /// <summary> 滚动 </summary>
         private Vector2 scrollPos;
 
-        [MenuItem("Tools/MieMieFrameWork/Animation/FBX 动画改名提取")]
         private static void Open()
         {
             var window = GetWindow<FbxAnimationClipRenameExtractWindow>("FBX 动画改名提取");
             window.minSize = new Vector2(460f, 360f);
             window.Show();
+        }
+
+        public void DrawEmbeddedGUI()
+        {
+            OnGUI();
         }
 
         private void OnGUI()

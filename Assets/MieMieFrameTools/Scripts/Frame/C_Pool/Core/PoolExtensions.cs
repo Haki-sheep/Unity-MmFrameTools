@@ -12,17 +12,17 @@ namespace MieMieFrameWork.Pool
         /// <summary>
         /// 将 GameObject 放回对象池
         /// </summary>
-        public static void PushGameObjectToPool(this GameObject obj)
+        public static bool PushGameObjectToPool(this GameObject obj, PoolHandle poolHandle)
         {
-            PoolManager.Instance.PushGameObj(obj);
+            return poolHandle.Release(obj);
         }
 
         /// <summary>
         /// 将 Component 对应 GameObject 放回对象池
         /// </summary>
-        public static void PushGameObjectToPool(this Component component)
+        public static bool PushGameObjectToPool(this Component component, PoolHandle poolHandle)
         {
-            PoolManager.Instance.PushGameObj(component.gameObject);
+            return poolHandle.Release(component);
         }
 
         #endregion

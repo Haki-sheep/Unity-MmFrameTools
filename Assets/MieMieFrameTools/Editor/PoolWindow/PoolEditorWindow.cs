@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using MieMieFrameWork;
 using MieMieFrameWork.Asset;
 using MieMieFrameWork.Pool;
@@ -9,7 +8,7 @@ using UnityEngine;
 
 namespace MieMieFrameWork.Editor.PoolEditor
 {
-    public class PoolEditorWindow : EditorWindow
+    public class PoolEditorWindow : EditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
     {
         private const string PrewarmPrefsKey = "PoolEditor.PrewarmPresets";
         private const string AutoPrewarmPrefsKey = "PoolEditor.AutoPrewarmOnPlay";
@@ -18,9 +17,7 @@ namespace MieMieFrameWork.Editor.PoolEditor
         {
             Dashboard,
             MmAssetPool,
-            Prewarm,
-            Radar,
-            Scan
+            Prewarm
         }
 
         private E_Tab currentTab = E_Tab.Dashboard;
@@ -28,18 +25,14 @@ namespace MieMieFrameWork.Editor.PoolEditor
         private readonly List<GameObjPoolReporter> poolInfoList = new();
         private readonly List<MmAssetPoolReporter> mmAssetPoolInfoList = new();
         private readonly List<PrewarmPresetEntry> prewarmPresetList = new();
-        private readonly List<PoolRadarEntry> radarEntryList = new();
-        private readonly List<string> poolableTypeNameList = new();
 
         private GameObject prewarmPrefab;
         private int prewarmCount = 10;
         private int prewarmMaxSize = 50;
-        private string prewarmPath = string.Empty;
         private int burstCount = 20;
         private bool autoPrewarmOnPlay;
         private double lastRefreshTime;
 
-        [MenuItem("Tools/MieMieFrameWork/Object Pool")]
         public static void Open()
         {
             var window = GetWindow<PoolEditorWindow>("对象池");
@@ -80,13 +73,18 @@ namespace MieMieFrameWork.Editor.PoolEditor
             }
         }
 
+        public void DrawEmbeddedGUI()
+        {
+            OnGUI();
+        }
+
         private void OnGUI()
         {
             DrawHeader();
             EditorGUILayout.Space(4);
             currentTab = (E_Tab)GUILayout.Toolbar(
                 (int)currentTab,
-                new[] { "实时监控", "MmAsset 资源池", "预热工坊", "场景雷达", "IPoolable扫描" });
+                new[] { "实时监控", "MmAsset 资源池", "预热工坊" });
             EditorGUILayout.Space(6);
 
             scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
@@ -101,12 +99,6 @@ namespace MieMieFrameWork.Editor.PoolEditor
                 case E_Tab.Prewarm:
                     DrawPrewarmTab();
                     break;
-                case E_Tab.Radar:
-                    DrawRadarTab();
-                    break;
-                case E_Tab.Scan:
-                    DrawScanTab();
-                    break;
             }
             EditorGUILayout.EndScrollView();
         }
@@ -114,7 +106,7 @@ namespace MieMieFrameWork.Editor.PoolEditor
         private void DrawHeader()
         {
             EditorGUILayout.LabelField("MieMie 对象池中枢", EditorStyles.boldLabel);
-            EditorGUILayout.LabelField("Get/Push · IPoolable · 预热 · 容量上限 · 重复归还检测", EditorStyles.miniLabel);
+            EditorGUILayout.LabelField("Get/Release · 预热 · 容量上限 · 重复归还检测", EditorStyles.miniLabel);
 
             using (new EditorGUILayout.HorizontalScope())
             {
@@ -276,14 +268,13 @@ namespace MieMieFrameWork.Editor.PoolEditor
             prewarmPrefab = (GameObject)EditorGUILayout.ObjectField("预制体", prewarmPrefab, typeof(GameObject), false);
             prewarmCount = EditorGUILayout.IntField("预热数量", Mathf.Max(0, prewarmCount));
             prewarmMaxSize = EditorGUILayout.IntField("池上限", Mathf.Max(1, prewarmMaxSize));
-            prewarmPath = EditorGUILayout.TextField("Addressable路径", prewarmPath);
 
             using (new EditorGUILayout.HorizontalScope())
             {
                 if (GUILayout.Button("加入预设"))
                     AddPrewarmPreset();
                 if (GUILayout.Button("立即预热") && Application.isPlaying)
-                    RunPrewarm(prewarmPrefab, prewarmCount, prewarmMaxSize, prewarmPath);
+                    RunPrewarm(prewarmPrefab, prewarmCount, prewarmMaxSize);
                 if (GUILayout.Button("压力测试") && Application.isPlaying)
                     RunBurstTest(prewarmPrefab, burstCount, prewarmMaxSize);
             }
@@ -302,11 +293,9 @@ namespace MieMieFrameWork.Editor.PoolEditor
                 {
                     EditorGUILayout.ObjectField(prefab, typeof(GameObject), false, GUILayout.Width(140f));
                     EditorGUILayout.LabelField($"x{entry.count}  max{entry.maxSize}", GUILayout.Width(90f));
-                    if (!string.IsNullOrEmpty(entry.path))
-                        EditorGUILayout.LabelField(entry.path, EditorStyles.miniLabel);
                     GUILayout.FlexibleSpace();
                     if (GUILayout.Button("▶", GUILayout.Width(24f)) && Application.isPlaying)
-                        RunPrewarm(prefab, entry.count, entry.maxSize, entry.path);
+                        RunPrewarm(prefab, entry.count, entry.maxSize);
                     if (GUILayout.Button("×", GUILayout.Width(24f)))
                         prewarmPresetList.RemoveAt(i);
                 }
@@ -314,51 +303,6 @@ namespace MieMieFrameWork.Editor.PoolEditor
 
             if (GUILayout.Button("保存预设"))
                 SavePrefs();
-        }
-
-        private void DrawRadarTab()
-        {
-            EditorGUILayout.LabelField("场景雷达  借出中的池对象", EditorStyles.boldLabel);
-            if (GUILayout.Button("扫描当前场景"))
-                ScanScenePoolMembers();
-
-            if (radarEntryList.Count == 0)
-            {
-                EditorGUILayout.HelpBox("点击扫描查找带 PoolMember 的活跃对象", MessageType.None);
-                return;
-            }
-
-            for (int i = 0; i < radarEntryList.Count; i++)
-            {
-                PoolRadarEntry entry = radarEntryList[i];
-                using (new EditorGUILayout.HorizontalScope(EditorStyles.helpBox))
-                {
-                    EditorGUILayout.LabelField(entry.Name, GUILayout.Width(160f));
-                    EditorGUILayout.LabelField($"PoolKey {entry.PoolKey}", GUILayout.Width(100f));
-                    GUILayout.FlexibleSpace();
-                    if (GUILayout.Button("定位", GUILayout.Width(48f)) && entry.Target != null)
-                    {
-                        Selection.activeGameObject = entry.Target;
-                        EditorGUIUtility.PingObject(entry.Target);
-                    }
-                }
-            }
-        }
-
-        private void DrawScanTab()
-        {
-            EditorGUILayout.LabelField("项目扫描  IPoolable 实现类", EditorStyles.boldLabel);
-            if (GUILayout.Button("扫描 Assets 下所有脚本"))
-                ScanPoolableTypes();
-
-            if (poolableTypeNameList.Count == 0)
-            {
-                EditorGUILayout.HelpBox("扫描后列出所有实现 IPoolable 的类型", MessageType.None);
-                return;
-            }
-
-            for (int i = 0; i < poolableTypeNameList.Count; i++)
-                EditorGUILayout.LabelField("• " + poolableTypeNameList[i]);
         }
 
         private void AddPrewarmPreset()
@@ -371,13 +315,12 @@ namespace MieMieFrameWork.Editor.PoolEditor
             {
                 prefabGuid = guid,
                 count = prewarmCount,
-                maxSize = prewarmMaxSize,
-                path = prewarmPath
+                maxSize = prewarmMaxSize
             });
             SavePrefs();
         }
 
-        private void RunPrewarm(GameObject prefab, int count, int maxSize, string path)
+        private void RunPrewarm(GameObject prefab, int count, int maxSize)
         {
             if (prefab == null)
                 return;
@@ -386,10 +329,8 @@ namespace MieMieFrameWork.Editor.PoolEditor
             if (poolMgr == null)
                 return;
 
-            if (!string.IsNullOrWhiteSpace(path))
-                poolMgr.RegisterPoolPath(path, prefab);
-
-            poolMgr.Prewarm(prefab, count, maxSize);
+            PoolHandle poolHandle = poolMgr.GetPool(prefab, maxSize);
+            poolHandle.Prewarm(count);
             Debug.Log($"[PoolEditor] 预热完成 {prefab.name} x{count}");
         }
 
@@ -402,10 +343,11 @@ namespace MieMieFrameWork.Editor.PoolEditor
             if (poolMgr == null)
                 return;
 
+            PoolHandle poolHandle = poolMgr.GetPool(prefab, maxSize);
             int success = 0;
             for (int i = 0; i < count; i++)
             {
-                if (poolMgr.GetGameObj(prefab, null, maxSize) != null)
+                if (poolHandle.Get() != null)
                     success++;
             }
 
@@ -421,49 +363,8 @@ namespace MieMieFrameWork.Editor.PoolEditor
             {
                 PrewarmPresetEntry entry = prewarmPresetList[i];
                 GameObject prefab = LoadPrefab(entry.prefabGuid);
-                RunPrewarm(prefab, entry.count, entry.maxSize, entry.path);
+                RunPrewarm(prefab, entry.count, entry.maxSize);
             }
-        }
-
-        private void ScanScenePoolMembers()
-        {
-            radarEntryList.Clear();
-            PoolMember[] memberList = FindObjectsByType<PoolMember>(FindObjectsInactive.Include);
-            for (int i = 0; i < memberList.Length; i++)
-            {
-                PoolMember member = memberList[i];
-                if (!member.gameObject.activeInHierarchy)
-                    continue;
-
-                radarEntryList.Add(new PoolRadarEntry
-                {
-                    Name = member.gameObject.name,
-                    PoolKey = member.PoolKey,
-                    Target = member.gameObject
-                });
-            }
-        }
-
-        private void ScanPoolableTypes()
-        {
-            poolableTypeNameList.Clear();
-            string[] guids = AssetDatabase.FindAssets("t:MonoScript");
-            for (int i = 0; i < guids.Length; i++)
-            {
-                string path = AssetDatabase.GUIDToAssetPath(guids[i]);
-                if (!path.EndsWith(".cs") || path.Contains("/Editor/"))
-                    continue;
-
-                MonoScript script = AssetDatabase.LoadAssetAtPath<MonoScript>(path);
-                if (script == null)
-                    continue;
-
-                Type type = script.GetClass();
-                if (type != null && typeof(IPoolable).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
-                    poolableTypeNameList.Add(type.FullName);
-            }
-
-            poolableTypeNameList.Sort();
         }
 
         private static PoolManager TryGetPoolManager()
@@ -535,7 +436,6 @@ namespace MieMieFrameWork.Editor.PoolEditor
             public string prefabGuid;
             public int count = 10;
             public int maxSize = 50;
-            public string path;
         }
 
         [Serializable]
@@ -544,11 +444,5 @@ namespace MieMieFrameWork.Editor.PoolEditor
             public PrewarmPresetEntry[] items;
         }
 
-        private class PoolRadarEntry
-        {
-            public string Name;
-            public EntityId PoolKey;
-            public GameObject Target;
-        }
     }
 }

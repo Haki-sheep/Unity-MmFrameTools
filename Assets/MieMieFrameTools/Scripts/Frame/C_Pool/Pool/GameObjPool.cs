@@ -4,7 +4,7 @@ namespace MieMieFrameWork.Pool
     using UnityEngine;
     using UnityEngine.SceneManagement;
 
-    public class GameObjPool
+    internal sealed class GameObjPool
     {
         /// <summary>
         /// 关联预制体
@@ -122,7 +122,6 @@ namespace MieMieFrameWork.Pool
             if (parent == null)
                 SceneManager.MoveGameObjectToScene(obj, SceneManager.GetActiveScene());
 
-            NotifyPoolable(obj, true);
             return obj;
         }
 
@@ -138,10 +137,8 @@ namespace MieMieFrameWork.Pool
             obj.name = prefab.name;
             totalCreatedCount++;
             activeInstanceIdHashList.Add(obj.GetEntityId());
-            BindPoolKey(obj);
             if (parent == null)
                 SceneManager.MoveGameObjectToScene(obj, SceneManager.GetActiveScene());
-            NotifyPoolable(obj, true);
             return obj;
         }
 
@@ -172,9 +169,6 @@ namespace MieMieFrameWork.Pool
                 Object.Destroy(obj);
                 return true;
             }
-
-            NotifyPoolable(obj, false);
-            BindPoolKey(obj);
 
             if (typeFather != null)
                 obj.transform.SetParent(typeFather);
@@ -214,7 +208,6 @@ namespace MieMieFrameWork.Pool
         /// </summary>
         private void PushPreWarmInstance(GameObject obj)
         {
-            BindPoolKey(obj);
             if (typeFather != null)
                 obj.transform.SetParent(typeFather);
 
@@ -222,32 +215,6 @@ namespace MieMieFrameWork.Pool
             poolQueue.Enqueue(obj);
             pooledInstanceIdHashList.Add(instanceId);
             obj.SetActive(false);
-        }
-
-        /// <summary>
-        /// 绑定池标记
-        /// </summary>
-        private void BindPoolKey(GameObject obj)
-        {
-            PoolMember member = obj.GetComponent<PoolMember>();
-            if (member == null)
-                member = obj.AddComponent<PoolMember>();
-            member.PoolKey = poolKey;
-        }
-
-        /// <summary>
-        /// 通知 IPoolable
-        /// </summary>
-        private static void NotifyPoolable(GameObject obj, bool isSpawn)
-        {
-            IPoolable[] poolableList = obj.GetComponentsInChildren<IPoolable>(true);
-            for (int i = 0; i < poolableList.Length; i++)
-            {
-                if (isSpawn)
-                    poolableList[i].OnSpawn();
-                else
-                    poolableList[i].OnDespawn();
-            }
         }
 
         #endregion

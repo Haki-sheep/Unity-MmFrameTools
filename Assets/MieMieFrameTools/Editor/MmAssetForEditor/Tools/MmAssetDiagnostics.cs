@@ -70,8 +70,7 @@ public static class MmAssetDiagnostics
     /// <summary>
     /// 菜单运行完整自检
     /// </summary>
-    [MenuItem("Tools/MieMieFrameWork/MmAsset/运行自检")]
-    private static void ValidateProjectMenu()
+    public static void ValidateProjectMenu()
     {
         var errorList = new List<string>();
         var warningList = new List<string>();

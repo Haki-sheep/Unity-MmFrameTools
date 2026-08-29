@@ -70,7 +70,7 @@ namespace MieMieFrameWork
                 EffectClipRoot = serviceRoot.Find("EffectRoot");
             }
 
-            AudioSource ef = PoolManager.Instance.GetGameObj<AudioSource>(efPlayerES, EffectClipRoot);
+            AudioSource ef = effectPoolHandle.Get<AudioSource>(EffectClipRoot);
             try
             {
                 if (ef != null)
@@ -100,7 +100,7 @@ namespace MieMieFrameWork
                 if (efAudioList.Contains(audioSource))
                     efAudioList.Remove(audioSource);
 
-                audioSource.PushGameObjectToPool();
+                effectPoolHandle.Release(audioSource);
 
                 // 等待指定延迟后执行回调
                 await UniTask.Delay(

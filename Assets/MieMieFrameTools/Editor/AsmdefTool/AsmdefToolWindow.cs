@@ -13,7 +13,7 @@ namespace MieMieFrameWork.Editor.AsmdefTool
     /// <summary>
     /// 拖文件夹生成 asmdef 并可自动分析引用
     /// </summary>
-    public sealed class AsmdefToolWindow : EditorWindow
+    public sealed class AsmdefToolWindow : EditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
     {
         /// <summary> 目标文件夹 </summary>
         private DefaultAsset targetFolder;
@@ -48,11 +48,15 @@ namespace MieMieFrameWork.Editor.AsmdefTool
         /// <summary> 滚动 </summary>
         private Vector2 scrollPos;
 
-        [MenuItem("Tools/MieMieFrameWork/AsmdefTool")]
         public static void Open()
         {
             var window = GetWindow<AsmdefToolWindow>("AsmdefTool");
             window.minSize = new Vector2(520f, 420f);
+        }
+
+        public void DrawEmbeddedGUI()
+        {
+            OnGUI();
         }
 
         private void OnGUI()

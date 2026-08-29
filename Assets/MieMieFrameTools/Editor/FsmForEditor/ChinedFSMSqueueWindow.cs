@@ -12,7 +12,7 @@ namespace MieMieFrameWork.ChainedFsm.Editor
     /// <summary>
     /// 链式 FSM 生成器
     /// </summary>
-    public class ChinedFSMSqueueWindow : EditorWindow
+    public class ChinedFSMSqueueWindow : EditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
     {
         [Serializable]
         private class StateClassEntry
@@ -38,7 +38,6 @@ namespace MieMieFrameWork.ChainedFsm.Editor
         private readonly List<StateClassEntry> stateEntryList = new List<StateClassEntry>();
         private Vector2 scroll;
 
-        [MenuItem("Tools/MieMieFrameWork/FSM/Chained FSM Generator")]
         public static void Open()
         {
             ChinedFSMSqueueWindow window = GetWindow<ChinedFSMSqueueWindow>("链式FSM生成器");
@@ -47,6 +46,11 @@ namespace MieMieFrameWork.ChainedFsm.Editor
 
         private void OnEnable() => LoadPrefs();
         private void OnDisable() => SavePrefs();
+
+        public void DrawEmbeddedGUI()
+        {
+            OnGUI();
+        }
 
         private void OnGUI()
         {

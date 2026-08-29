@@ -25,7 +25,6 @@ public class BundleEnumCreator
     private static string bundleModuleDeliveryFilePath =
              MmAssetPaths.ConfigDiskPath + "/BundleModuleDelivery.cs";
 
-    [MenuItem("Tools/MieMieFrameWork/MmAsset/生成模块枚举")]
     public static void GenerateBundleModuleEnum()
     {
         List<BundleModuleData> moduleList = BuildBundleConfigura.Instance.bundleModuleDataList;

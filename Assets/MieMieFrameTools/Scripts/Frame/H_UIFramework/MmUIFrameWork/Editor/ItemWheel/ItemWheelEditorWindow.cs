@@ -25,7 +25,7 @@ public class ItemWheelEditorWindow : EditorWindow
     private const float PreviewHeight = 320f;
     private const string PrefsPrefix = "MieMieUIFrameWork_ItemWheel_";
 
-    [MenuItem("Tools/MieMieUIFrameWork/ItemWheel")]
+    [MenuItem("Tools/MieMieFrameWork/UI中心/ItemWheel")]
     private static void Open()
     {
         var window = GetWindow<ItemWheelEditorWindow>("ItemWheel");

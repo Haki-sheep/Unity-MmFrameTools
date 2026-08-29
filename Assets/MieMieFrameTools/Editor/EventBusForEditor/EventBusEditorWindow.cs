@@ -13,7 +13,7 @@ namespace MieMieFrameWork.Editor.EventBusForEditor
     /// <summary>
     /// EventBus 运行时监控与代码扫描
     /// </summary>
-    public class EventBusEditorWindow : EditorWindow
+    public class EventBusEditorWindow : EditorWindow, MieMieFrameWork.Editor.ToolsCenter.IMieMieToolsEmbeddedWindow
     {
         /// <summary>
         /// 当前页签偏好键
@@ -62,7 +62,6 @@ namespace MieMieFrameWork.Editor.EventBusForEditor
         /// <summary>
         /// 打开窗口
         /// </summary>
-        [MenuItem("Tools/MieMieFrameWork/Event Bus")]
         public static void Open()
         {
             var window = GetWindow<EventBusEditorWindow>("EventBus");
@@ -99,6 +98,11 @@ namespace MieMieFrameWork.Editor.EventBusForEditor
         /// <summary>
         /// 绘制窗口
         /// </summary>
+        public void DrawEmbeddedGUI()
+        {
+            OnGUI();
+        }
+
         private void OnGUI()
         {
             EditorGUILayout.Space(4);

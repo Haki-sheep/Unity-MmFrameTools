@@ -81,7 +81,7 @@
             "version": "1.0.0",
             "gitUrl": "",
             "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/C_Pool/PoolManager.cs",
+            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/C_Pool/Core/PoolManager.cs",
             "tags": [
                 "性能"
             ],
@@ -98,23 +98,6 @@
             "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/B_Assets/Addressable/AddressableMgr.cs",
             "tags": [
                 "资源"
-            ],
-            "isBuiltIn": true
-        },
-        {
-            "id": "yooasset-res",
-            "displayName": "YooAsset 资源加载",
-            "category": "框架",
-            "subCategory": "可选模块",
-            "description": "YooAsset 资源管理系统，后续接入 MmAsset 资源后端选择器。",
-            "version": "内嵌",
-            "gitUrl": "https://github.com/tuyoogame/YooAsset",
-            "packageName": "",
-            "installCheckPath": "Assets/MieMieFrameTools/Scripts/Frame/B_Assets/Yooasset/package.json",
-            "menuPath": "Tools/MieMieFrameWork/YooAsset/资源面板",
-            "tags": [
-                "资源",
-                "YooAsset"
             ],
             "isBuiltIn": true
         },
@@ -307,7 +290,7 @@
             "id": "plugin-odin",
             "displayName": "Odin Inspector",
             "category": "插件",
-            "description": "Sirenix 商业 Inspector 增强 序列化 表格 按钮 模块中枢与框架编辑器大量依赖 Odin",
+            "description": "Sirenix 商业 Inspector 增强 序列化 表格 按钮 模块中心与框架编辑器大量依赖 Odin",
             "version": "内置",
             "gitUrl": "https://odininspector.com",
             "packageName": "",
@@ -568,7 +551,6 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/FolderForEditor/ProjectWindow/FolderBookmarkWindow.cs",
-            "menuPath": "Tools/MieMieFrameWork/Folder/Folder Bookmarks",
             "tags": [
                 "编辑器",
                 "路径"
@@ -584,7 +566,6 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/EventBusForEditor/EventBusEditorWindow.cs",
-            "menuPath": "Tools/MieMieFrameWork/Event Bus",
             "tags": [
                 "编辑器",
                 "事件"
@@ -600,7 +581,6 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/FsmForEditor/TickFSMWindow.cs",
-            "menuPath": "Tools/MieMieFrameWork/FSM/TickFSMWindow",
             "tags": [
                 "编辑器",
                 "FSM"
@@ -616,7 +596,6 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/DmvcForEditor/DMVCCodeGeneratorWindow.cs",
-            "menuPath": "Tools/MieMieFrameWork/DMVC/Code Generator",
             "tags": [
                 "编辑器",
                 "架构"
@@ -632,7 +611,6 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/PoolWindow/PoolEditorWindow.cs",
-            "menuPath": "Tools/MieMieFrameWork/Object Pool",
             "tags": [
                 "编辑器",
                 "性能"
@@ -648,7 +626,6 @@
             "gitUrl": "",
             "packageName": "",
             "installCheckPath": "Assets/MieMieFrameTools/Editor/MmAssetForEditor/RootWindow/BuildWindow.cs",
-            "menuPath": "Tools/MieMieFrameWork/MmAsset/资源管线",
             "tags": [
                 "编辑器",
                 "资源",
@@ -665,7 +642,7 @@
             "gitUrl": "git@github.com:Haki-sheep/MmUIFrameWork.git?path=Assets/MmUIFrameWork",
             "packageName": "com.hakisheep.mm-uiframe",
             "installCheckPath": "Packages/com.hakisheep.mm-uiframe/Editor/UIForEditor/UIScripts/GenerateUITemp.cs",
-            "menuPath": "Tools/MieMieFrameWork/UI/GenerateUITemp",
+            "menuPath": "Tools/MieMieFrameWork/UI中心/GenerateUITemp",
             "tags": [
                 "编辑器",
                 "UI"
