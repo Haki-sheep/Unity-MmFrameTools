@@ -1,0 +1,17 @@
+{
+    "name": "MieMieFrameWork.Data.Luban",
+    "rootNamespace": "MieMieFrameWork.Data.Luban",
+    "references": [
+        "MieMieFrameWork.Runtime",
+        "Luban.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -15,13 +15,9 @@ namespace MieMieFrameWork.Editor.MmAssets
         public string id = string.Empty;
         public string displayName = string.Empty;
         public string category = "未分类";
-        public string subCategory = string.Empty;
         public string description = string.Empty;
         public string version = "0.1.0";
-        public string gitUrl = string.Empty;
-        public string packageName = string.Empty;
         public string installCheckPath = string.Empty;
-        public string menuPath = string.Empty;
         public List<string> tags = new();
         public bool isBuiltIn;
     }

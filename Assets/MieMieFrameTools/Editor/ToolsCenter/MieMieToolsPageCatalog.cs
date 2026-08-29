@@ -129,6 +129,11 @@ namespace MieMieFrameWork.Editor.ToolsCenter
                     "链式 FSM 生成器",
                     "按顺序生成链式状态流程代码"),
 
+                CreateEmbedded<MieMieFrameWork.Editor.DataForEditor.LubanWorkbenchWindow>(
+                    "Data/Luban 工作台",
+                    "Luban 工作台",
+                    "打开配置表并执行 Luban 校验与代码生成"),
+
                 CreateEmbedded<MieMieFrameWork.Asset.BuildWindow>(
                     "MmAsset/资源管线",
                     "MmAsset 资源管线",
