@@ -20,7 +20,7 @@
         private readonly Dictionary<Type, IManagerBase> managerDict = new Dictionary<Type, IManagerBase>();
 
         [FormerlySerializedAs("uICoreMgr")]
-        [SerializeField, LabelText("UI管理器(可选)")]
+        [SerializeField, LabelText("UI管理器")]
         private MonoBehaviour uiCoreMgrBehaviour;
 
         [SerializeField, LabelText("存档子目录")]
