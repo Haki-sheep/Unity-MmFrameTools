@@ -38,11 +38,12 @@ namespace MieMieFrameWork.Business.Samples.DCES
         /// 转发玩家伤害请求
         /// 不在服务层重复实现业务规则
         /// </summary>
-        /// <param name="request">伤害请求</param>
-        /// <returns>伤害结果</returns>
-        public PlayerDamageResult TakeDamage(PlayerDamageRequest request)
+        /// <param name="damage">请求伤害值</param>
+        /// <returns>实际扣血量</returns>
+        public int TakeDamage(int damage)
         {
-            return damageExecutor.Execute(request);
+            
+            return damageExecutor.Execute(damage);
         }
     }
 }

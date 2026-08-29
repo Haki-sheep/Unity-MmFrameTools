@@ -10,9 +10,9 @@ namespace MieMieFrameWork.Business.Samples.DCES
     {
         /// <summary>
         /// 玩家生命变化事件
-        /// 参数为本次伤害结果
+        /// 参数为实际伤害与剩余生命
         /// </summary>
-        public static readonly EventKey<PlayerDamageResult> HealthChanged =
-            new EventKey<PlayerDamageResult>("DCES.Player.HealthChanged");
+        public static readonly EventKey<int, int> HealthChanged =
+            new EventKey<int, int>("DCES.Player.HealthChanged");
     }
 }

@@ -65,7 +65,9 @@ Data
 - ConfigData 初始化后只读
 - RuntimeData 是运行期间唯一业务真值 不向模块外暴露
 - SaveData 只是序列化快照 加载后转换成 RuntimeData
-- Request 和 Result 只携带一次业务调用需要的数据
+- Request 和 Result 不是必选项
+- 简单参数直接写在接口方法上
+- 只有入参或回执明显变多时才在 Public/Data 增加 DTO
 - 外部只能获得只读结果 DTO
 - 数据修改必须由负责该业务的 Executor 完成
 - 内部 Data 不允许被外部模块直接取得或修改
@@ -172,7 +174,7 @@ Service 是模块公共入口 实现公共接口并组装模块内部对象
 - 持有 RuntimeData 和 Executor
 - 将公共请求转发给对应 Executor
 - 提供稳定查询
-- 将内部结果转换成公共 Result
+- 将内部结果转换成接口返回值或事件参数
 
 禁止
 
@@ -316,11 +318,8 @@ Player
 ├── Public
 │   ├── Interface
 │   │   └── IPlayerService.cs
-│   ├── Event
-│   │   └── PlayerEvents.cs
-│   └── Data
-│       ├── PlayerDamageRequest.cs
-│       └── PlayerDamageResult.cs
+│   └── Event
+│       └── PlayerEvents.cs
 ├── Data
 │   ├── Config
 │   ├── Runtime
@@ -329,6 +328,10 @@ Player
 ├── Executor
 └── PlayerService.cs
 ```
+
+简单入参直接写在接口方法上 不要为单个 int 再造 Request Result
+
+参数或回执明显变多时再按需增加 `Public/Data` 下的 DTO
 
 目录按实际职责创建
 
@@ -359,7 +362,7 @@ Player
 
 多个 Executor 随意修改同一 RuntimeData 会使约束散落
 
-规避 RuntimeData 模块私有 外部只拿 Result DTO 修改由对应业务 Executor 完成
+规避 RuntimeData 模块私有 外部只通过接口返回值或 Event 参数取结果 修改由对应业务 Executor 完成
 
 ### 简单模块类爆炸
 
@@ -413,7 +416,7 @@ PlayerDamageCalculator.Calculate          ← 实例 持有只读 Config
 PlayerDamageMath.ApplyReduction           ← 静态 纯公式
 PlayerDamageMath.ResolveHealth            ← 静态 纯公式
     ↓
-PlayerRuntimeData.ApplyDamage
+PlayerRuntimeData.SetHealth
     ↓
 MmGlobalEventBus.Publish(PlayerEvents.HealthChanged)
     ↓
@@ -456,7 +459,8 @@ Consumer 销毁时释放事件订阅令牌
 
 - 公共接口是否继承 IGameService
 - GameHub 是否按公共接口类型注册
-- 外部是否只依赖公共接口 公共 EventKey 和公共 Data
+- 外部是否只依赖公共接口和公共 EventKey
+- 简单参数是否直接写在接口上 没有多余 DTO
 - 跨模块通知是否走 Public/Event 而不是 Action 回调或接口上的 C# event
 - RuntimeData 是否仍然是模块私有
 - Calculator 是否保持纯计算

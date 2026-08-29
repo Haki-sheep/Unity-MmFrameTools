@@ -36,9 +36,11 @@ namespace MieMieFrameWork.Business.Samples.DCES
         private void Start()
         {
             playerService = GameHub.Get<IPlayerService>();
+            
             healthChangedRegistration = MieMieFrameWork.MmGlobalEventBus.GlobalBus.Subscribe(
                 PlayerEvents.HealthChanged,
                 OnHealthChanged);
+
             Debug.Log($"[DCES Sample] 当前生命 {playerService.CurrentHealth}");
         }
 
@@ -49,19 +51,20 @@ namespace MieMieFrameWork.Business.Samples.DCES
         [ContextMenu("DCES Sample Take Damage")]
         private void TakeDamage()
         {
-            var request = new PlayerDamageRequest(damage);
-            var result = playerService.TakeDamage(request);
-            Debug.Log($"[DCES Sample] 实际伤害 {result.AppliedDamage}");
+            int appliedDamage = playerService.TakeDamage(damage);
+            Debug.Log($"[DCES Sample] 实际伤害 {appliedDamage}");
         }
 
         /// <summary>
         /// 输出生命变化结果
         /// 只消费公共 EventKey 载荷
         /// </summary>
-        /// <param name="result">伤害结果</param>
-        private void OnHealthChanged(PlayerDamageResult result)
+        /// <param name="appliedDamage">实际伤害</param>
+        /// <param name="currentHealth">剩余生命</param>
+        private void OnHealthChanged(int appliedDamage, int currentHealth)
         {
-            Debug.Log($"[DCES Sample] 剩余生命 {result.CurrentHealth} 死亡 {result.IsDead}");
+            bool isDead = currentHealth == 0;
+            Debug.Log($"[DCES Sample] 剩余生命 {currentHealth} 死亡 {isDead}");
         }
 
         /// <summary>

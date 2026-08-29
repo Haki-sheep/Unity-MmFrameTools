@@ -10,10 +10,10 @@ namespace MieMieFrameWork.Business.Samples.DCES
 
         /// <summary>
         /// 对玩家执行一次伤害
-        /// 返回本次伤害结果
+        /// 返回实际扣血量
         /// </summary>
-        /// <param name="request">伤害请求</param>
-        /// <returns>伤害结果</returns>
-        public PlayerDamageResult TakeDamage(PlayerDamageRequest request);
+        /// <param name="damage">请求伤害值</param>
+        /// <returns>实际扣血量</returns>
+        public int TakeDamage(int damage);
     }
 }

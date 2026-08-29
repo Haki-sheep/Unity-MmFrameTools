@@ -23,18 +23,29 @@ namespace MieMieFrameWork.Business.Samples.DCES
         }
 
         /// <summary>
-        /// 计算减免后的伤害结果
+        /// 计算减免后的实际扣血与剩余生命
         /// 业务规则走实例 纯公式委托静态 Math
         /// </summary>
         /// <param name="currentHealth">当前生命值</param>
-        /// <param name="request">伤害请求</param>
-        /// <returns>伤害结果</returns>
-        public PlayerDamageResult Calculate(int currentHealth, PlayerDamageRequest request)
+        /// <param name="damage">请求伤害值</param>
+        /// <param name="appliedDamage">实际扣血</param>
+        /// <param name="remainingHealth">剩余生命</param>
+        public void Calculate(
+            int currentHealth,
+            int damage,
+            out int appliedDamage,
+            out int remainingHealth)
         {
             int mitigatedDamage = PlayerDamageMath.ApplyReduction(
-                request.Damage,
+                damage,
                 configData.DamageReductionPercent);
-            return PlayerDamageMath.ResolveHealth(currentHealth, mitigatedDamage);
+
+                
+            PlayerDamageMath.ResolveHealth(
+                currentHealth,
+                mitigatedDamage,
+                out appliedDamage,
+                out remainingHealth);
         }
     }
 }

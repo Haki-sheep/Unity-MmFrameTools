@@ -1,0 +1,64 @@
+﻿# Unity 生成与缓存 不要索引
+Library/
+Temp/
+Obj/
+obj/
+Logs/
+UserSettings/
+MemoryCaptures/
+ProfilerCaptures/
+Build/
+Builds/
+Bundles/
+
+# IDE / 工程噪音
+.vs/
+.idea/
+.gradle/
+*.csproj
+*.sln
+*.suo
+*.user
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# 二进制与第三方产物
+*.dll
+*.so
+*.a
+*.exe
+*.unitypackage
+*.apk
+*.aab
+*.zip
+*.7z
+*.rar
+*.fbx
+*.FBX
+*.blend
+*.psd
+*.tga
+*.exr
+*.hdr
+*.mp3
+*.wav
+*.ogg
+*.mp4
+*.mov
+*.webm
+
+# 大资源与无关文档 不影响写代码
+Assets/MieMieFrameTools/ADefaultRes/
+Assets/MieMieFrameTools/Plugins/
+Assets/TextMesh Pro/
+Assets/AddressableAssetsData/
+Assets/StreamingAssets/
+GBK2UTF8-result-*.md
+Yooasset-empty/
+MieMieSave/
+UIElementsSchema/

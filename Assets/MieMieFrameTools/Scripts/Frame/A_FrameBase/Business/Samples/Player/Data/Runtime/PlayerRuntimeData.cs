@@ -19,13 +19,13 @@ namespace MieMieFrameWork.Business.Samples.DCES
         }
 
         /// <summary>
-        /// 应用伤害计算结果
+        /// 写入剩余生命
         /// 本函数只负责修改运行时状态
         /// </summary>
-        /// <param name="result">伤害结果</param>
-        public void ApplyDamage(PlayerDamageResult result)
+        /// <param name="remainingHealth">剩余生命</param>
+        public void SetHealth(int remainingHealth)
         {
-            CurrentHealth = result.CurrentHealth;
+            CurrentHealth = remainingHealth;
         }
     }
 }

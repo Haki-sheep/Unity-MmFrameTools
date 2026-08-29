@@ -36,14 +36,21 @@ namespace MieMieFrameWork.Business.Samples.DCES
         /// 执行玩家伤害业务
         /// 先写状态再发布 PlayerEvents
         /// </summary>
-        /// <param name="request">伤害请求</param>
-        /// <returns>伤害结果</returns>
-        public PlayerDamageResult Execute(PlayerDamageRequest request)
+        /// <param name="damage">请求伤害值</param>
+        /// <returns>实际扣血量</returns>
+        public int Execute(int damage)
         {
-            var result = damageCalculator.Calculate(runtimeData.CurrentHealth, request);
-            runtimeData.ApplyDamage(result);
-            MieMieFrameWork.MmGlobalEventBus.GlobalBus.Publish(PlayerEvents.HealthChanged, result);
-            return result;
+            damageCalculator.Calculate(
+                runtimeData.CurrentHealth,
+                damage,
+                out int appliedDamage,
+                out int remainingHealth);
+            runtimeData.SetHealth(remainingHealth);
+            MieMieFrameWork.MmGlobalEventBus.GlobalBus.Publish(
+                PlayerEvents.HealthChanged,
+                appliedDamage,
+                remainingHealth);
+            return appliedDamage;
         }
     }
 }

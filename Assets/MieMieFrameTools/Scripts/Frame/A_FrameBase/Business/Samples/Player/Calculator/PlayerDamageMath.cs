@@ -47,13 +47,17 @@ namespace MieMieFrameWork.Business.Samples.DCES
         /// </summary>
         /// <param name="currentHealth">当前生命</param>
         /// <param name="damage">请求伤害</param>
-        /// <returns>实际伤害与剩余生命</returns>
-        public static PlayerDamageResult ResolveHealth(int currentHealth, int damage)
+        /// <param name="appliedDamage">实际扣血</param>
+        /// <param name="remainingHealth">剩余生命</param>
+        public static void ResolveHealth(
+            int currentHealth,
+            int damage,
+            out int appliedDamage,
+            out int remainingHealth)
         {
             int validDamage = ClampNonNegative(damage);
-            int appliedDamage = Math.Min(currentHealth, validDamage);
-            int remainingHealth = currentHealth - appliedDamage;
-            return new PlayerDamageResult(appliedDamage, remainingHealth);
+            appliedDamage = Math.Min(currentHealth, validDamage);
+            remainingHealth = currentHealth - appliedDamage;
         }
     }
 }
